@@ -1,12 +1,12 @@
-%\TEX root = ../../thesis_rui_almeida.tex
-
-
+%!TEX root = ../../thesis_rui_almeida.tex
 \section{Tomographic algorithms and reconstruction techniques}%
 \label{sec:tomographic_algorithms_and_reconstruction_techniques}
 
 \subsection{Introduction}%
 \label{sub:tomography_introduction}
 
+
+\todo[inline]{From here}
 Tomography is the cross-sectional imaging of an object through the use
 of transmitted or reflected waves, captured by the object exposure to
 the waves from a set of known angles. It has many different applications
@@ -17,6 +17,10 @@ a revolutionary impact, allowing doctors to see inside their patients,
 without having to subject them to more invasive
 procedures~\cite{Kak2001}.
 
+
+
+
+
 Mathematical basis for tomography were set by Johannes Radon in 1917. At
 the time, he postulated that  it is possible to represent a function
 written in $\mathbb{R}$ in the space of straight lines, $\mathbb{L}$
@@ -25,22 +29,14 @@ which the function that is being integrated is evaluated along a curved
 path, a line. In the tomographic case, these line integrals represent a
 measurement on a ray that traverses the Region Of Interest (\gls{ROI}).
 Each set of line integrals, characterized by an incidence angle, is
-called a projection (see Figure~\ref{fig:projection}). To perform a
-tomographic reconstruction, the machine must take many projections
-around the object. To the set of projections arranged in matrix form by
-detector and projection angle, we call sinogram. All reconstruction
-methods, analytical and iterative, revolve around going from reality to
-sinogram to image~\cite{Bruyant2002, Kak2001, Herman1973, Herman1995,
-Herman2009, Defrise2003}.
-
-\begin{figure}[htpb]
-    \centering
-    \includegraphics[width=0.5\textwidth]{img/png/projections.png}
-    \caption{A schematic representation of a projection acquisition. In
-    this image, taken from ~\cite{Herman2009}, the clear line that comes
-    down at a diagonal angle is a projection.}
-    \label{fig:projection}
-\end{figure}
+called a projection (see Figure~\ref{fig:projection} in
+Section~\ref{sub:tomography}). To perform a tomographic reconstruction,
+the machine must take many projections around the object. To the set of
+projections arranged in matrix form by detector and projection angle, we
+call sinogram. All reconstruction methods, analytical and iterative,
+revolve around going from reality to sinogram to
+image~\cite{Bruyant2002, Kak2001, Herman1973, Herman1995, Herman2009,
+Defrise2003}.
 
 There are two broad algorithm families when it comes to tomographic
 reconstruction, regarding the physics of the problem. The problem can
@@ -52,10 +48,19 @@ not address the latter family, since I will not be applying them in my
 work. In the next few paragraphs, I will discuss the first family of
 algorithms, and describe how an image can be reconstructed from an
 object's projections when the radiation source is non-diffracting.
+\todo[inline]{To here}
+
+
+
+
+
+
+
+
 
 Let's consider the case in which we deal with a single ray of solar
 light entering the atmosphere at a given point. Since the atmosphere
-contains numerous absorbents and comparable atmospheric effects, the ray
+contains numerous absorbers and comparable atmospheric effects, the ray
 changes from the point where it enters the atmosphere to the point at
 which it is measured by a detector. Total absorption will depend on the
 pollutant species, their cross-section and their concentration, since it
