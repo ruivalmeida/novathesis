@@ -263,6 +263,9 @@ of \gls{DOAS}.}
 \label{alg:doas_non_linear}
 \end{algorithm}
 
+\subsection{\gls{DOAS} categories}%
+\label{sub:doas_categories}
+
 There are two main families of \gls{DOAS} assemblies, with different
 goals and capabilities:
 
@@ -282,7 +285,6 @@ goals and capabilities:
                 \caption{Active DOAS schematic.}\label{fig:activeSmall}
               \end{figure}
 
-
         \item Passive DOAS techniques, illustrated in
             Fig.~\ref{fig:passiveSchematic}, use natural light sources,
             such as the Sun and the moon, in their measurement process.
@@ -297,8 +299,33 @@ goals and capabilities:
                   \includegraphics[width=.8\textwidth]{img/png/amt-2016-314-f03.png}
                   \caption{Passive DOAS schematic.}\label{fig:passiveSchematic}
               \end{figure}
-
 \end{itemize}
+
+Now, within these two families, there are several categories of possible
+experiments. Differences in assembly design originate from a number of
+different target requirements. Active and passive applications can
+differ with relation to their intended spectral range, light throughput,
+resolution, or many other factors that come from tailor made solution to
+mostly research problems.
+
+In active experiments, the choice of the light source is the most
+critical aspect of the whole system design. Light sources must be
+stable, have a very high throughput -- these experiments are many times
+conducted over long optical paths -- and need to be adequately priced in
+purchase and maintenance costs. This is especially true if the
+experimented is intended to run for extended periods of time. Moreover,
+the spectral range of the emitted light is central. Not every trace gas
+is present in every spectral interval. The light's spectral structure is
+also very important, for similar reasons, and should be taken into
+account during the experiment design phase.
+
+Passive \gls{DOAS} experiments are instrumentally simpler. They do not
+involve the design and operation of any light source, since they operate
+on natural light. However, the complexity level of the retrieval process
+is much higher, since one has to take into account radiative transfer.
+There are several models in the literature that allow the
+simulation\todo{Read Stutz and Platt, in the part that starts talking
+about passive DOAS experiments. This subsection is getting poor.}
 
 \todo[inline]{MISSING}
 \begin{itemize}
