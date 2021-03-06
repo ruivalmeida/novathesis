@@ -1,3 +1,8 @@
+#Ignore img folder
+
+!img/
+
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -15,6 +20,9 @@
 ## Intermediate documents:
 *.dvi
 *.xdv
+
+## Compiled documents
+*.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
