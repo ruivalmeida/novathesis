@@ -252,6 +252,8 @@ value. This cycle is iteratively repeated in the best minimisation
 direction until any of the stop criteria are met and the cycle is
 terminated. Algorithm~\ref{alg:doas_non_linear} summarises this process.
 
+\todo[inline]{Algorithm~\ref{alg:doas_non_linear} must be written}
+
 \begin{algorithm}[htb]
 \SetAlgoLined
 \KwResult{Target trace gas concentrations.}
@@ -378,14 +380,19 @@ using literature-obtained cross-section data for each target trace gas,
 the \gls{wfm} approach uses weighing functions, calculated through the
 application of a radiative transfer model, such as
 SCIATRAN~\todo{Citation Rozanov}. Still, the retrieval is based on a
-fitting process. Equation~\ref{eq:wfmdoas} can be called the
-\acrlong{wfm} equation.
+fitting process. Equation~\ref{eq:wfmdoas}, adapted
+from~\cite{Buchwitz2000, Buchwitz2004} can be called the \gls{wfm}
+equation.
 
 \begin{equation}
     \centering
-    \lVert \ln I_{i}^{obs}(V^t) - \left[ \ln I_{i}^{mod}(\bar{V}) +
+    \left \lVert \ln I_{i}^{obs}(V^t) - \left[ \ln I_{i}^{mod}(\bar{V}) +
         \sum_{j=1}^{J} \frac{\partial \ln I_{i}^{mod}}{\partial V_{j}}
-    \right] \Rvert ^{2}
+        \middle \vert_{\bar{V_{j}}} (\hat{V_{j}} - \bar{V_{j}}) +
+        P_{i}(a_m)
+    \right] \right\rVert^{2} = \left \lVert RES \right \rVert^2
+    \rightarrow min
+    \label{eq:wfmdoas}
 \end{equation}
 
 
