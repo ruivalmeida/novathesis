@@ -342,7 +342,7 @@ concentration changes. In addition to this, there is always the need to
 convert the system's direct measurement, a column density, into vertical
 densities. Since in scattered sunlight measurements, the optical path is
 impossible to calculate in a precise manner, this requires the use of
-complex radiative transfer models.
+complex radiative transfer models~\cite{Platt2007, Frins2006}.
 
 One particular interesting use of passive \gls{DOAS} are satellite
 measurements. There are three types satellite \gls{DOAS} experiments:
@@ -365,7 +365,30 @@ Satellite based \gls{DOAS} measurements have also been important because
 they have given rise to new trace gas retrieval techniques. Through
 them, new trace gases, previously unreachable through \gls{DOAS} have
 been quantified on a global level, such as carbon monoxide through
-\gls{wfm}.
+\gls{wfm}~\cite{Buchwitz2000, Buchwitz2004}.
+
+\subsection{\acrlong{wfm}}%
+\label{sub:wfm_doas}
+
+\gls{wfm} is a trace gas column retrieval algorithm, developed in the
+beginning of the 21\textsuperscript{st} century, with the main goal of
+determining the total columns of gases such as \gls{co}, \gls{h2o} or
+\gls{co2} from satellite nadir data~\cite{Buchwitz2004}. Instead of
+using literature-obtained cross-section data for each target trace gas,
+the \gls{wfm} approach uses weighing functions, calculated through the
+application of a radiative transfer model, such as
+SCIATRAN~\todo{Citation Rozanov}. Still, the retrieval is based on a
+fitting process. Equation~\ref{eq:wfmdoas} can be called the
+\acrlong{wfm} equation.
+
+\begin{equation}
+    \centering
+    \lVert \ln I_{i}^{obs}(V^t) - \left[ \ln I_{i}^{mod}(\bar{V}) +
+        \sum_{j=1}^{J} \frac{\partial \ln I_{i}^{mod}}{\partial V_{j}}
+    \right] \Rvert ^{2}
+\end{equation}
+
+
 
 \todo[inline]{MISSING}
 \begin{itemize}
