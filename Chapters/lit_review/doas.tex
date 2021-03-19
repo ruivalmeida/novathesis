@@ -386,7 +386,8 @@ equation.
 
 \begin{equation}
     \centering
-    \left \lVert \ln I_{i}^{obs}(V^t) - \left[ \ln I_{i}^{mod}(\bar{V}) +
+    \left \lVert \ln I_{i}^{obs}(\bm{V^t}) - \left[ \ln
+            I_{i}^{mod}(\bm{\bar{V}}) +
         \sum_{j=1}^{J} \frac{\partial \ln I_{i}^{mod}}{\partial V_{j}}
         \middle \vert_{\bar{V_{j}}} (\hat{V_{j}} - \bar{V_{j}}) +
         P_{i}(a_m)
@@ -395,6 +396,17 @@ equation.
     \label{eq:wfmdoas}
 \end{equation}
 
+In Equation~\ref{eq:wfmdoas}, $I_{i}^{obs}$ is the observed
+sun-normalised radiance (the ratio between a nadir radiance measurement
+and solar irradiance) for the center wavelength $\lambda_i$ of detector
+pixel number $i$. $\bm{V}$ are the vector that have vertical columns as
+their components. These can be true, $V^t$, modelled, $\bar{V_j}$, or
+approximated, $\hat{V_j}$. The true columns are unknown as we only have
+the radiance value and not the things on which it depends, modelled
+vertical columns are taken from the literature (they are climatological
+values) and $\hat{V_j}$ are one of the fitting parameters. The other
+being $a_m$, the low order polynomial ($P$) coefficients. $RES$ is
+the fit residuum, which is minimised for the fitting. 
 
 
 \todo[inline]{MISSING}
