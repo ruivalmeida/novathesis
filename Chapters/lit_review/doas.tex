@@ -1,17 +1,19 @@
 %!TEX root=../../thesis_rui_almeida.tex
 
-\section{DOAS}%
+\section{\gls{DOAS}}%
 \label{sec:doas}
 
-Differential Optical Absorption Spectroscopy is a well established
-absorption technique that is widely used in the field of atmospheric
+\acrlong{DOAS} is a well established absorption spectroscopy technique
+that is widely used in the field of atmospheric
 studies~\cite{Platt2007}. In this section, I present a short
-introduction to the field, extracted from~\cite{ValentedeAlmeida2017},
-an article we have published in 2017, marking the conclusion of the
-initial studies for this PhD thesis.
+introduction to the field. The first part of this introduction is based
+on~\cite{ValentedeAlmeida2017}, an article we have published in 2017,
+marking the conclusion of the initial studies for this PhD thesis. The
+second and last part refers to additional research that I have conducted
+since then.
 
-DOAS itself is based on Lambert--Beer's law, which can be written as
-\cite{Platt2007}
+\gls{DOAS} itself is based on Lambert--Beer's law, which can be written
+as \cite{Platt2007}
 
 \begin{equation}
   \centering
@@ -59,16 +61,13 @@ following~\cite{Platt2007}.
 
 In addition, we also have to take into account that, in the atmosphere,
 there are a number of trace gases that interfere with passing light.
-
 Another aspect worth mentioning is that our device is never pointed
 directly at the light source (the Sun) but always processes light that
 has been scattered at some unknown point in the optical path. This means
 that the light that reaches our detector is only the scattered fraction
 of the sunlight, depending on the system's position and geometry, as
-well as wavelength.
-
-The expansion of Lambert--Beer's equation to include all these effects
-results in Eq.~(\ref{eq:expandedLambertBeer}).
+well as wavelength. The expansion of Lambert--Beer's equation to include
+all these effects results in Eq.~(\ref{eq:expandedLambertBeer}).
 
 \begin{equation}
     \label{eq:expandedLambertBeer}
@@ -88,17 +87,16 @@ Where $A(\lambda, \ldots)$ is the fraction of scattered light that
 reaches the device, $S(\lambda)$ represents instrumental and turbulence
 effects, $\sigma_{i}(\lambda, s)$ is the absorption cross section of
 absorber $i$, $c_{i}$ is the concentration of absorber $i$.
-$\epsilon_{\mathrm{TG}}(\lambda, s)$ is the absorption by the $i$ trace gases,
-$\epsilon_\mathrm{R}(\lambda, s)$ represents Rayleigh's extinction
-coefficient and $\epsilon_\mathrm{M}(\lambda, s)$ represents Mie's
-extinction coefficient.
-
-The interest of this equation lies within the retrieval of $c_i$, a
-given absorber's concentration. Since the integral is taken along the
-total atmospheric path of the measured photons, and considering that
-their cross sections do not vary significantly in atmospheric
-conditions, it is possible to define the concept of slant column, which
-is of great importance~\cite{Merlaud2013}.
+$\epsilon_{\mathrm{TG}}(\lambda, s)$ is the absorption by the $i$ trace
+gases, $\epsilon_\mathrm{R}(\lambda, s)$ represents Rayleigh's
+extinction coefficient and $\epsilon_\mathrm{M}(\lambda, s)$ represents
+Mie's extinction coefficient. The interest of this equation lies within
+the retrieval of $c_i$, a given absorber's concentration. Since the
+integral is taken along the total atmospheric path of the measured
+photons, and considering that their cross sections do not vary
+significantly in atmospheric conditions, it is possible to define the
+concept of slant column, which is of great
+importance~\cite{Merlaud2013}.
 
 \begin{equation}
       \label{eq:slantColumn}
@@ -107,13 +105,12 @@ is of great importance~\cite{Merlaud2013}.
 
 This quantity, as Eq.~(\ref{eq:slantColumn}) shows, equals the integral
 of an individual absorber's concentration along the atmospheric optical
-path of relevance.
-
-Now, without knowledge of $I_{0}(\lambda)$, these equations cannot give
-us absolute concentration values. We can, however, use another scattered
-light spectrum as reference in Eq.~(\ref{eq:opticalThickness}). Instead
-of absolute densities, this will yield relative changes in the
-atmosphere. We thus arrive at Eq.~(\ref{eq:relativeOpticalThickness}).
+path of relevance. Now, without knowledge of $I_{0}(\lambda)$, these
+equations cannot give us absolute concentration values. We can, however,
+use another scattered light spectrum as reference in
+Eq.~(\ref{eq:opticalThickness}). Instead of absolute densities, this
+will yield relative changes in the atmosphere. We thus arrive at
+Eq.~(\ref{eq:relativeOpticalThickness}).
 
 \begin{equation}
     \label{eq:relativeOpticalThickness}
@@ -131,7 +128,6 @@ Where $\Delta \mathrm{SC}_{i}$  is the relative slant column of absorber
 $i$; $\Delta \tau_\mathrm{M}$  is the relative Mie scattering term,
 integrated to its optical thickness; and $\Delta \tau_\mathrm{R}$ is the
 relative Rayleigh scattering term, integrated to its optical thickness.
-
 This is where the principle of DOAS is applied. Instrument features,
 scattering and other atmospheric effects have broad absorption spectral
 profiles, which vary slowly with wavelength. Several trace absorbers
@@ -200,7 +196,7 @@ requires the use of numerical approximations, and the most common
 approach is a least-squares approximation, in which the best solution
 minimises $\chi^2=\left[\tau - A \cdot X\right]\left[\tau - A \cdot
 X\right]^T$. The upper script $T$ used in this expression denotes the
-transpose of the preceding matrix.
+transpose of the preceding matrix~\cite{Merlaud2013, Platt2007}.
 
 A crude \gls{DOAS} algorithm might not go any forward. In effect, this
 is precisely the approached followed in~\cite{ValentedeAlmeida2017} for
