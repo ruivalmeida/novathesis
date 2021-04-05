@@ -246,22 +246,18 @@ window is shifted, stretched and offset according to the initial
 conditions. The $\chi^2$ is re-calculated and compared to the previous
 value. This cycle is iteratively repeated in the best minimisation
 direction until any of the stop criteria are met and the cycle is
-terminated. Algorithm~\ref{alg:doas_non_linear} summarises this process.
+terminated. The algorithm is illustrated (simplified) in
+Figure~\ref{fig:doas_non_linear}.
 
-\todo[inline]{Algorithm~\ref{alg:doas_non_linear} must be written}
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.4\textwidth]{tikz/doasFlowchart/doasFlowchart.pdf}
+    \caption{Simplified schematic flowchart of the \gls{DOAS} algorithm,
+    including the non-linear part.}
+    \label{fig:doas_non_linear}
+\end{figure}
 
-\begin{algorithm}[htb]
-\SetAlgoLined
-\KwResult{Target trace gas concentrations.}
-lkjahsdlkjhasdk
-çlkasjdçlkjasd
-jkashdkljahsd
-\caption{The non linear algorithm for trace gas concentration retrieval
-of \gls{DOAS}.}
-\label{alg:doas_non_linear}
-\end{algorithm}
-
-\subsection{\gls{DOAS} categories}%
+\subsection{ Types of \gls{DOAS} experiments}%
 \label{sub:doas_categories}
 
 There are two main families of \gls{DOAS} assemblies, with different
@@ -322,14 +318,48 @@ or after a scattering event, the latter being the more common. In these
 experiments, instead of pointing directly at the sun, the collector is
 pointed at a certain point in the atmosphere, entering the system after
 it has been scattered. There are many possible geometries to a scattered
-sunlight \gls{DOAS} experiment:
-\todo[inline]{Write this description}
-\begin{description}
-    \item[Zenith Scattered Light:] 
-    \item[Multi-Axis \gls{DOAS}:]
-    \item[Nadir Satellite:]
-    \item[Limb Satellite:]
-\end{description}
+sunlight \gls{DOAS} experiment. Some of them are schematically
+represented in Figure~\ref{fig:doasTypes}.
+
+\begin{figure}[htpb]
+    \centering
+    \begin{subfigure}[b]{.475\textwidth}
+        \centering
+        \includegraphics[trim=10.8cm 10cm 4.5cm
+        16.9cm, clip, width=\textwidth]{img/pdf/zenithMaxAMax.pdf}
+        \caption{Zenith Scattered Sunlight}
+        \label{fig:zsldoas}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{.475\textwidth}
+        \centering
+        \includegraphics[trim=3cm 5.3cm 12cm
+        21.7cm, clip, width=\textwidth]{img/pdf/zenithMaxAMax.pdf}
+        \caption{\gls{maxdoas}}
+        \label{fig:maxdoas}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{.475\textwidth}
+        \centering
+        \includegraphics[trim=10.8cm 5.3cm 4.5cm
+        21.7cm, clip, width=\textwidth]{img/pdf/zenithMaxAMax.pdf}
+        \caption{Airborne \gls{maxdoas}}
+        \label{fig:amaxdoas}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{.475\textwidth}
+        \centering
+        \includegraphics[trim=3cm 23.7cm 12cm
+        3cm, clip, width=\textwidth]{img/pdf/imaging.pdf}
+        \caption{Imaging \gls{DOAS}}
+        \label{fig:imagingDoas}
+    \end{subfigure}
+    \caption{Several examples of possible passive \gls{DOAS} experiment
+    geometries. All these examples use only the light from an
+    astronomical source to detect many atmospheric trace gases. All
+    these examples were taken from~\cite{Platt2007}.}
+    \label{fig:doasTypes}
+\end{figure}
 
 Although instrumentally simpler than their active counterpart, passive
 \gls{DOAS} applications require more care in the retrieval process. In
@@ -342,21 +372,50 @@ densities. Since in scattered sunlight measurements, the optical path is
 impossible to calculate in a precise manner, this requires the use of
 complex radiative transfer models~\cite{Platt2007, Frins2006}.
 
-One particular interesting use of passive \gls{DOAS} are satellite
+\subsubsection{Satellite Measurements}%
+\label{ssub:satellite_measurements}
+
+One particularly interesting use of passive \gls{DOAS} are satellite
 measurements. There are three types satellite \gls{DOAS} experiments:
 \begin{description}
     \item[Occultation measurements:] this is a direct sunlight
         measurement. Light comes from the sun and traverses the Earth's
         atmosphere in a tangential manner before entering the
         satellite's light collector;
+
+        \begin{figure}[htpb]
+            \centering
+            \includegraphics[trim=3cm 10cm 10.5cm
+            18cm, clip, width=\textwidth]{img/pdf/zenithMaxAMax.pdf}
+            \caption{Occultation measurement schematic
+            representation~\cite{Platt2007}}
+            \label{fig:occultation}
+        \end{figure}
+
     \item[Limb:] a scattered sunlight measurement, in which the
         collector is pointed towards the Earth, at an angle. Light
         reaches the detector after being scattered in the atmosphere,
         the ground, or both;
+        \begin{figure}[htpb]
+            \centering
+            \includegraphics[trim=3cm 19cm 12cm
+            8.5cm, clip, width=\textwidth]{img/pdf/imaging.pdf}
+            \caption{Schematic representation of the limb satellite
+            measurement geometry.}
+            \label{fig:limb}
+        \end{figure}
     \item[Nadir:] this is the most common measurement geometry for
         satellite experiments. In this mode, light that gets reflected
         off the Earth's surface is captured by the collecting device,
         while it is pointing directly down.
+        \begin{figure}[htpb]
+            \centering
+            \includegraphics[trim=10cm 23.7cm 5cm
+            3cm, clip, width=\textwidth]{img/pdf/imaging.pdf}
+            \caption{Schematic representation of the nadir satellite
+            measurement geometry.}
+            \label{fig:nadir}
+        \end{figure}
 \end{description}
 
 Satellite based \gls{DOAS} measurements have also been important because
@@ -365,9 +424,6 @@ them, new trace gases, previously unreachable through \gls{DOAS} have
 been quantified on a global level, such as carbon monoxide through
 \gls{wfm}~\cite{Buchwitz2000, Buchwitz2004}.
 
-\subsection{\acrlong{wfm}}%
-\label{sub:wfm_doas}
-
 \gls{wfm} is a trace gas column retrieval algorithm, developed in the
 beginning of the 21\textsuperscript{st} century, with the main goal of
 determining the total columns of gases such as \gls{co}, \gls{h2o} or
@@ -375,7 +431,7 @@ determining the total columns of gases such as \gls{co}, \gls{h2o} or
 using literature-obtained cross-section data for each target trace gas,
 the \gls{wfm} approach uses weighing functions, calculated through the
 application of a radiative transfer model, such as
-SCIATRAN~\todo{Citation Rozanov}. Still, the retrieval is based on a
+SCIATRAN~\cite{Rozanov2002}. Still, the retrieval is based on a
 fitting process. Equation~\ref{eq:wfmdoas}, adapted
 from~\cite{Buchwitz2000, Buchwitz2004} can be called the \gls{wfm}
 equation.
@@ -403,10 +459,3 @@ vertical columns are taken from the literature (they are climatological
 values) and $\hat{V_j}$ are one of the fitting parameters. The other
 being $a_m$, the low order polynomial ($P$) coefficients. $RES$ is
 the fit residuum, which is minimised for the fitting. 
-
-\todo[inline]{MISSING}
-\begin{itemize}
-    \item types of active and passive measurements
-    \item scattered sunlight measurements;
-    \item satellite based measurements (SCIAMACHY).
-\end{itemize}

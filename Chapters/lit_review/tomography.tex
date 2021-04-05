@@ -2,11 +2,6 @@
 \section{Tomographic algorithms and reconstruction techniques}%
 \label{sec:tomographic_algorithms_and_reconstruction_techniques}
 
-\subsection{Introduction}%
-\label{sub:tomography_introduction}
-
-
-\todo[inline]{From here}
 Tomography is the cross-sectional imaging of an object through the use
 of transmitted or reflected waves, captured by the object exposure to
 the waves from a set of known angles. It has many different applications
@@ -17,47 +12,41 @@ a revolutionary impact, allowing doctors to see inside their patients,
 without having to subject them to more invasive
 procedures~\cite{Kak2001}.
 
-\todo[inline, color=green!40]{New}
+The central thought around tomographic image reconstruction is to
+recreate the information contained inside a target physical body,
+without having to cut it or open it in any way. The theory is based on
+Radon's idea that it is possible to "\emph{represent a function written
+in $\mathbb{R}$ in the space of straight lines ($\mathbb{L}$) through
+its line integrals}"~\todo{citation Radon}.
 
+Say we have a body that we want to fully characterise without cutting
+open or destroying in any way. Now imagine we can traverse it with some
+kind of radiation, ray by ray, and that we are able to measure the rays
+after they traverse the target. What we would capture would be relative
+to the emitted radiation, of course, but it would also contain
+information on how that ray had interacted with the target body's
+matter. In the case of the ubiquitously used X-Ray radiation, the
+measurement would be one of the total attenuation "imprinted" onto the
+ray by the target body's molecules, in the ray's particular direction.
+If said body is heterogeneous, the total attenuation can be derived by
+the infinitesimal sum of all different attenuation phenomena caused by
+the object's several different constituents (the same can be said of a
+homogeneous object, but in that case there is only one type of
+attenuation present). This means that each one of the rays contains
+information regarding the constitution of said body.
 
-\todo[inline, color=green!40]{Endnew}
-
-Mathematical basis for tomography were set by Johannes Radon in 1917. At
-the time, he postulated that  it is possible to represent a function
-written in $\mathbb{R}$ in the space of straight lines, $\mathbb{L}$
-through the function's line integrals. A line integral is an integral in
-which the function that is being integrated is evaluated along a curved
-path, a line. In the tomographic case, these line integrals represent a
-measurement on a ray that traverses the Region Of Interest (\gls{ROI}).
-Each set of line integrals, characterized by an incidence angle, is
-called a projection (see Figure~\ref{fig:projection} in
-Section~\ref{sub:tomography}). To perform a tomographic reconstruction,
-the machine must take many projections around the object. To the set of
-projections arranged in matrix form by detector and projection angle, we
-call sinogram. All reconstruction methods, analytical and iterative,
-revolve around going from reality to sinogram to
-image~\cite{Bruyant2002, Kak2001, Herman1973, Herman1995, Herman2009,
-Defrise2003}.
-
-There are two broad algorithm families when it comes to tomographic
-reconstruction, regarding the physics of the problem. The problem can
-involve either non-diffracting sources (light travels in straight
-lines), such as the X-Rays in a conventional \gls{CT} exam; or
-diffracting sources, such as micro-waves or ultrasound in more
-research-oriented applications~\cite{Kak2001}. In this document, I will
-not address the latter family, since I will not be applying them in my
-work. In the next few paragraphs, I will discuss the first family of
-algorithms, and describe how an image can be reconstructed from an
-object's projections when the radiation source is non-diffracting.
-\todo[inline]{To here}
-
-
-
-
-
-
-
-
+The question that arises is thus "\emph{how we can use this information
+to create a spatially accurate representation of this target's interior
+composition?}". The answer to this question lies on many factors, but
+the most prominent of which are surely choosing the quantity that we are
+trying to find (that characterises the object) and assembling the
+projections (that is what we call the line integrals in tomographic
+imaging) in a way that allows solving an equation system for the
+aforementioned quantity. This assembly, a matrix of projections
+organised by their angles and position within the detector, is called
+sinogram. All tomography methods revolve around finding the relationship
+between it and the system's geometrical description~\cite{Bruyant2002,
+Kak2001, Herman1973, Herman1995, Herman2009, Defrise2003}.
 
 Let's consider the case in which we deal with a single ray of solar
 light entering the atmosphere at a given point. Since the atmosphere
@@ -71,9 +60,6 @@ With \gls{DOAS}, it is possible to measure several pollutants at the
 same time, but for simplicity (and since it is one of the most studied
 compounds in the field), let's consider that the single pollutant in our
 atmospheric mixture is NO$_2$.
-
-\subsection{Initial Considerations}%
-\label{sub:initial_considerations}
 
 The problem of tomographic reconstruction can be approached in a number
 of ways, depending mostly on the authors. In my literary search, I have
@@ -131,9 +117,6 @@ a parallel geometry. Another more complex case is when a single point
 source is used as origin for all rays, forming a fan. This is called a
 fan-beam array. There are other possible geometries, but they fall out of
 the scope of this work and will therefore not be addressed any further.
-
-\subsection{The Fourier Slice Theorem}%
-\label{sub:the_fourier_slice_theorem}
 
 The Fourier Slice Theorem (\gls{FST}) is the most important component of
 the most important algorithm in tomographic inversion, the Filtered
@@ -216,12 +199,6 @@ $\theta=0$. Finally, the enunciation of the Fourier Slice Theorem:
     \label{fig:fst}
 \end{figure}
 
-\subsection{The Filtered BackProjection Algorithm}%
-\label{sub:the_filtered_backprojection_algorithm}
-
-\subsubsection{The rationale for \gls{FBP}}%
-\label{ssub:the_rationale_for_fbp}
-
 If one takes the \gls{FST} into account, the idea behind the \gls{FBP}
 seems to appear almost naturally. Say one has a single projection and
 its Fourier transform. From the \gls{FST}, this projection is the same
@@ -261,22 +238,6 @@ value to be $\frac{2\pi\lvert\omega\rvert}{K}$. As an algorithm,
     }
     
 \end{algorithm}
-
-
-% \begin{algorithm}
-%     \begin{algorithmic}
-%         \FORALL{$\theta, \theta \in \left\{0..180,
-%         \frac{180}{K}\right\}$}
-%         \STATE{Measure projection $P_{\theta}(t)$;}
-%         \STATE{FT($P_{\theta}(t)$), rendering $S_{\theta}(\omega)$}
-%         \STATE{Multiply by $\frac{2\pi\lvert{\omega}\rvert}{K}$;}
-%         \STATE{Sum the \gls{IFT} of the result in the image space.}
-%     \ENDFOR
-%     \end{algorithmic}
-% \end{algorithm}
-
-\subsubsection{Fan Projections Reconstruction}%
-\label{ssub:fan_projections_reconstruction}
 
 Parallel projections, in which the object is scanned linearly from
 multiple directions, have the advantage of having a relatively simple
