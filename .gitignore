@@ -1,7 +1,5 @@
 #Ignore img folder
-
 !img/
-
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
