@@ -102,22 +102,67 @@ the \emph{Cristo-Rei} sanctuary, near our own base.
 The experiment involved two different optical assemblies, which are
 summarised in Table~\ref{tab:assemblies}. Both assemblies play two
 roles, which reflect the comparison between active and passive that is
-the entire aim of the test. 
+the entire aim of the test. To simplify, we will address the two as West
+Bank and East Bank. The West Bank is, as the name implies, the assembly
+that is placed further West, i.e., the one that is installed on
+\gls{iep}'s roof. By exclusion, the East Bank assembly is the one placed
+on the sanctuary. The West Bank assembly is comprised of a telescope and
+tripod, a spectrometer (with the necessary fibre optics attached) and a
+laptop. 
 
-\todo[inline]{Describe artificial light setup and volunteer usage here}
-
-As material in Table~\ref{tab:assemblies} might imply, the East bank
-assembly acts as the emitter for the active mode experiment, while the
-West bank only plays the part of receiver.
+The East Bank assembly has exactly the same parts, but in addition to
+them, it features a hand-held torch that sports an XHP50.2 CREE LED. The
+manufacturer states that this torch is capable of illuminating by itself
+up to a distance of 300 m and produces luminous flux of at least 1500
+lm. By fitting this torch on the telescope's eyepiece channel, we are
+able to further collimate the light that it produces, making it reach
+much further distances than originally stated, and being easily picked
+up by the other telescope. This is plain to see in
+Figure~\ref{fig:light_at_the_distance}. The light spectrum that pertains
+to the CREE LED in use is published in this device's datasheet, and
+presented in Figure~\ref{fig:cree_spectrum}, which largely corroborates
+the spectrum in Figure~\ref{fig:measured_led_spectrum}, taken by the
+same spectrometers that were used in the experiment, at a distance of
+approximately 50 m from the torchlight. 
 
 \begin{figure}[htpb]
+    \begin{minipage}{.45\textwidth}
+        \includegraphics[trim=3cm 15cm 5cm 6cm, % ...
+            clip, width=\textwidth]{img/pdf/cree_datasheet.pdf}
+        \caption{Published spectrum of the CREE XHP50.2 LED
+        light. The LED that was used in this
+        experiment corresponds to the blue line~\cite{CREE2021}.}
+        \label{fig:cree_spectrum}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.45\textwidth}
+        \includegraphics[width=\textwidth]{img/png/measured_led_spectrum.png}
+        \caption{Spectrum measured with the experiment spectrometers, at
+        a distance of approximately 50 m from the torchlight.}
+        \label{fig:measured_led_spectrum}
+    \end{minipage}
+\end{figure}
+
+\begin{table}[htpb]
     \centering
     \caption{Summary table for the two experiment assemblies. Note the
     difference in terms of material, due to the two different roles both
-    assemblies play during the experiment.}
+    assemblies play during the experiment. This is translated into not
+    having the need of an artificial light source in the West Bank's
+    assembly.}
     \label{tab:assemblies}
-    \missingfigure{}
-\end{figure}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{@{}lll@{}}
+            \toprule
+            \textbf{} & \textbf{West Bank} & \textbf{East Bank} \\ \midrule
+            \textbf{Spectrometer} & Avantes USB 2048 channels & Avantes USB 2048 channels \\
+            \textbf{Telescope} & Meade ET90 & Meade ET90 \\
+            \textbf{Artificial Light Source} & N/A & Goobay CREE XHP50.2 torch \\
+            \textbf{Laptop} & Windows 10 laptop & Windows 10 laptop \\
+            \textbf{Software} & AvaSoft 8.11 & AvaSoft 8.11 \\ \bottomrule
+        \end{tabular}%
+    }
+\end{table}
 
 The experiment itself is scheduled to start at around 06:00 A.M.. It
 consists in capturing spectral measurements in both modes (active and
@@ -192,14 +237,25 @@ distribution~\cite{Fox2006}.
 The first attempt at running this experiment took place on June
 7\textsuperscript{th} 2021. Weather conditions were optimal for this
 kind of measurement, with no wind, clear sky and very low optical
-density. The experiment started with a small delay, caused by a problem
-on the charger of the East bank laptop. Besides this delay, this was not
-a problem for the experiment itself. It was the other laptop's battery
+density, as can is testified by Figure~\ref{fig:light_at_the_distance}.
+The experiment started with a small delay, caused by a problem on the
+charger of the East bank laptop. Besides this delay, this was not a
+problem for the experiment itself. It was the other laptop's battery
 that did not hold enough charge for the experiment to reach its
 determined end, and there was no means to charge it on \gls{iep}'s roof.
 Given this circumstance, we were able to retrieve spectral measurements
 from around 06:20 A.M. to 08:20 A.M., in a total of 6 measurements which
 are produced in Table~\ref{tab:experiment_measurements}.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{img/jpg/experiment1/light_at_the_distance1.jpg}
+    \caption{View from West Bank assembly at sunrise during the first
+    run of the experiment. Note that even with the sun appearing in the
+    back, the light from the torch is perfectly visible at this distance.}
+    \label{fig:light_at_the_distance}
+\end{figure}
+
 
 \begin{table}[htpb]
     \centering
@@ -292,4 +348,128 @@ equivalently smaller influence in the final results.
 \subsection{Data Processing}%
 \label{sub:data_processing}
 
+While the rest of this section is dedicated to the gathering of spectral
+data and even the results that it returns, it is important to mention
+and to provide a (brief, high level) description of what is being done
+to said data.
 
+AvaSoft, Avantes' spectrometer handling software application, allows one
+to store collected data in several formats. Most of these formats are
+binary in nature. These are more compact in terms of occupied disk space
+and are commonly used in this kind of application because spectra are
+most likely being collected for later processing through another
+computer program. However, they are not good if one needs to quickly
+check if the data are being correctly gathered or to see if there was
+any kind of operation error in the collection process, since they are
+completely unintelligible for humans. For this purpose, Avantes make the
+Avantes \gls{ascii} file format available. This is, as its name might
+imply, an \gls{ascii} formatted file that can be quickly inspected by
+anoyone that can read the English language and understand the Latin
+characters. The files have a particular structure which is illustrated
+by Figure~\ref{fig:avantesASCIIFile}.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=\linewidth]{img/png/avantes_ascii.png}
+    \caption{The Avantes ASCII file format. This is a screenshot of a
+        file of this type opened in the VIM text editor. Note its
+        particular structure, around which the file / folder parsing
+        objects described by Figure~\ref{fig:avantesASCIIFileLoader} and
+        Figure~\ref{fig:avantesASCIIFolder} are constructed.}
+        \label{fig:avantesASCIIFile}
+\end{figure}
+
+Some light string parsing operations are the compromise that is required
+to use this kind of file format in analytical software. In the case of
+this thesis' application, the files are opened and parsed using an
+\gls{oop} approach that takes advantage of the organisational structure
+of the several files involved in the process. Each file originates an
+AvantesASCII object, which loads the data, parses its values and stores
+them in a Pandas DataFrame internal object~\footnote{Pandas is a data
+processing library used in Python that provides a very efficient way to
+access and manipulate tabular data by leveraging the use of C code
+through Python commands.}. For each folder that contains this kind of
+file, the parsing library creates an AvantesASCIIFolder object, which
+loads all files inside that folder and runs global data operations such
+as summation and integration-time-normalisation. A general schematic of
+this approach is provided in Figure~\ref{fig:data_processing_general},
+while a flowchart for the file loading routine is presented in
+Figure~\ref{fig:avantesASCIIFileLoader} and the folder loading process
+is illustrated by Figure~\ref{fig:avantesASCIIFolder}.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.3\linewidth]{img/pdf/data_processing_general.pdf}
+    \caption{The Data processing. The \gls{oop} approach that was taken
+    attempts to take advantage of the organisational structure of the
+    spectral data, by modelling it into Python objects.}
+    \label{fig:data_processing_general}
+\end{figure}
+
+\begin{figure}[htpb]
+    \begin{minipage}{.45\textwidth}
+        \centering
+        \includegraphics[width=0.7\linewidth]{img/pdf/file_loading.pdf}
+        \caption{The file loading process. An Avantes ASCII file originates
+        an AvantesASCII object, which besides a series of string-parsing
+        operations stores the data in a Pandas DataFrame, for easy access and
+        control.}
+        \label{fig:avantesASCIIFileLoader}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.45\textwidth}
+        \centering
+        \includegraphics[width=0.3\linewidth]{img/pdf/folder_loading.pdf}
+        \caption{The folder loading process. Each folder can have many
+        files. The way in which the data is gathered (described in
+        Subsection~\ref{sub:experiment_first_run}) requires some global
+        operations performed on groups of files, like summation and
+        normalisation (with reference to the integration time). The
+        AvantesASCIIFolder object provides such operations.}
+        \label{fig:avantesASCIIFolder}
+    \end{minipage}
+\end{figure}
+
+\subsection{The DOAS Library}%
+\label{sub:the_doas_library}
+
+The \gls{DOAS} software library is a Python package developed
+specifically for this thesis data processing operations. It was, as
+other components, designed using an \gls{oop} approach and following the
+SOLID principles of \acrlong{oop}. This piece of software was written in
+response to the initial research that I undertook and that returned no
+usable results in terms of modular, compact Python libraries for
+\gls{DOAS} applications, that I could use in my work. It is, as far as I
+know,  the only \gls{DOAS} solving application with this kind of
+structure.
+
+The library (\gls{uml} diagram presented in
+Figure~\ref{fig:doas_library}) models a \gls{DOAS} application through
+the instrumentation lens. A \gls{DOAS} application is always
+parametrised through its spectrometer's physical features and
+limitations, which in turn determine the structure of the analysed
+spectral data, and even the differential cross sections of the trace
+gases that are to be studied. Of course, this library is much more
+limited in its capabilities than some specific programs that have become
+commonplace in this kind of application, such as
+QDOAS~\cite{Danckaert2015}, but the fact that it can be operated through
+a Python program and that one can manipulate the data through such tools
+as Pandas DataFrames more than make up for this lack. Moreover, since it
+is in effect a software library, it is also as flexible as one is
+willing to expand it.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{img/pdf/uml_doas.pdf}
+    \caption{UML diagram for the \gls{DOAS} library. The \gls{oop}
+    approach that was followed allows for an instrument-oriented
+    experiment parametrisation, which is not available in any other
+    software}
+    \label{fig:doas_library}
+\end{figure}
+
+An important side note that attests to this library's relevance is that
+it has been fully integrated in FutureCompta's Bee2Fire software, with
+further developments being conducted through this team's efforts. This
+is the first commercially applicable result provided by the work in this
+thesis.

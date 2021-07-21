@@ -2,21 +2,20 @@
 \section{First Hypothesis}%
 \label{sec:first_hypothesis}
 
-\todo[inline, color=red]{Copied directly from the article. This must be
-rewritten.}
-
-Results presented in the previous subsection raise a series of pertinent
-observations that should be addressed in discussion. The first remark
-goes to the fact that the number of projections used was adequate to
-perform the tomographic reconstruction in adequate fashion, as expected.
-There are already several examples of studies in which a considerably
-lower number of projections was used, still producing satisfactory
-results~\cite{Pundt2005}. Moreover, and since the simulation software
-automatically includes errors in the calculations, this figure also
-proves that geometric error plays a very limited role in changing the
-result of the reconstruction. Given the difference in size between the
-drone's trajectory and the geometric error, this was also a predicted
-result.
+Results presented in Section~\ref{sec:tomosim}  raise a series of
+pertinent observations that should be addressed in discussion. The first
+remark goes to the fact that the number of projections used seemed
+adequate to perform the tomographic reconstruction in adequate fashion,
+although there are tomographic applications with many more projections
+(orders of magnitude more projections).  This was not an unexpected
+result, as there are already several examples of studies in which a
+considerably lower number of projections was used, still producing
+satisfactory results~\cite{Pundt2005}.  Moreover, and since the
+simulation software automatically includes errors in the calculations,
+this number also proves that geometric error plays a very limited role
+in changing the result of the reconstruction due to the difference in
+size between the drone's trajectory and the geometric error, this was
+also a predicted result.
 
 Even with the relatively low number of projections produced by the
 drone's trajectory and measurement strategy, all reconstruction
@@ -36,39 +35,13 @@ four times the second best result (FBP) for the smallest projection
 interval. This difference could to some extent be expected. SART and FBP
 algorithms were implemented using some of the most relevant and
 consistently used Python libraries (SciPy, for
-instance~\cite{Oliphant2007}). Given the amount of attention these
+instance~\cite{Virtanen2020}). Given the amount of attention these
 libraries get from the scientific programming community, levels of
 optimisation are extremely high. Although it is nowhere near the other
 two approaches, the MLEM routine is still useful, as it is the only
 truly geometry-independent algorithm in this study (SART is also
 geometry independent, but this particular implementation expects a
 parallel projection sinogram as input).
-
-\begin{table}[htpb]
-    \centering
-    \caption{Reconstruction error table for the new spectral phantom at
-        several projection intervals. The MLEM routine used pure
-        fan-beam data while the other two used resorted parallel
-        information. Errors presented were calculated using the Root
-        Mean Square Errors, normalised to the range of the reconstructed
-        image. }
-    \label{tab:rec_errors}
-    \begin{tabular}{c}
-        \missingfigure{}
-    \end{tabular}
-\end{table}
-
-\begin{figure}[htpb]
-    \centering
-    \includegraphics[width=.8\linewidth]{img/pdf/error_estimation_2.pdf}
-    \caption{Tomographic reconstruction errors. Each one of these images
-        was constructed by subtracting the respective reconstruction
-        matrix, displayed in Figure~\ref{fig:rec_results}, from the
-        original phantom matrix. Error value is normalised to the pixel
-        values, i.e., 32 bit floating point numbers with values between
-        0 and 1.}
-    \label{fig:rec_errors}
-\end{figure}
 
 As stated in Section~\ref{sub:error_estimation}, three different kinds
 of error influence the reconstruction results: geometric, spectroscopic
@@ -84,7 +57,7 @@ the one used in~\cite{Stutz1996}, in which a Gaussian noise spectrum is
 added to the spectrum of interest in order to simulate how the error
 behaves with a degraded signal. Finally, reconstruction errors come from
 the finite precision of the calculations that render the images. These
-errors were presented in Section~\ref{sec:reconstruction_results}.
+errors were presented in Subsection~\ref{sub:reconstruction_results}.
 
 The three methods were also evaluated as to how they perform
 computationally, by measuring the time it took to produce the images in
