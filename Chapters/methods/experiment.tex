@@ -93,49 +93,383 @@ would have to be taken into account and the experiment conditions would
 be very different from the ones the drone will have. There are not many
 site pairs that provide this, and most of the ones that exist are
 private and authorisations are not easy to obtain. In the end, we
-managed to run the experiment in the facilities of \emph{Infraestruturas
-de Portugal} and the \emph{Cristo-Rei} sanctuary, near our own base. 
+managed to run the experiment in the facilities of \emph{\gls{iep}} and
+the \emph{Cristo-Rei} sanctuary, near our own base. 
+
+\subsection{Protocol and conduction}%
+\label{sub:protocol_and_conduction}
 
 The experiment involved two different optical assemblies, which are
 summarised in Table~\ref{tab:assemblies}. Both assemblies play two
 roles, which reflect the comparison between active and passive that is
-the entire aim of the test. As material in Table~\ref{tab:assemblies}
-might imply, the West bank assembly acts as the emitter for the active
-mode experiment, while the East bank only plays the part of receiver.
+the entire aim of the test. To simplify, we will address the two as West
+Bank and East Bank. The West Bank is, as the name implies, the assembly
+that is placed further West, i.e., the one that is installed on
+\gls{iep}'s roof. By exclusion, the East Bank assembly is the one placed
+on the sanctuary. The West Bank assembly is comprised of a telescope and
+tripod, a spectrometer (with the necessary fibre optics attached) and a
+laptop. 
+
+The East Bank assembly has exactly the same parts, but in addition to
+them, it features a hand-held torch that sports an XHP50.2 CREE LED. The
+manufacturer states that this torch is capable of illuminating by itself
+up to a distance of 300 m and produces luminous flux of at least 1500
+lm. By fitting this torch on the telescope's eyepiece channel, we are
+able to further collimate the light that it produces, making it reach
+much further distances than originally stated, and being easily picked
+up by the other telescope. This is plain to see in
+Figure~\ref{fig:light_at_the_distance}. The light spectrum that pertains
+to the CREE LED in use is published in this device's datasheet, and
+presented in Figure~\ref{fig:cree_spectrum}, which largely corroborates
+the spectrum in Figure~\ref{fig:measured_led_spectrum}, taken by the
+same spectrometers that were used in the experiment, at a distance of
+approximately 50 m from the torchlight. 
 
 \begin{figure}[htpb]
+    \begin{minipage}{.45\textwidth}
+        \includegraphics[trim=3cm 15cm 5cm 6cm, % ...
+            clip, width=\textwidth]{img/pdf/cree_datasheet.pdf}
+        \caption{Published spectrum of the CREE XHP50.2 LED
+        light. The LED that was used in this
+        experiment corresponds to the blue line~\cite{CREE2021}.}
+        \label{fig:cree_spectrum}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.45\textwidth}
+        \includegraphics[width=\textwidth]{img/png/measured_led_spectrum.png}
+        \caption{Spectrum measured with the experiment spectrometers, at
+        a distance of approximately 50 m from the torchlight.}
+        \label{fig:measured_led_spectrum}
+    \end{minipage}
+\end{figure}
+
+\begin{table}[htpb]
     \centering
     \caption{Summary table for the two experiment assemblies. Note the
     difference in terms of material, due to the two different roles both
-    assemblies play during the experiment.}
+    assemblies play during the experiment. This is translated into not
+    having the need of an artificial light source in the West Bank's
+    assembly.}
     \label{tab:assemblies}
-    \missingfigure{}
-\end{figure}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{@{}lll@{}}
+            \toprule
+            \textbf{} & \textbf{West Bank} & \textbf{East Bank} \\ \midrule
+            \textbf{Spectrometer} & Avantes USB 2048 channels & Avantes USB 2048 channels \\
+            \textbf{Telescope} & Meade ET90 & Meade ET90 \\
+            \textbf{Artificial Light Source} & N/A & Goobay CREE XHP50.2 torch \\
+            \textbf{Laptop} & Windows 10 laptop & Windows 10 laptop \\
+            \textbf{Software} & AvaSoft 8.11 & AvaSoft 8.11 \\ \bottomrule
+        \end{tabular}%
+    }
+\end{table}
 
+The experiment itself is scheduled to start at around 06:00 A.M.. It
+consists in capturing spectral measurements in both modes (active and
+passive) periodically, with the least amount of time possible between
+measurements in the same capture. In this case, I am calling capture to
+a particular group of actions that are defined in
+Table~\ref{tab:actions}. Captures are defined according to the time at
+which they are run, and are summarised in Table~\ref{tab:captures}.
+Closing time for this experiment was set on 11:00 A.M.. This time window
+ensures measurements are taken during sunrise and until after the
+morning rush hour is over.
 
-The idea of the experiment is as follows. On the night before the
-experiment, all equipment is transported onto both sites, and all
-alignments are verified and corrected. The experiment starts in the
-early morning. Spectral measurements are conducted on both modes,
-periodically and with the least amount of time between them. On the
-active mode, the light source is collimated by the emitting telescope
-and pointed at the receiver. The spectrometer on the East side
-continuously takes spectra for 1 minute every 15. When this is over, the
-East telescope is pointed towards the opposite direction (which is the
-same direction as the emitter telescope) and both the West and East
-bank assemblies perform the passive experiment. These are also performed
-during 1 minute every 15. We do this 4 times per hour, from half an hour
-before sunrise until 11:00 am. Since there is a busy road in between
-(arguably the busiest highway section in the country in this period of
-the day), we expect to be able to compare pollutant concentrations taken
-with both methods, and we expect them to be similar. A schematic
-representation of the experiment stages can be found in
-Figure~\ref{fig:experiment_schematic}.
+\begin{table}[htpb]
+    \centering
+    \small
+    \caption{Actions are the indivisible unit upon which each capture is
+    built. The prescribed actions for this experiment are described in
+    this table.}
+    \label{tab:actions}
+    \begin{tabularx}{\textwidth}{cXX}
+        \toprule
+        \textbf{Action ID} & \textbf{Action} & \textbf{Description} \\ \midrule
+        A & Active trace gas concentration determination & With the two
+        telescopes facing each other, we collect spectra for two minutes
+        with the light source turned off and another 2 min with the light
+        source turned on. \\
+        \midrule
+        B & Passive trace gas concentration determination & With the two
+        telescopes aligned and approximately facing West, we collect spectra
+        for 2 minutes. \\
+        \midrule
+        C & Passive reference collection & The West telescope points upwards
+        and collects data for 2 minutes. \\ \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{table}[htpb]
+    \centering
+    \caption{Captures are particular sets of actions that are conducted
+    according to a specific order, depending on the time of day on which
+    the capture is run. This table describes the prescribed captures on
+    which this experiment consisted.}
+    \label{tab:captures}
+    \begin{tabular}{@{}ccc@{}}
+        \toprule
+        \textbf{Time Frame} & \textbf{Period} & \textbf{Action} \\
+        \midrule
+        05:00 - Sunrise & 15 minutes & A \\
+        Sunrise & Once & C \\
+        Sunrise - 11:00 & 15 minutes & A and B\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+As displayed in Table~\ref{tab:assemblies}, the spectrometers are both
+the same model, manufactured by Avantes and with 2048 channels, powered
+through the same \gls{usb} cable that is used for data transfer. The
+spectra are acquired through Avantes' own collection software, AvaSoft
+8. The spectrometer are configured to have an integration time of 20ms
+and immediately store every measurement on an \gls{ascii} file. With the
+kind of lighting conditions that we are dealing with, this integration
+time allows us not to worry about saturation. However, to build usable
+spectra we need to sum the collected files. This is valid because given
+the very little time it takes to make a measurement (2 minutes), the sun
+can be considered a constant light source, and therefore
+we can consider the photons to have a Poissonian statistic
+distribution~\cite{Fox2006}.
+
+\subsection{First Run}%
+\label{sub:experiment_first_run}
+
+The first attempt at running this experiment took place on June
+7\textsuperscript{th} 2021. Weather conditions were optimal for this
+kind of measurement, with no wind, clear sky and very low optical
+density, as can is testified by Figure~\ref{fig:light_at_the_distance}.
+The experiment started with a small delay, caused by a problem on the
+charger of the East bank laptop. Besides this delay, this was not a
+problem for the experiment itself. It was the other laptop's battery
+that did not hold enough charge for the experiment to reach its
+determined end, and there was no means to charge it on \gls{iep}'s roof.
+Given this circumstance, we were able to retrieve spectral measurements
+from around 06:20 A.M. to 08:20 A.M., in a total of 6 measurements which
+are produced in Table~\ref{tab:experiment_measurements}.
+
 \begin{figure}[htpb]
     \centering
-    \missingfigure{}
-    \caption{Schematic representation of the two types of measurement
-    intended for the experiment. On the left the active mode; on the
-    right the passive mode.}
-    \label{fig:experiment_schematic}
+    \includegraphics[width=0.8\linewidth]{img/jpg/experiment1/light_at_the_distance1.jpg}
+    \caption{View from West Bank assembly at sunrise during the first
+    run of the experiment. Note that even with the sun appearing in the
+    back, the light from the torch is perfectly visible at this distance.}
+    \label{fig:light_at_the_distance}
 \end{figure}
+
+
+\begin{table}[htpb]
+    \centering
+    \caption{First run: measurement table.}
+    \label{tab:experiment_measurements}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{@{}lllll@{}}
+            \toprule
+            \textbf{\#} & \textbf{Passive meas.} & \textbf{Passive ref.} & \textbf{Active mean.} & \textbf{Active ref.} \\ \midrule
+            1 & 06:20 & 06:23 & 06:15 & -- \\
+            2 & 06:46 & 06:50 & 06:41 & -- \\
+            3 & 07:04 & 07:07 & 07:00 & -- \\
+            4 & 07:25 & 07:27 & 07:21 & -- \\
+            5 & 07:48 & 07:50 & 07:45 & -- \\
+            6 & 08:10 & 08:12 & 08:06 & 08:08 \\ \bottomrule
+        \end{tabular}%
+    }
+\end{table}
+
+On the one hand, it is clear from
+Table~\ref{tab:experiment_measurements} that we do not have data on the
+active baseline spectra~\footnote{In this case, the baseline spectrum is
+one taken in the exact same direction and approximately
+simultaneously, with the light turned off to allow removal of solar
+contribution.} (likely due to some operation error); on the other hand,
+we have too few data points to make any claim of validation or
+refutation of the principle we were to measure. It was thus clear that
+another run was necessary to get the necessary results.
+
+Although it was not possible to produce convincing results from these
+data, they were of good individual quality and allowed some preliminary
+analysis to be run. Using the first measurement as the reference
+spectrum, it was possible to calculate optical densities for each one of
+the measurement moments, as well as \gls{no2} concentration. The
+graphical appearance of the optical density signal for each measurement
+is presented in Figure~\ref{fig:active_optical_densities} and
+Figure~\ref{fig:passive_optical_densities}, while the concentration
+chart for the various moments comprises
+Figure~\ref{fig:calculated_concentration}.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{img/png/tau_activeDOAS.png}
+    \caption{Optical densities calculated with reference to measurement
+    \#1 for the other measurement moments in the active DOAS mode.} 
+    \label{fig:active_optical_densities}
+\end{figure}
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{img/png/tau_passiveDOAS.png}
+    \caption{Optical densities calculated with reference to measurement
+    \#1 for the other measurement moments in the passive DOAS mode.} 
+    \label{fig:passive_optical_densities}
+\end{figure}
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{img/png/calculatedConcentrations.png}
+    \caption{Calculated \gls{no2} concentrations for the various
+    measurement moments. Each integer in the horizontal axis corresponds
+    to a moment, organized chronologically.}
+    \label{fig:calculated_concentration}
+\end{figure}
+
+Although admittedly incomplete, these data allows some preliminary
+remarks. The first and most important one is that the highest
+concentration detected appears in the first measurement point for both
+active and passive modes. The passive mode measurement could be
+discarded because this measurement was taken during sunrise and the
+relevant spectra could be considered too noisy. However, its active
+counterpart produces the exact same result, as the chart in
+Figure~\ref{fig:calculated_concentration} shows. The second data point
+had the lowest detected concentration, and from that point forward, the
+concentration evolves as expected (rising). One other remark that could
+be addressed towards this first stage analysis is that there seems to be
+a good agreement between active and passive measurements. This remark
+might be considered invalid, as there is no data for the active
+baseline. However, since this analysis was focused on \gls{no2}
+concentration, and the relevant spectral window for this trace gas is
+usually between 400nm and 500nm, this is not the case. In effect, the
+scattered-sunlight-originated photon counts in this interval will be
+always much smaller than the artificial ones, thus having an
+equivalently smaller influence in the final results. 
+
+\subsection{Second run}%
+\label{sub:second_run}
+
+
+\subsection{Data Processing}%
+\label{sub:data_processing}
+
+While the rest of this section is dedicated to the gathering of spectral
+data and even the results that it returns, it is important to mention
+and to provide a (brief, high level) description of what is being done
+to said data.
+
+AvaSoft, Avantes' spectrometer handling software application, allows one
+to store collected data in several formats. Most of these formats are
+binary in nature. These are more compact in terms of occupied disk space
+and are commonly used in this kind of application because spectra are
+most likely being collected for later processing through another
+computer program. However, they are not good if one needs to quickly
+check if the data are being correctly gathered or to see if there was
+any kind of operation error in the collection process, since they are
+completely unintelligible for humans. For this purpose, Avantes make the
+Avantes \gls{ascii} file format available. This is, as its name might
+imply, an \gls{ascii} formatted file that can be quickly inspected by
+anoyone that can read the English language and understand the Latin
+characters. The files have a particular structure which is illustrated
+by Figure~\ref{fig:avantesASCIIFile}.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=\linewidth]{img/png/avantes_ascii.png}
+    \caption{The Avantes ASCII file format. This is a screenshot of a
+        file of this type opened in the VIM text editor. Note its
+        particular structure, around which the file / folder parsing
+        objects described by Figure~\ref{fig:avantesASCIIFileLoader} and
+        Figure~\ref{fig:avantesASCIIFolder} are constructed.}
+        \label{fig:avantesASCIIFile}
+\end{figure}
+
+Some light string parsing operations are the compromise that is required
+to use this kind of file format in analytical software. In the case of
+this thesis' application, the files are opened and parsed using an
+\gls{oop} approach that takes advantage of the organisational structure
+of the several files involved in the process. Each file originates an
+AvantesASCII object, which loads the data, parses its values and stores
+them in a Pandas DataFrame internal object~\footnote{Pandas is a data
+processing library used in Python that provides a very efficient way to
+access and manipulate tabular data by leveraging the use of C code
+through Python commands.}. For each folder that contains this kind of
+file, the parsing library creates an AvantesASCIIFolder object, which
+loads all files inside that folder and runs global data operations such
+as summation and integration-time-normalisation. A general schematic of
+this approach is provided in Figure~\ref{fig:data_processing_general},
+while a flowchart for the file loading routine is presented in
+Figure~\ref{fig:avantesASCIIFileLoader} and the folder loading process
+is illustrated by Figure~\ref{fig:avantesASCIIFolder}.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.3\linewidth]{img/pdf/data_processing_general.pdf}
+    \caption{The Data processing. The \gls{oop} approach that was taken
+    attempts to take advantage of the organisational structure of the
+    spectral data, by modelling it into Python objects.}
+    \label{fig:data_processing_general}
+\end{figure}
+
+\begin{figure}[htpb]
+    \begin{minipage}{.45\textwidth}
+        \centering
+        \includegraphics[width=0.7\linewidth]{img/pdf/file_loading.pdf}
+        \caption{The file loading process. An Avantes ASCII file originates
+        an AvantesASCII object, which besides a series of string-parsing
+        operations stores the data in a Pandas DataFrame, for easy access and
+        control.}
+        \label{fig:avantesASCIIFileLoader}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.45\textwidth}
+        \centering
+        \includegraphics[width=0.3\linewidth]{img/pdf/folder_loading.pdf}
+        \caption{The folder loading process. Each folder can have many
+        files. The way in which the data is gathered (described in
+        Subsection~\ref{sub:experiment_first_run}) requires some global
+        operations performed on groups of files, like summation and
+        normalisation (with reference to the integration time). The
+        AvantesASCIIFolder object provides such operations.}
+        \label{fig:avantesASCIIFolder}
+    \end{minipage}
+\end{figure}
+
+\subsection{The DOAS Library}%
+\label{sub:the_doas_library}
+
+The \gls{DOAS} software library is a Python package developed
+specifically for this thesis data processing operations. It was, as
+other components, designed using an \gls{oop} approach and following the
+SOLID principles of \acrlong{oop}. This piece of software was written in
+response to the initial research that I undertook and that returned no
+usable results in terms of modular, compact Python libraries for
+\gls{DOAS} applications, that I could use in my work. It is, as far as I
+know,  the only \gls{DOAS} solving application with this kind of
+structure.
+
+The library (\gls{uml} diagram presented in
+Figure~\ref{fig:doas_library}) models a \gls{DOAS} application through
+the instrumentation lens. A \gls{DOAS} application is always
+parametrised through its spectrometer's physical features and
+limitations, which in turn determine the structure of the analysed
+spectral data, and even the differential cross sections of the trace
+gases that are to be studied. Of course, this library is much more
+limited in its capabilities than some specific programs that have become
+commonplace in this kind of application, such as
+QDOAS~\cite{Danckaert2015}, but the fact that it can be operated through
+a Python program and that one can manipulate the data through such tools
+as Pandas DataFrames more than make up for this lack. Moreover, since it
+is in effect a software library, it is also as flexible as one is
+willing to expand it.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{img/pdf/uml_doas.pdf}
+    \caption{UML diagram for the \gls{DOAS} library. The \gls{oop}
+    approach that was followed allows for an instrument-oriented
+    experiment parametrisation, which is not available in any other
+    software}
+    \label{fig:doas_library}
+\end{figure}
+
+An important side note that attests to this library's relevance is that
+it has been fully integrated in FutureCompta's Bee2Fire software, with
+further developments being conducted through this team's efforts. This
+is the first commercially applicable result provided by the work in this
+thesis.
