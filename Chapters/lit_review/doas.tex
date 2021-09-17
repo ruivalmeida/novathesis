@@ -459,3 +459,54 @@ vertical columns are taken from the literature (they are climatological
 values) and $\hat{V_j}$ are one of the fitting parameters. The other
 being $a_m$, the low order polynomial ($P$) coefficients. $RES$ is
 the fit residuum, which is minimised for the fitting. 
+
+\section{Important Notes on \gls{DOAS} in practice}%
+\label{sec:important_notes_on_doas_in_practice}
+
+Theoretically, the procedure described in Section~\ref{sec:doas} would
+be enough to obtain the target trace gas concentrations. In practice,
+this is an over-simplification. There are several additional required
+steps, most of them concerning a certain conditioning that one has to
+apply to both the collected and literature spectral signals.
+
+Unless conditions are absolutely stable, and one is able to record all
+data with the same device, which is impractical to the point of
+infeasibility, external literary sources are required for the \gls{DOAS}
+analysis. These data are obtained with standardised trace gas sampling,
+extremely high resolution spectrometers and in carefully designed
+laboratory experimental setups.
+
+To use external cross sections in one's own experiments, these data must
+be adapted to one's equipments. The very high resolution spectra coming
+from the literature are convolved with the instrument function of the
+real experiment's spectrometer. This function can be thought of as the
+device's impulse response. Since the spectrometer is inevitably
+imperfect, this response is not nearly as sharp as the impulse itself,
+and is normally modelled as a Gaussian curve fitted to a known source's
+well defined, impulse-like narrow structures (for instance, the narrow
+line for mercury at xxx nm~\todo{check this, citation (Fayt, diss)}).
+For most spectrometers, this step is not actually required, as
+manufacturers already provide a very accurate spectral resolution value.
+
+After calculating or fetching this value from the device's manual, it is
+a matter of creating a Gaussian kernel that can be used to filter the
+high resolution spectra through convolution. The \gls{FWHM} of the
+Gaussian kernel is equal to the spectrometer's resolution. One can
+ensure this by using the formula in Equation~\ref{eq:fwhm_to_sigma}
+which relates the width of the kernel with the standard deviation used
+to create it. The signal that results from the convolution of the
+literature cross sections and the gaussian kernel can be thought of as
+how the cross section would look if it had been acquired using the
+experiment's spectrometer.
+
+The final step in this process of conditioning high resolution
+literature cross sections to the experiment that one is conducting is
+the discretisation of this signal. Physically, spectra are continuous
+signals. In practice, they were all captured using finite-resolution
+devices, and therefore are a digital signal. However, the resolution of
+the literature cross sections is so high in comparison to the usual
+resolution of a \gls{DOAS} experiment spectrometer that one can think of
+this signal as being \emph{quasi-}continuous. In order for them to be
+used in \gls{DOAS} calculations, they have to be re-discretised onto the
+experiment's spectrometer sensor resolution.
+
