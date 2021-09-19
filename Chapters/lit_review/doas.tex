@@ -469,6 +469,9 @@ this is an over-simplification. There are several additional required
 steps, most of them concerning a certain conditioning that one has to
 apply to both the collected and literature spectral signals.
 
+\subsection{Cross section conditioning}%
+\label{sub:cross_section_conditioning}
+
 Unless conditions are absolutely stable, and one is able to record all
 data with the same device, which is impractical to the point of
 infeasibility, external literary sources are required for the \gls{DOAS}
@@ -483,14 +486,14 @@ real experiment's spectrometer. This function can be thought of as the
 device's impulse response. Since the spectrometer is inevitably
 imperfect, this response is not nearly as sharp as the impulse itself,
 and is normally modelled as a Gaussian curve fitted to a known source's
-well defined, impulse-like narrow structures (for instance, the narrow
-line for mercury at xxx nm~\todo{check this, citation (Fayt, diss)}).
-For most spectrometers, this step is not actually required, as
-manufacturers already provide a very accurate spectral resolution value.
+well defined, impulse-like narrow structures. An Hg-Cd lamp was used in
+Merlaud's 2013 work, for instance~\cite{Merlaud2013}.  For most
+spectrometers, this step is not actually required, as manufacturers
+already provide a very accurate spectral resolution value.
 
 After calculating or fetching this value from the device's manual, it is
 a matter of creating a Gaussian kernel that can be used to filter the
-high resolution spectra through convolution. The \gls{FWHM} of the
+high resolution spectra through convolution. The \gls{fwhm} of the
 Gaussian kernel is equal to the spectrometer's resolution. One can
 ensure this by using the formula in Equation~\ref{eq:fwhm_to_sigma}
 which relates the width of the kernel with the standard deviation used
@@ -498,6 +501,13 @@ to create it. The signal that results from the convolution of the
 literature cross sections and the gaussian kernel can be thought of as
 how the cross section would look if it had been acquired using the
 experiment's spectrometer.
+
+\begin{equation}
+    \centering
+    FWHM = 2 \sqrt{ 2 \sigma^2 \ln 2 } \rightarrow FWHM \approx 2.355
+    \cdot \sigma
+    \label{eq:fwhm_to_sigma}
+\end{equation}
 
 The final step in this process of conditioning high resolution
 literature cross sections to the experiment that one is conducting is
@@ -507,6 +517,128 @@ devices, and therefore are a digital signal. However, the resolution of
 the literature cross sections is so high in comparison to the usual
 resolution of a \gls{DOAS} experiment spectrometer that one can think of
 this signal as being \emph{quasi-}continuous. In order for them to be
-used in \gls{DOAS} calculations, they have to be re-discretised onto the
-experiment's spectrometer sensor resolution.
+used in \gls{DOAS} calculations, they have to be "re-discretised" onto
+the experiment's spectrometer sensor resolution. Since it is seldom the
+case (if ever) that the literature and the low resolution pixels
+coincide, a mathematical routine is used to interpolate the former onto
+the latter. The most commonly used routine is the cubic spline
+interpolation, widely regarded as the best compromise between
+computational expense and accuracy~\cite{Beekman2010}. Overall,
+cross sections used in \gls{DOAS} undergo a process illustrated in
+Figure~\ref{fig:cross_section_conditioning}~\cite{Danckaert2015,
+Beekman2010}.
+
+\begin{figure}[htpb]
+    \centering
+    %left bottom right top
+    \includegraphics[clip,%
+    trim=3cm 13.1cm 3cm 3cm,%
+    width=.8\textwidth]{img/pdf/beekman_conditioning.pdf}
+    \caption{Before being used in \gls{DOAS} calculations, literature
+    trace gas cross section spectra must undergo a conditioning process
+    to make sure they are compatible with the current experiment's
+    instruments. Figure adapted from~\cite{Beekman2010}}
+    \label{fig:cross_section_conditioning}
+\end{figure}
+
+\subsection{Spectral Calibration}%
+\label{sub:spectral_calibration}
+
+One other small but important incorrection that can bias results is the
+lack of proper calibration between cross sections and collected spectra.
+Figure~\ref{fig:conditioned_cross_section_discrepancy} shows how can a
+conditioned cross section present slight wavelength related
+discrepancies.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/png/calibration_differences.png}
+    \caption{This figure, taken from~\cite{Beekman2010}, shows the difference
+    between NO\textsubscript{2} cross sections. The red line comes from
+    the literature, and has been conditioned to the experiment spectrometer.
+    The blue line was actually collected with that device. The slight
+    discrepancies that can be observed are calibration defects.}
+    \label{fig:conditioned_cross_section_discrepancy}
+\end{figure}
+
+These small nonconformities are caused not only because both types of
+data were captured by different spectrometers, but also because
+conditions most certainly changed. This means that situations in which
+calibration must be handled with care are the norm. This is done by
+running an iterative process that makes slight adjustments to the
+function mapping wavelength to pixel number, as explained in the next
+few paragraphs.
+
+The light that enters the spectrometer is scattered by the diffraction
+grating before reaching the device's sensor, which is divided into
+pixels. These pixels have a well defined and finite width. At the centre
+of each one of them, the signal's intensity can be described by
+Equation~\ref{eq:pixel_mapping_integral}, in which $I$ is the intensity,
+$i$ the pixel number and $\lambda$ the wavelength.
+
+\begin{equation}
+    \centering
+    I(i) = \int_{\lambda(i)}^{\lambda(i+1)} I(\lambda)d{\lambda}
+    \label{eq:pixel_mapping_integral}
+\end{equation}
+
+The expression in Equation~\ref{eq:pixel_mapping_integral} assumes that
+the signal has been conditioned properly, as described in
+Section~\ref{sub:cross_section_conditioning}, through the convolution of
+the cross section data with the instrument function and adequate
+discretisation. The smaller $\Delta \lambda = \lambda(i+1)-\lambda(i)$,
+the finer the instrument's resolution. This is, of course, inherent to
+the system and cannot be changed. What can and should be changed during
+analysis is the central wavelength assigned to each pixel. This
+assignment is in fact what constitutes the instrument's calibration.
+
+The most common way of conducting said calibration is by introducing a
+polynomial describing wavelength to pixel relationship. This polynomial
+is the wavelength-pixel mapping function, and can be written as in
+Equation~\ref{eq:wavelength_pixel_function}.
+
+\begin{equation}
+    \centering
+    \lambda(i) = \sum_{k=0}^{q} \gamma_{k} \cdot i^k
+    \label{eq:wavelength_pixel_function}
+\end{equation}
+
+In Equation~\ref{eq:wavelength_pixel_function}, $\gamma_{k}$ determines
+how the pixels are mapped to the wavelength ($\lambda$), and the type of
+mapping effect depends on $k$. Changing $\gamma_{0}$ shifts the signal
+left or right; changing $\gamma_{1}$ introduces linear distortions to
+the pixel mapping, i.e., stretching or squeezing of the signal. One can
+fit this polynomial up towards $k=\infty$, in theory, but normal
+spectrometer calibrations are only run up to the second or third degree.
+The Avantes spectrometers that were used in this dissertation are
+factory-calibrated to a fourth order polynomial. 
+
+The non-linear portion of the \gls{DOAS} algorithm, described in
+Section~\ref{sec:doas}, is indeed a wavelength calibration. However, it
+is important to previously calibrate every spectral signal before
+actually running the \gls{DOAS} fitting process. This is because the
+types of optimisation algorithm used in this technique, such as
+Levenberg--Marquardt, tend to find local minima or to not converge if
+there is significant misalignment between the spectra.
+
+For passive applications using the sun as the light source, one can use
+a high resolution solar spectrum (see Figure~\ref{fig:kurucz}), and the
+Fraunhofer bands in it (which have a very well defined wavelength that
+can be used as ground truth) to align the various spectra. For active
+applications, one can use the light source's own spectrum, either
+provided by the manufacturer or previously collected in the absence of
+atmospheric or other effects.
+
+
+\begin{figure}[htpb]
+    \centering
+    %left bottom right top
+    \includegraphics[clip,%
+    trim=5.5cm 22cm 4.5cm 3.5cm,%
+    width=\textwidth]{img/pdf/chance_kurucz.pdf}
+    \caption{High resolution solar spectrum commonly used to calibrate
+    the various spectral signals in \gls{DOAS}
+    experiments~\cite{Chance2010}.}
+    \label{fig:kurucz}
+\end{figure}
 
