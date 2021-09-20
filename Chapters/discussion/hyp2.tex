@@ -1,4 +1,4 @@
-%!TEX root=../../thesis_rui_almeida.tex
+%!TEX root=../../template.tex
 \section{Second Hypothesis}%
 \label{sec:second_hypothesis}
 
@@ -41,58 +41,71 @@ with traffic intensity. The expected (and positive) part was that
 density evolution was the same for both the passive and the active
 \gls{DOAS} systems.
 
-The second run of the experiment...
+The second run of the experiment happened later in the same month, on
+the 23\textsuperscript{rd}. A new challenge came from the fact that the
+experiment's site was re-located to a better place (in terms of
+measuring capabilities),  the alignment became more difficult, and
+revealed itself to be of paramount importance, rendering several
+measurements useless. Also, in this second day of experiments, there was
+a lot more wind than in the first day, which also played an important
+part in this alignment problem. With the 8 viable measurements that were
+left, I calculated molecular densities for \gls{no2} and gls{o3}, which
+are displayed in Figure~\ref{fig:no2_o3_densities}. The \gls{DOAS} fits
+that led to these concentration values are also displayed, in
+Figure~\ref{fig:doas_fits}. Official numbers for \gls{no2}
+concentrations are provided by QualAR, a Portuguese public initiative
+that measures air quality throughout the country~\todo{citation}. The
+QualAR chart for the relevant day is presented in
+Figure~\ref{fig:qualar_june_23}. 
 
+There are two important levels of analysis for the density plots
+presented in Figure~\ref{fig:no2_o3_densities}:
+\begin{description}
+    \item[Internal analysis:] did the experiment confirm or deny the
+        hypothesis it was meant to test (see
+        Section~\ref{sec:second_hypothesis})?
+    \item[External analysis:] are the collected data comparable in any
+        way with the official data coming from QualAR?
+\end{description}
 
+With regards to the first angle of analysis, a first glance comparison
+of active and passive-related measurement charts might indicate that the
+hypothesis was firmly denied. However, one should look at the charts
+with some care. Both types of chart are always in the same scale,
+meaning that whatever is being measured, it appears to have
+approximately the same effect on both measurements. Moreover, if it is
+true that they exhibit different behaviours, it is also true that with
+respect to a trend, they seem to agree. The analysed data are too
+different in order to issue a confirmation of the proposed hypothesis,
+but they are also too close to conclude the opposite. Once misalignment
+issues are factored in, this becomes ever more evident. The hypothesis
+remains plausible, even if not confirmed. 
 
+The second lens through which one must look at the charts is the
+external analysis. This must also be done with some care. The first
+important thing to consider is that absolute quantities are of no
+importance here. The data collected through this experiment was not
+processed with the goal of providing a vertical column density that
+could be compared to the official numbers. Besides this, although the
+air quality station that provided the QualAR data is not far from the
+place in which I ran the experiment, it is still sufficiently far that
+the absolute values should not be the same.
 
-% As stated in the introductory paragraphs of Chapter~\ref{cha:methods},
-% the proposed hypothesis was:
+The QualAR chart tells us that, from 0700 onwards, \gls{no2}
+concentration only goes down. This is in direct agreement with the
+\gls{no2} cycle described in Section~\ref{sub:criteria_pollutants}.
+Although not being as monotonic as the official data, our density charts
+(see Figure~\ref{fig:no2_o3_densities}) confirm this. Two factors can be
+used to explain the behaviour difference that can be seen between our
+charts and QualAR's:
+\begin{itemize}
+    \item misalignment issues may have introduced this discrepancy as an
+        error;
+    \item measurements may have been too close to the noise level, and
+        therefore some instability is expected.
+\end{itemize}
 
-% \begin{center}
-% \end{center}
-% \begin{center}
-%     \begin{minipage}{0.8\textwidth}
-
-%         \noindent\textit{We can retrieve the column density for a given
-%         trace gas (or set of trace gases) between two points by
-%         performing a spectral measurement in both of these points in the
-%         same direction and subtracting them from one another.}
-
-%     \end{minipage}
-% \end{center}
-% In Section~\ref{sec:the_experiment}, I have argued that this hypothesis
-% is in accordance with Lambert-Beer's law and theory, but that in the
-% real world there might be some practical limitations that needed to be
-% investigated. To test this hypothesis, I have setup an experiment that
-% aimed to compare column densities retrieved by an active \gls{DOAS}
-% assembly with those that were taken with a scattered sunlight assembly
-% in the hypothesis conditions (two measurements in the same direction).
-% Materials and equipment are presented in Table~\ref{tab:assemblies}.
-% Experiment results (measured trace gas concentrations) are presented in
-% Table~\ref{tab:experiment_results}. 
-
-% \begin{table}[htpb]
-%     \centering
-%     \caption{Numerical results for the experiment detailed in
-%     Section~\ref{sec:the_experiment}. Both active and passive modes of
-%     operation evolve in approximately the same way, confirming the initial
-%     hypothesis.}
-%     \label{tab:experiment_results}
-%     \begin{tabular}{c}
-%     \missingfigure{}
-%     \end{tabular}
-% \end{table}
-
-% The optical path for the experiment was above a very busy highway.
-% Moreover, the experiment was programmed to run during the time period
-% that builds up to the morning rush hour. NO\textsubscript{2}, a
-% trace gas that is produced by diesel combustion~\todo{Fetch reference
-% for this}, was expected to rise in concentration during the experiment.
-% This was precisely what happened in both the active and passive
-% experiment configurations. Besides, column density values, i.e., the
-% number of molecules of that trace gas that interacted with the light,
-% were also similar in both experiment modes. Our system's measurement
-% strategy was therefore validated.
-
-% \todo[inline]{This section lacks a bit of polish.}
+The second hypothesis is clearly the more worrisome, as it threatens the
+validity of the whole experiment. However, the fit charts in
+Figure~\ref{fig:doas_fits} make this unlikely, since one can clearly see
+the signal above the noise.

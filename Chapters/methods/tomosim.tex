@@ -1,7 +1,4 @@
-%!TEX root=../../thesis_rui_almeida.tex
-
-
-
+%!TEX root=../../template.tex
 \section{Tomosim}%
 \label{sec:tomosim}
 
@@ -81,12 +78,45 @@ Section~\ref{sec:tomographic_algorithms_and_reconstruction_techniques}.
 
 \begin{figure}[htpb]
     \centering
-    \missingfigure{}
-    \caption{Illustration of the projection gathering algorithm based on
-    fanbeam assembly of information. On the left the circle which
-    constitutes the general trajectory of the drone. On the right the
-    gymbal points the optical system towards different directions, forming
-    what can be seen as a fan.}
+    \begin{tikzpicture}
+        \def\circRad{4}
+        \def\d{5}
+        \def\noOfRays{3}
+        \def\nfans{5}
+
+        \pgfmathsetmacro\width{\circRad*2 + 4}
+        \pgfmathsetmacro\nloop{\nfans-1}
+
+        \clip[draw](0,0)circle(\circRad);
+        \node[](image) at (0,0)
+            {\includegraphics[width=\width cm]{img/png/caparica.png}};
+        \draw[name path=c1, color=black, very thick](0,0)circle(\circRad);
+
+        \foreach \fan in {0,...,\nloop}
+        {
+            \pgfmathsetmacro\pct{(5-\fan)*20}
+            \begin{scope}[rotate=\d * \fan, color=black!\pct]
+                \node[xshift=.1cm] (A) at (0:\circRad){};
+                \foreach \ray in {-\noOfRays,...,\noOfRays}{
+                    \path[thin, name path=line] (A)--++(\ray*\d:-13cm);
+                    \draw[name intersections={of=line and c1, by={P1}}] (A)--(P1);
+                }                
+            \end{scope}
+
+        } 
+    \end{tikzpicture}
+
+    \caption{ Illustration of the projection gathering algorithm based
+    on the assembly of groups of acquisitions as fanbeam projections.
+    The lines presented on the drawing come from the right to the left. Each
+    is a ray in fan, corresponding to one stop of the drone. In the second
+    measurement moment, the drone moves to the exit point on the left and
+    repeats the first moment collection. Here, both fans ans rays are
+    separated by 5 degrees and there are 6 rays within each fan. A "real
+    life" acquisition would feature a lot more rays, but that would be
+    graphically complicated for the reader. Both ray and fan angular
+    distance are customisable at runtime. Map taken from Google Maps in
+    2019. \textsuperscript{\textcopyright}Google.}
     \label{fig:illustriated_trajectory_and_fanbeam_formation}
 \end{figure}
 
