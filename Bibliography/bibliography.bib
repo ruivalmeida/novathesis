@@ -129,6 +129,13 @@ url = {www.atmos-chem-phys.org/acp/4/1945/},
 volume = {4},
 year = {2004}
 }
+@misc{Danckaert2015,
+author = {Danckaert, Thomas and Fayt, Caroline and {Van Roozendael}, M. and de Smedt, Isabelle and Letocart, Vincent and Merlaud, Alexis and Pinardi, Gaia},
+file = {:Users/ruivalmeida/Library/Application Support/Mendeley Desktop/Downloaded/Danckaert et al. - 2015 - QDOAS.pdf:pdf},
+title = {{QDOAS}},
+url = {http://uv-vis.aeronomie.be/software/QDOAS/},
+year = {2015}
+}
 @phdthesis{MartinsdeSousaeSa2017,
 abstract = {The easyPET scanner has an innovative design, comprising only two array columns facing each other, and with an actuation defined by two rotation axes. Using this design, two approaches have been taken. The first concerns to a didactic PET scanner, where the arrays of detectors are comprised of only one detector each, and it is meant to be a simple 2-dimensional PET scanner for educational purposes. The second corresponds to a pre-clinical scanner, with the arrays having multiple detectors, meant to acquire 3-dimensional data. Given the geometry of the system, there is no concern with the effects of not measuring the Depth-of-Interaction (DOI), and a resolution of 1-1.5 mm is expected with the didactic system, improving with the pre-clinical. The work presented in this thesis deals with 2D image reconstruction for the easyPET scanners. The unconventional nature of the acquisition geometry, the large amount of data to be processed, the complexity of implementing a PET image reconstruction algorithm, and the implementation of data regularization methods, gaussian filtering and Median Root Prior (MRP), were addressed in this thesis. For this, the Matlab software was used to implement the ML-EM algorithm. Alongside, several optimizations were also implemented in order to convey a better computational performance to the algorithm. These optimizations refer to using geometry symmetries and fast indexing approaches. Moreover, a user interface was created so as to enhance the user experience for the didactic easyPET system. The validation of the implemented algorithm was performed using Monte Carlo simulated, and acquired data. The first results obtained indicate that the optimizations implemented on the algorithm have successfully reduced the image reconstruction time. On top of that, the system was tested according to the NEMA rules. A comparison was then made between reconstructed images produced by using Filtered Back Projection (FBP), the native ML-EM implementation, the ML-EM algorithm using inter- iteration gaussian filtering, and the ML-EM algorithm implemented with the MRP. This comparison was made through the calculation of FWHM, FWTM, and SNR, at different spatial positions. The results obtained reveal an approximate 1.5x 1.5 mm2 FWHM source resolution in the FOV, when recurring to FBP, and 1.2x 1.2 mm2 for the native ML-EM algorithm. The implemented data regularization methods produced similar or improved spatial resolution results, whilst improving the source's SNR values. The results obtained show the potential in the easyPET systems. Since the didactic scanner is already on its final stage, the next step will be to further test the pre-clinical system},
 author = {{Martins de Sousa e S{\'{a}}}, Pedro},
@@ -157,6 +164,18 @@ journal = {Critical Review},
 number = {January},
 title = {{Traffic-Related Air Pollution: A Critical Review of the Literature on Emissions, Exposure, and Health Effects}},
 year = {2010}
+}
+@phdthesis{Merlaud2013,
+address = {Louvain},
+author = {Merlaud, Alexis},
+file = {:Users/ruivalmeida/Library/Application Support/Mendeley Desktop/Downloaded/Merlaud - 2013 - Development and use of compact instruments for tropospheric investigations based on optical spectroscopy from mobile pl.pdf:pdf},
+isbn = {978-2-87558-128-0},
+publisher = {Presses Universitaires de Louvain},
+school = {Facult{\'{e}} des Sciences - Universit{\'{e}} Catholique de Louvain},
+title = {{Development and use of compact instruments for tropospheric investigations based on optical spectroscopy from mobile platforms}},
+type = {PhD Thesis},
+url = {http://books.google.com/books?hl=en\&lr=\&id=inXVSyR82zwC\&oi=fnd\&pg=PR3\&dq=Development+and+use+of+compact+instruments+for+tropospheric+investigations+based+on+optical+spectroscopy+from+mobile+platforms+sciences\&ots=VdebeDBQMc\&sig=4G0eVEvthJXuqd8WI3IWjjVXuXc},
+year = {2013}
 }
 @article{Capraz2017,
 abstract = {We examined the associations between the daily variations of air pollutants and hospital admissions for respiratory diseases in İstanbul, the largest city of Turkey. A time series analysis of counts of daily hospital admissions and outdoor air pollutants was performed using single-pollutant Poisson generalized linear model (GLM) while controlling for time trends and meteorological factors over a 3-year period (2013–2015) at different time lags (0–9 days). Effects of the pollutants (Excess Risk, ER) on current-day (lag 0) hospital admissions to the first ten days (lag 9) were determined. Data on hospital admissions, daily mean concentrations of air pollutants of PM10, PM2.5 and NO2 and daily mean concentrations of temperature and humidity of İstanbul were used in the study. The analysis was conducted among people of all ages, but also focused on different sexes and different age groups including children (0–14 years), adults (35–44 years) and elderly (≥65 years). We found significant associations between air pollution and respiratory related hospital admissions in the city. Our findings showed that the relative magnitude of risks for an association of the pollutants with the total respiratory hospital admissions was in the order of: PM2.5, NO2, and PM10. The highest association of each pollutant with total hospital admission was observed with PM2.5 at lag 4 (ER = 1.50; 95\% CI = 1.09–1.99), NO2 at lag 4 (ER = 1.27; 95\% CI = 1.02–1.53) and PM10 at lag 0 (ER = 0.61; 95\% CI = 0.33–0.89) for an increase of 10 $\mu$g/m3 in concentrations of the pollutants. In conclusion, our study showed that short-term exposure to air pollution was positively associated with increased respiratory hospital admissions in İstanbul during 2013–2015. As the first air pollution hospital admission study using GLM in İstanbul, these findings may have implications for local environmental and social policies.},
@@ -282,17 +301,13 @@ url = {https://www.atmos-meas-tech.net/10/2299/2017/},
 volume = {10},
 year = {2017}
 }
-@article{Kastis2012,
-abstract = {An efficient, two-dimensional, analytic, Spline Reconstruction Technique (SRT) for SPECT has been presented earlier in the literature. The SRT is a reconstruction algorithm based on an analytic formula of the inverse Attenuated Radon Transform which results from the approximation of the sinogram in terms of cubic splines. The algorithm incorporates the attenuation map obtained by a CT scan, to provide attenuation corrected images. The aim of this study is to evaluate the performance of the SRT algorithm, using phantoms and real SPECT/CT data, by comparing it with two commonly used reconstruction algorithms: FBP and OSEM. The uniformity and resolution limitations of the analytic SRT algorithm is assessed in simulation studies by using a Uniformity phantom, a slice of the Hoffman brain phantom, and two slices of the NCAT human torso phantom. Appropriate attenuation maps are used for each image. Reconstructed images are obtained for 60, 90, 120, and 180 projections over 360 degrees. Furthermore, real SPECT sinograms and their corresponding CT images are acquired from a clinical SPECT/CT system, and then reconstructed employing the SRT algorithm. The reconstructed images obtained via the SRT algorithm are compared to those produced by FBP and OSEM. Several profiles are presented which illustrate the ability of SRT algorithm to correct for attenuation. The SRT reconstructions from clinical data are also compared with the OSEM reconstructions provided by the commercial system. Comparisons between fused images are also presented. Our preliminary results suggest that SRT appears to provide better reconstructed images than FBP at least for the cases when no attenuation correction is applied to FBP. The reconstruction time for SRT was about 2 sec which is comparable to that of FBP and faster than OSEM. Regarding reconstructions for the data obtained from the clinical system, SRT appears to provide comparable quality images with the OSEM reconstructions processed by the comme- cial system. However, further evaluation of SRT is needed to substantiate this claim. It is also important to note that SRT suffers from striking artifacts, due to angular under-sampling, which become worse at low number of projection angles.},
-author = {Kastis, George A. and Gaitanis, Anastasios and Skouras, Theodoros and Fokas, Athanassios S.},
-doi = {10.1109/NSSMIC.2011.6153751},
-file = {::},
-isbn = {9781467301183},
-issn = {10957863},
-journal = {IEEE Nuclear Science Symposium Conference Record},
-pages = {3950--3954},
-title = {{Evaluation of a spline reconstruction technique for SPECT: Comparison with FBP and OSEM}},
-year = {2012}
+@misc{ProTeste2003,
+author = {ProTeste, DECO /},
+booktitle = {ProTeste},
+title = {{Rad{\~{a}}o: perigo que se esconde no granito}},
+url = {https://www.deco.proteste.pt/institucionalemedia/imprensa/comunicados/2003/radao-perigo-que-se-esconde-no-granito},
+urldate = {2020-04-11},
+year = {2003}
 }
 @inproceedings{Li2016,
 address = {Washington, D.C.},
@@ -585,6 +600,20 @@ title = {{Developing of DOAS in China}},
 url = {http://proceedings.spiedigitallibrary.org/proceeding.aspx?doi=10.1117/12.465860},
 year = {2003}
 }
+@article{Spichtinger2004,
+abstract = {Forest fire emissions have a strong impact on the concentrations of trace gases and aerosols in the atmosphere. In order to quantify the influence of boreal forest fire emissions on the atmospheric composition, the fire seasons of 1997 and 1998 are compared in this paper. Fire activity in 1998 was very strong, especially over Canada and Eastern Siberia, whereas it was much weaker in 1997. According to burned area estimates the burning in 1998 was more than six times as intense as in 1997. Based on hot spot locations derived from ATSR ( Along Track Scanning Radiometer) data and official burned area data, fire emissions were estimated and their transport was simulated with a Lagrangian tracer transport model. Siberian and Canadian forest fire tracers were distinguished to investigate the transport of both separately. The fire emissions were transported even over intercontinental distances. Due to the El Nino induced meteorological situation, transport from Siberia to Canada was enhanced in 1998. Siberian fire emissions were transported towards Canada and contributed concentrations more than twice as high as those due to Canada's own CO emissions by fires. In 1998 both tracers arrive at higher latitudes over Europe, which is due to a higher North Atlantic Oscillation (NAO) index in 1998. The simulated emission plumes are compared to CMDL ( Climate Monitoring and Diagnostics Laboratory) CO(2) and CO data, Total Ozone Mapping Spectrometer ( TOMS) aerosol index ( AI) data and Global Ozone Monitoring Experiment (GOME) tropospheric NO(2) and HCHO columns. All the data show clearly enhanced signals during the burning season of 1998 compared to 1997. The results of the model simulation are in good agreement with ground-based as well as satellite-based measurements.},
+author = {Spichtinger, N and Damoah, R and Eckhardt, S and Forster, C and James, P and Beirle, S and Marbach, T and Wagner, T and Novelli, P C and Stohl, a},
+doi = {10.5194/acp-4-1857-2004},
+file = {::},
+isbn = {1680-7316},
+issn = {1680-7324},
+journal = {Atmospheric Chemistry and Physics},
+keywords = {biomass burning smoke,carbon-monoxide,co,emissions,northern latitudes,region,satellite-observations,siberia,united-states,upper troposphere},
+pages = {1857--1868},
+title = {{Boreal forest fires in 1997 and 1998: a seasonal comparison using transport model simulations and measurement data}},
+volume = {4},
+year = {2004}
+}
 @inproceedings{Hough2007,
 abstract = {Geo-referenced imaging systems, (which alert the operator to smoke by day, and fire glow by night) are able to perform at higher sensitivity and over longer distances, by using 3 -D information w hich provides the distance between the camera and every ima ge pixel's line-ofsight projection to the object on the ground. A smoke event at any one of these geo -referenced locations is therefore determined when the system is installed – before the fire is detected. Unlike CCTV based surveillance, every pixel is projected to a ground position at a kno wn distance from the camera, ensuring that smoke signatures a few km from the camera are treated very differently from the equivalent smoke signature at 10 tim es the distance. Usually settings that detect far -field smoke signatures are prone to false alarms in the near -field, and settings which work well for detecting near -field smoke are not reliable when detecting smoke in the far -field. Geo-referenced imagi ng systems achieve a measure of range invariance that compensates for distance effects.},
 archivePrefix = {arXiv},
@@ -807,12 +836,11 @@ issn = {0278-0062},
 journal = {IEEE Transactions on Medical Imaging},
 month = {oct},
 number = {2},
-pages = {655--677},
-publisher = {CIRP},
-title = {{Industrial applications of computed tomography}},
-url = {http://dx.doi.org/10.1016/j.cirp.2014.05.011},
-volume = {63},
-year = {2014}
+pages = {113--122},
+title = {{Maximum Likelihood Reconstruction for Emission Tomography}},
+url = {https://ieeexplore.ieee.org/document/4307558/},
+volume = {1},
+year = {1982}
 }
 @article{Siddon1985,
 author = {Siddon, Robert L.},
@@ -850,6 +878,17 @@ doi = {10.1007/978-1-4471-3482-4},
 isbn = {9781447134848},
 title = {{Measurement of Atmospheric Emissions}},
 year = {1994}
+}
+@article{Frins2006a,
+abstract = {A novel experimental procedure to measure the near-surface distribution of atmospheric trace gases by using passive multiaxis differential absorption optical spectroscopy ͑MAX-DOAS͒ is proposed. The pro-cedure consists of pointing the receiving telescope of the spectrometer to nonreflecting surfaces or to bright targets placed at known distances from the measuring device, which are illuminated by sunlight. We show that the partial trace gas absorptions between the top of the atmosphere and the target can be easily removed from the measured total absorption. Thus it is possible to derive the average concentration of trace gases such as NO 2 , HCHO, SO 2 , H 2 O, Glyoxal, BrO, and others along the line of sight between the instrument and the target similar to the well-known long-path DOAS observations (but with much less expense). If tomographic arrangements are used, even two-or three-dimensional trace gas distri-butions can be retrieved. The basic assumptions of the proposed method are confirmed by test measure-ments taken across the city of Heidelberg.},
+author = {Frins, Erna and Bobrowski, Nicole and Platt, Ulrich and Wagner, Thomas},
+file = {::},
+journal = {Applied optics},
+keywords = {0101290,2801120,3001030,OCIS codes},
+number = {24},
+title = {{Tomographic multiaxis-differential optical absorption spectroscopy observations of Sun-illuminated targets: a technique providing well-defined absorption paths in the boundary layer}},
+volume = {45},
+year = {2006}
 }
 @inproceedings{Premuda2009,
 author = {Premuda, M. and Masieri, S. and Bortoli, D. and Margelli, F. and Ravegnani, F. and Petritoli, A. and Kostadinov, I. and Giovanelli, G. and Cupini, E.},
@@ -1335,9 +1374,13 @@ abstract = {We apply a novel experimental procedure for the rapid measurement of
 author = {Wang, Y. and Li, A. and Xie, P. H. and Wagner, T. and Chen, H. and Liu, W. Q. and Liu, J. G.},
 doi = {10.5194/amt-7-1663-2014},
 file = {::},
-journal = {Forest fires and regional haze in Southeast Asia},
-pages = {1--7},
-title = {{Forest Fire Detection and Monitoring}},
+isbn = {1867-8548},
+issn = {18678548},
+journal = {Atmospheric Measurement Techniques},
+number = {6},
+pages = {1663--1680},
+title = {{A rapid method to derive horizontal distributions of trace gases and aerosols near the surface using multi-axis differential optical absorption spectroscopy}},
+volume = {7},
 year = {2014}
 }
 @misc{EnviroVisionSolutions,
@@ -1394,6 +1437,19 @@ pages = {1--38},
 title = {{Maximum likelihood from incomplete data via the EM algorithm (with discussion)}},
 volume = {39},
 year = {1977}
+}
+@article{Hendrick2014,
+author = {Hendrick, F. and M{\"{u}}ller, J.-F. and Cl{\'{e}}mer, K. and Wang, P. and {De Mazi{\`{e}}re}, M. and Fayt, C. and Gielen, C. and Hermans, C. and Ma, J. Z. and Pinardi, G. and Stavrakou, T. and Vlemmix, T. and {Van Roozendael}, M.},
+doi = {10.5194/acp-14-765-2014},
+file = {::},
+issn = {1680-7324},
+journal = {Atmospheric Chemistry and Physics},
+number = {2},
+pages = {765--781},
+title = {{Four years of ground-based MAX-DOAS observations of HONO and NO<sub>2</sub> in the Beijing area}},
+url = {http://www.atmos-chem-phys.net/14/765/2014/},
+volume = {14},
+year = {2014}
 }
 @misc{BNHCRC2016,
 author = {BNHCRC},
@@ -1476,6 +1532,17 @@ title = {{Advances in Pattern Recognition}},
 url = {http://www.nature.com/doifinder/10.1038/scientificamerican0471-56},
 volume = {224},
 year = {1971}
+}
+@article{Frins2008,
+abstract = {Topographic Target Light scattering – Differen-tial Optical Absorption Spectroscopy (ToTaL-DOAS), also called Target-DOAS, is a novel experimental procedure to re-trieve trace gas concentrations present in the low atmosphere. Scattered sunlight (diffuse or specular) reflected from natural or artificial targets located at different distances are analyzed to retrieve the spatial distribution of the concentration of dif-ferent trace gases like NO 2 , SO 2 and others. We report high spatial resolution measurements of NO 2 mixing ratios in the city of Montevideo (Uruguay) observing three buildings as targets with a Mini-DOAS instrument. Our instrument was 146 m, 196 m, and 280 m apart from three different build-ings located along a main Avenue. We obtain temporal vari-ation of NO 2 mixing ratios between 30 ppb and 65 ppb from measurements of November 2007 and mixing ratios up to 50 ppb from measurements of August and September 2008. Our measurements demonstrate that ToTaL-DOAS observa-tions can be made over relative short distances. In polluted air masses, the retrieved absorption signal was found to be sufficiently strong to allow measurements over distances in the range of several tens of meters.},
+author = {Frins, E and Platt, U and Wagner, T},
+file = {::},
+journal = {Atmos. Chem. Phys. Atmospheric Chemistry and Physics},
+pages = {7595--7601},
+title = {{High spatial resolution measurements of NO 2 applying Topographic Target Light scattering-Differential Optical Absorption Spectroscopy (ToTaL-DOAS)}},
+url = {www.atmos-chem-phys.net/8/7595/2008/},
+volume = {8},
+year = {2008}
 }
 @article{Wang2012,
 author = {Wang, Yang and Li, Ang and Xie, Pin-Hua and Zeng, Yi and Wang, Rui-Bin and Chen, Hao and Pei, Xian and Liu, Jian-Guo and Liu, Wen-Qing},
@@ -1588,7 +1655,7 @@ pages = {104017},
 title = {{Measurement of SO <sub>2</sub> and NO <sub>2</sub> applying ToTaL-DOAS from a remote site}},
 url = {http://stacks.iop.org/1464-4258/10/i=10/a=104017?key=crossref.3970b448595c849a1e98aae7445faab2},
 volume = {10},
-year = {2010}
+year = {2008}
 }
 @misc{Python,
 author = {Python},
@@ -1638,6 +1705,16 @@ pages = {967--975},
 title = {{Measurements of trace gas distributions using Long-path DOAS-Tomography during the motorway campaign BAB II: Experimental setup and results for NO 2}},
 volume = {39},
 year = {2005}
+}
+@book{Platt2007,
+address = {Heidelberg, Germany},
+author = {Platt, U and Stutz, J},
+editor = {Guzzi, Rodolfo and Lanzerotti, Louis J. and Imboden, Dieter and Platt, Ulrich},
+file = {:Users/ruivalmeida/Library/Application Support/Mendeley Desktop/Downloaded/Platt, Stutz - 2008 - Differential Optical Absorption Spectroscopy - Principles and Applications.pdf:pdf},
+isbn = {9783540211938},
+publisher = {Springer-Verlag Heidelberg Berlin},
+title = {{Differential Optical Absorption Spectroscopy - Principles and Applications}},
+year = {2008}
 }
 @misc{EEA2019,
 author = {EEA},
@@ -1788,31 +1865,12 @@ title = {{Novel algorithm for tomographic reconstruction of atmospheric chemical
 volume = {39},
 year = {2005}
 }
-@article{Franklin2019,
-abstract = {There is a growing body of research on the association between ambient air pollution and adverse birth outcomes. However, people in high income countries spend most of their time indoors. Pregnant women spend much of that time at home. The aim of this study was to investigate if indoor air pollutants were associated with poor birth outcomes. Pregnant women were recruited prior to 18 weeks gestation. They completed a housing questionnaire and household chemical use survey. Indoor pollutants, formaldehyde (HCHO), nitrogen dioxide (NO2) and volatile organic compounds (VOCs), were monitored in the women's homes at 34 weeks gestation. Gestational age (GA), birth weight (BW) and length (BL) and head circumference (HC) were collected from birth records. The associations between measured pollutants, and pollution surrogates, were analysed using general linear models, controlling for maternal age, parity, maternal health, and season of birth. Only HCHO was associated with any of the birth outcomes. There was a 0.044 decrease in BW z-score (p = 0.033) and 0.05 decrease in HC z-score (p = 0.06) for each unit increase in HCHO. Although HCHO concentrations were very low, this finding is consistent with other studies of formaldehyde and poor birth outcomes.},
-author = {Franklin, Peter and Tan, Mark and Hemy, Naomi and Hall, Graham L.},
-doi = {10.3390/ijerph16081364},
-issn = {16604601},
-journal = {International Journal of Environmental Research and Public Health},
-keywords = {Birth outcomes,Formaldehyde,Indoor air pollution,Pregnancy},
-number = {8},
-title = {{Maternal exposure to indoor air pollution and birth outcomes}},
-volume = {16},
-year = {2019}
-}
-@article{Petersen2008a,
-abstract = {BACKGROUND: A software engineering systematic map is a defined method to build a classification scheme and structure a software engineering field of interest. The analysis of results focuses on frequencies of publications for categories within the scheme. Thereby, the coverage of the research field can be determined. Different facets of the scheme can also be combined to answer more specific research questions. OBJECTIVE: We describe how to conduct a systematic mapping study in software engineering and provide guidelines. We also compare systematic maps and systematic reviews to clarify how to chose between them. This comparison leads to a set of guidelines for systematic maps. METHOD: We have defined a systematic mapping process and applied it to complete a systematic mapping study. Furthermore, we compare systematic maps with systematic reviews by systematically analyzing existing systematic reviews. RESULTS: We describe a process for software engineering systematic mapping studies and compare it to systematic reviews. Based on this, guidelines for conducting systematic maps are defined. CONCLUSIONS: Systematic maps and reviews are different in terms of goals, breadth, validity issues and implications. Thus, they should be used complementarily and require different methods (e.g., for analysis).},
-author = {Petersen, Kai and Feldt, Robert and Mujtaba, Shahid and Mattsson, Michael},
-doi = {10.1142/S0218194007003112},
+@article{Jing,
+abstract = {—A full computer-controlled multiple light paths differential optical absorption spectroscopy (DOAS) apparatus are applied for air pollution monitoring in the suburb of NanJing. Two optical paths have been installed in the DOAS system (OPSIS AB, Sweden), which is operating since September 2007, and both are controlled with the same main unit, and so only one analyzer system studies the light received. A beam-finding servosystem and automatic gain control permit unattended long-time monitoring. The concentrations and standard deviations of a wide number of pollutants, along with light levels in the system are stored in the central unit computer. Being able to monitor a range of user-specified compounds continuously in real time with a single system, the OPSIS instruments offer high levels of accuracy, reliability and data capture. The first results obtained with the DOAS system are presented in this work; comparisons between pollutant data obtained along the two optical paths (and relations between different pollutant concentrations) have been carried out.},
+author = {Jing, Wang and Bin, Zhu and Shengjie, Niu},
 file = {::},
-isbn = {0-7695-2555-5},
-issn = {02181940},
-journal = {EASE'08 Proceedings of the 12th international conference on Evaluation and Assessment in Software Engineering},
-keywords = {evidence based software engineering,systematic mapping studies,systematic reviews},
-pages = {68--77},
-title = {{Systematic mapping studies in software engineering}},
-url = {http://dl.acm.org/citation.cfm?id=2227115.2227123},
-year = {2008}
+keywords = {Differential Optical Absorption Spectroscopy Syste},
+title = {{Differential optical absorption spectroscopy system for suburb of NanJing atmospheric pollution monitoring}}
 }
 @misc{Simon2013,
 author = {Simon, Stacy},
@@ -2060,6 +2118,19 @@ file = {:Users/ruivalmeida/Downloads/ds-XHP502.pdf:pdf},
 title = {{XLamp {\textregistered} XHP50.2 LEDs Datasheet}},
 year = {2021}
 }
+@article{Urbanski2008,
+abstract = {Wildland fires are major sources of trace gases and aerosol, and these emissions are believed to significantly influence the chemical composition of the atmosphere and the earth's climate system. The wide variety of pollutants released by wildland fire include greenhouse gases, photochemically reactive compounds, and fine and coarse particulate matter. Through direct emissions and secondary chemical and physical processes, wildland fire can have a significant impact on tropospheric chemistry and serve as a major source of air pollution. We provide a synthesis of emission factor data from the literature and previously unpublished research for use in global, continental and regional scale studies investigating the role of wildland fire emissions in atmospheric chemistry and climate. The emission factor data is presented by geographic zones (boreal, temperate, and tropical) and vegetation group (forest and savanna/rangeland), allowing researchers to account for the different emission characteristics exhibited by biomass burning in these disparate regions. A brief overview of the wildland fuel combustion process as related to emissions production is also provided. The atmospheric fate of wildland fire emissions is briefly discussed and related to the production of secondary air pollutants. Previously unpublished results from a series of fire emission studies in the United States and Canada are presented in an appendix. ?? 2009 Elsevier B.V. All rights reserved.},
+author = {Urbanski, Shawn P. and Hao, Wei Min and Baker, Stephen},
+doi = {10.1016/S1474-8177(08)00004-1},
+file = {::},
+isbn = {9780080556093},
+issn = {14748177},
+journal = {Developments in Environmental Science},
+pages = {79--107},
+title = {{Chapter 4 Chemical Composition of Wildland Fire Emissions}},
+volume = {8},
+year = {2008}
+}
 @article{Brook2008,
 abstract = {Air pollution is a heterogeneous mixture of gases, liquids and PM (particulate matter). In the modern urban world, PM is principally derived from fossil fuel combustion with individual constituents varying in size from a few nanometres to 10 $\mu$m in diameter. In addition to the ambient concentration, the pollution source and chemical composition may play roles in determining the biological toxicity and subsequent health effects. Nevertheless, studies from across the world have consistently shown that both short- and long-term exposures to PM are associated with a host of cardiovascular diseases, including myocardial ischaemia and infarctions, heart failure, arrhythmias, strokes and increased cardiovascular mortality. Evidence from cellular/toxicological experiments, controlled animal and human exposures and human panel studies have demonstrated several mechanisms by which particle exposure may both trigger acute events as well as prompt the chronic development of cardiovascular diseases. PM inhaled into the pulmonary tree may instigate remote cardiovascular health effects via three general pathways: instigation of systemic inflammation and/or oxidative stress, alterations in autonomic balance, and potentially by direct actions upon the vasculature of particle constituents capable of reaching the systemic circulation. In turn, these responses have been shown to trigger acute arterial vasoconstriction, endothelial dysfunction, arrhythmias and pro-coagulant/thrombotic actions. Finally, long-term exposure has been shown to enhance the chronic genesis of atherosclerosis. Although the risk to one individual at any single time point is small, given the prodigious number of people continuously exposed, PM air pollution imparts a tremendous burden to the global public health, ranking it as the 13th leading cause of morality (approx. 800000 annual deaths). {\textcopyright} The Authors.},
 author = {Brook, Robert D.},
@@ -2073,6 +2144,21 @@ pmid = {18691154},
 title = {{Cardiovascular effects of air pollution}},
 volume = {115},
 year = {2008}
+}
+@article{Galle2010,
+abstract = {This paper presents the global project Network for Observation of Volcanic and Atmospheric Change ({NOVAC)}, the aim of which is automatic gas emission monitoring at active volcanoes worldwide. Data from the network will be used primarily for volcanic risk assessment but also for geophysical research, studies of atmospheric change, and ground validation of satellite instruments. A novel type of instrument, the scanning miniaturized differential optical absorption spectroscopy (Mini-{DOAS)} instrument, is applied in the network to measure volcanic gas emissions by {UV} absorption spectroscopy. The instrument is set up 5–10 km downwind of the volcano under study, and typically two to four instruments are deployed at each volcano in order to cover different wind directions and to facilitate measurements of plume height and plume direction. Two different versions of the instrument have been developed. Version I was designed to be a robust and simple instrument for measurement of volcanic {SO2} emissions at high time resolution with minimal power consumption. Version {II} was designed to allow the best possible spectroscopy and enhanced flexibility in regard to measurement geometry at the cost of larger complexity, power consumption, and price. In this paper the project is described, as well as the developed software, the hardware of the two instrument versions, measurement strategies, data communication, and archiving routines. As of April 2009 a total of 46 instruments have been installed at 18 volcanoes worldwide. As a typical example, the installation at Tungurahua volcano in Ecuador is described, together with some results from the first 21 months of operation at this volcano.},
+author = {Galle, Bo and Johansson, Mattias and Rivera, Claudia and Zhang, Yan and Kihlman, Manne and Kern, Christoph and Lehmann, Thomas and Platt, Ulrich and Arellano, Santiago and Hidalgo, Silvana},
+doi = {10.1029/2009JD011823},
+file = {:Users/ruivalmeida/Library/Application Support/Mendeley Desktop/Downloaded/Galle et al. - 2010 - Network for Observation of Volcanic and Atmospheric Change (NOVAC) - A global network for volcanic gas monitoring.pdf:pdf},
+isbn = {0148-0227},
+issn = {21698996},
+journal = {Journal of Geophysical Research Atmospheres},
+keywords = {DOAS,SO<subscr>2</subscr>,doi:10.1029/2009JD011823,http://dx.doi.org/10.1029/2009JD011823,volcanic gas},
+number = {D5},
+pages = {1--19},
+title = {{Network for Observation of Volcanic and Atmospheric Change (NOVAC) - A global network for volcanic gas monitoring: Network layout and instrument description}},
+volume = {115},
+year = {2010}
 }
 @misc{Agriculture2012,
 author = {of Agriculture, United States Department},
@@ -2126,21 +2212,28 @@ title = {{Multi Axis Differential Optical Absorption Spectroscopy (MAX-DOAS)}},
 url = {www.atmos-chem-phys.org/acp/4/231/},
 year = {2004}
 }
+@book{Environment2015,
+abstract = {This is the 15th issue of the EFFIS annual report on forest fires for the year 2014. This report is consolidated as highly appreciated documentation of the previous year's forest fires in Europe, Middle East and North Africa. In its different sections, the report includes information on the evolution of fire danger in the European and Mediterranean regions, the damage caused by fires and detailed description of the fire conditions during the 2014 fire campaign in the majority of countries in the EFFIS network The chapter on national reporting gives an overview of the efforts undertaken at national and regional levels, and provides inspiration for countries exposed to forest fire risk. The preparation and publication of the report aims also at improving cooperation with the members of the EGFF especially with regard to fire prevention actions. Our common aim is to maintain and protect our landscapes and natural heritage, to avoid loss of human lives and to minimise the damage caused to property by uncontrolled forest fires.},
+author = {Environment, Directorate-general},
+doi = {10.2788/1082},
+file = {::},
+isbn = {9789279504471},
+title = {{Forest Fires in Europe, Middle East and North Africa 2014}},
+year = {2015}
+}
 @article{Petersen2008a,
 abstract = {BACKGROUND: A software engineering systematic map is a defined method to build a classification scheme and structure a software engineering field of interest. The analysis of results focuses on frequencies of publications for categories within the scheme. Thereby, the coverage of the research field can be determined. Different facets of the scheme can also be combined to answer more specific research questions. OBJECTIVE: We describe how to conduct a systematic mapping study in software engineering and provide guidelines. We also compare systematic maps and systematic reviews to clarify how to chose between them. This comparison leads to a set of guidelines for systematic maps. METHOD: We have defined a systematic mapping process and applied it to complete a systematic mapping study. Furthermore, we compare systematic maps with systematic reviews by systematically analyzing existing systematic reviews. RESULTS: We describe a process for software engineering systematic mapping studies and compare it to systematic reviews. Based on this, guidelines for conducting systematic maps are defined. CONCLUSIONS: Systematic maps and reviews are different in terms of goals, breadth, validity issues and implications. Thus, they should be used complementarily and require different methods (e.g., for analysis).},
 author = {Petersen, Kai and Feldt, Robert and Mujtaba, Shahid and Mattsson, Michael},
 doi = {10.1142/S0218194007003112},
 file = {::},
-issn = {0258-8900},
-journal = {Bulletin of Volcanology},
-keywords = {Differential optical absorption spectroscopy,Environmental impact,Gas emission,NO2,SO2,Tomography},
-month = {dec},
-number = {10},
-pages = {1169--1178},
-title = {{Tomographic reconstruction of gas plumes using scanning DOAS}},
-url = {http://link.springer.com/10.1007/s00445-009-0292-8},
-volume = {71},
-year = {2009}
+isbn = {0-7695-2555-5},
+issn = {02181940},
+journal = {EASE'08 Proceedings of the 12th international conference on Evaluation and Assessment in Software Engineering},
+keywords = {evidence based software engineering,systematic mapping studies,systematic reviews},
+pages = {68--77},
+title = {{Systematic mapping studies in software engineering}},
+url = {http://dl.acm.org/citation.cfm?id=2227115.2227123},
+year = {2008}
 }
 @article{Lawrence2000,
 annote = {NULL},
@@ -2291,9 +2384,11 @@ year = {2015}
 abstract = {Modern software systems are prone to a continuous evolution under frequently varying requirements. Architecture-centric software evolution (ACSE) enables changes in system structure and behavior while maintaining a global view of software to address evolution-centric tradeoffs. Implications for the Lehman's law of continuing change have resulted in solutions that enable reuse-driven evolution in software architectures.},
 author = {Ahmad, Aakash and Jamshidi, Pooyan and Pahl, Claus},
 file = {::},
-number = {March},
-title = {{Global Forest Resources Assessment 2005 –}},
-year = {2006}
+number = {November 2012},
+pages = {14},
+title = {{Protocol for Systematic Literature Review}},
+url = {http://www.computing.dcu.ie/$\sim$pjamshidi/SLR/Review_Protocol_ERK.pdf},
+year = {2012}
 }
 @book{Barrett2012,
 abstract = {Radiological Imaging: The Theory of Image Formation, Detection, and Processing is intended to prepare the student to do research in radiological imaging, to teach general image science within a radiographic context, and to help the student gain fluency with the essential analytical tools of linear systems theory and the theory of stochastic processes that are applicable to any imaging system. The book contains chapters devoted to the discussion of linear systems, Poisson processes, analysis of radiographic systems, radiographic image detectors, and the various aspects of three-dimensional or tomographic imaging. Computed tomography, psychophysics, and scattered radiation and its effect on image are also elucidated. Radiology technicians will find the book very invaluable.},
@@ -2304,6 +2399,20 @@ isbn = {9780120796038},
 pages = {1--683},
 title = {{Radiological Imaging: The Theory of Image Formation, Detection, and Processing}},
 year = {2012}
+}
+@article{Zhao2011,
+author = {Zhao, Jianhui and Zhang, Zhong and Han, Shizhong and Qu, Chengzhang and Yuan, Zhiyong and Zhang, Dengyi},
+doi = {10.2298/CSIS101012030Z},
+file = {::},
+issn = {1820-0214},
+journal = {Computer Science and Information Systems},
+keywords = {color segmentation,dynamic feature,forest flame,matching,shape,static feature,svm},
+number = {3},
+pages = {821--841},
+title = {{SVM based forest fire detection using static and dynamic features}},
+url = {http://www.doiserbia.nb.rs/Article.aspx?ID=1820-02141100030Z},
+volume = {8},
+year = {2011}
 }
 @article{Korte2017,
 abstract = {Carbon monoxide (CO) is an odorless, colorless and toxic gas that results from incomplete combustion of coal and fossil fuels. The aim of this study was to evaluate cardiovascular mortality (CVM) attributed to CO levels in Ahvaz, Bushehr and Kermanshah, as the major cities in south western of Iran, with population of 2000000 people during 2013? The measured CO data in 2013 by 10 monitoring stations were used in this study. CO data, temperature and pressure were collected through Ahvaz, Bushehr and Kermanshah Meteorological Organization and Iranian Environmental Protection Agency (EPA). Then, these data were processed by Excel software through correcting temperature and pressure, encode, averaging and filtering. Finally, all data were processed to make input file of Air Q model. The results showed that the maximum and the minimum concentration of CO were associated with Ahvaz and Bushehr with annual averages of 8.51 and 3.76 mg/m3, respectively. This could be due to higher fuel consumption gasoline in vehicles in Ahvaz in comparison with Kermanshah and Bushehr. Cardiovascular mortality during 2013 which was attributed to CO in Ahvaz, Bushehr and Kermanshah were 15, 10 and 3 cases, respectively. The finding of this study showed that maximum and the minimum cases of CVM attributed to carbon monoxide level were estimated 4.3 and 1.4 percent for Ahvaz and Bushehr.},
@@ -2372,6 +2481,16 @@ institution = {Division of Atmospheric Research, CSIRO},
 title = {{Historical CO2 record from the Law Dome DE08, DE08-2 and DSS ice cores}},
 url = {http://cdiac.ornl.gov/ftp/trends/co2/lawdome.combined.dat}
 }
+@book{Vallero2014,
+address = {Oxford, UK},
+author = {Vallero, Daniel},
+edition = {5},
+file = {:Users/ruivalmeida/Downloads/Daniel A Vallero - Fundamentals of air pollution-Academic Press, , Elsevier Inc (2014)-2.pdf:pdf},
+isbn = {9780124017337},
+publisher = {Academic Press - Elsevier},
+title = {{Fundamentals of air pollution}},
+year = {2014}
+}
 @article{Kampa2008,
 author = {Kampa, Marilena and Castanas, Elias},
 doi = {10.1016/j.envpol.2007.06.012},
@@ -2397,6 +2516,18 @@ title = {{The Fourier reconstruction of a head section}},
 url = {http://ieeexplore.ieee.org/document/6499235/},
 volume = {21},
 year = {1974}
+}
+@article{Movaghati2007,
+abstract = {Fire as a natural disaster plays a major role in deforestation; is a major source of trace gases, aerosols and carbon fluxes. Approximately 7 percent of Iran area is covered by forests/and wooded lands. According to the ECE/FAO database on forest/other wooded land fires in Iran (1982-1995), the number of fires per year is 130 and the average area burnt per year is 5400 ha, but fires are not largely monitored and enough detection facilities are not available. The use of remote sensing is now a useful alternative, especially in vast and remote areas. The objective of this paper is to inspect the applicability of using MODIS imagery for forest fire detection in Iran, so a comparative study between a graph-based algorithm proposed by Byun et al. (2005) and two contextual algorithms developed by Giglio et al. (2003) and Wang et al. (2007) using MODIS data acquired over Kerman shah province in summer 2006 is present. The results were compared with ground-based observations collected with GPS. It implies that the algorithm developed by Giglio et al. (2003), MODIS version 4 contextual algorithm, performed best with the least commission and omission errors; has potential to be applied in detecting the fire pixels that start in or around forests and are mainly surface fires and seldom crown fires. As a result, using daily MODIS data, it is possible to track fire development in Iran. 1.},
+author = {Movaghati, S and Samadzadegan, F and Azizi, A},
+file = {::},
+journal = {The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences},
+keywords = {comparative analysis,detection,forest fire,image understanding,multi-spectral remote sensing},
+number = {B8},
+pages = {379--382},
+title = {{A Comparative Study of Three Algorithms for Forest Fire Detection in Iran}},
+volume = {XXXVII},
+year = {2007}
 }
 @article{Vivek2014,
 abstract = {As we all know, the forest is considered as one of the most important and indispensable resources and Forest fires represent a constant threat to ecological systems, infrastructure and environmental aspects of a community, forest fire detection is a very important issue in the pre-suppression process. This gives rise to the urgent need to detect forest fires as fast as possible. This paper highlights the powerful feature of wireless sensor networks as a potential solution to the challenge of early detection of forest fires. The device presented makes use of various sensors attached and wireless data transmission, to fulfill the task in question. These collected data are transmitted to the small satellite and the satellite transmits the data to the ground station where they are analyzed. The proposed scheme based on wireless sensor networks performs early detection of any fire threat.},
@@ -2601,6 +2732,19 @@ file = {::},
 title = {{Airborne multi-axis DOAS measurements of tropospheric SO2 plumes in the Po-valley , Italy To cite this version : HAL Id : hal-00301159 Airborne multi-axis DOAS measurements of tropospheric SO 2 plumes in the}},
 year = {2017}
 }
+@article{Mettendorf2005b,
+abstract = {In this study we validate the two-dimensional long path DOAS tomography measurement technique by means of an indoor experiment with well-known concentration distributions. The experiment was conducted over an area of 10 m × 15 m using one and two cylindrical polycarbonate containers of diameter 2 m, respectively, filled with NO2. The setup was realized with three of the multibeam instruments recently developed by Pundt and Mettendorf (Appl. Opt., 2005, in press),1 which allow the simultaneous measurement along at least four light paths each. The configuration consisted of twelve simultaneous light beams, 39 horizontal light paths in total, and 18 different cylinder positions inside the field. It was found that for the discretization and inversion technique shown here reconstructions of the concentration distributions from experimental data agree well with simulated reconstructions. In order to draw conclusions for atmospheric applications, numerical studies including instrumental errors were carried out. It was found that with the presented measurement setup it is possible to measure and reconstruct one or two NO 2 plumes of 600 m diameter and average concentrations above 4.2 ppbv each, on a scale of 13.5 km2. Theoretical investigations show that it should be possible to localize and quantify 600 m diameter plumes of SO 2 > 1.5 ppbv, H2CO > 6.3 ppbv, HONO > 3.2 ppbv, and ozone > 46.2 ppbv. Larger plumes can be measured with higher precision. {\textcopyright} The Royal Society of Chemistry 2006.},
+author = {Mettendorf, K U and Hartl, A and Pundt, I},
+doi = {10.1039/b511337g},
+file = {::},
+issn = {14640325},
+journal = {Journal of Environmental Monitoring},
+number = {2},
+pages = {279--287},
+title = {{An indoor test campaign of the tomography long path differential optical absorption spectroscopy technique}},
+volume = {8},
+year = {2006}
+}
 @article{Greenblatt1990,
 abstract = {The absorption spectrum of O2 and O2-O2 collision pairs was measured over the wavelength range from 330 to 1140 nm using pressures of O2 from 1 to 55 atm at 298 K. Absorption cross sections, pressure dependences, band centers, and full widths at half maximum of the observed absorption bands centered at 343.4, 360.5, 380.2, 446.7, 477.3, 532.2, 577.2, 630.0, 688, 762, and 1065.2 nm are reported. The absorption bands centered at 360.5, 380.2, and 477.3 nm were also measured at 196 K and their temperature dependences were characterized.},
 author = {Greenblatt, Gary D. and Orlando, John J. and Burkholder, James B. and Ravishankara, A. R.},
@@ -2679,6 +2823,23 @@ title = {{A Fast Algorithm to Calculate the Exact Radiological Path through a Pi
 volume = {6},
 year = {2015}
 }
+@book{Kak2001a,
+abstract = {3 Algorithms for Reconstruction with Nondiffracting Sources 3.1 Line Integrals and Projections 49 3.2 The Fourier Slice Theorem 56 3.3 Reconstruction Algorithms for Parallel Projections 60 The Idea l Theory l Computer Implementation of the Algorithm 3.4 Reconstruction from Fan Projections 75 Equiangular Rays l Equally Spaced Collinear Detectors l A Re-sorting Algorithm 3.5 Fan Beam Reconstruction from a Limited Number of Views 93 3.6 Three-Dimensional Reconstructions 99 Three-Dimensional Projections l Three-Dimensional Filtered Backprojection 5 49},
+author = {Kak, Avinash C. and Slaney, Malcolm},
+booktitle = {Principles of Computerized Tomographic Imaging},
+doi = {10.1137/1.9780898719277},
+file = {::},
+isbn = {978-0-89871-494-4},
+issn = {00766879},
+month = {jan},
+number = {1},
+pages = {49--112},
+pmid = {12073313},
+publisher = {Society for Industrial and Applied Mathematics},
+title = {{Principles of Computerized Tomographic Imaging}},
+url = {http://epubs.siam.org/doi/book/10.1137/1.9780898719277},
+year = {2001}
+}
 @techreport{Organization2019,
 address = {New York, New York, USA},
 author = {Organization, World Health},
@@ -2698,6 +2859,25 @@ title = {{Real time measurement of transient event emissions of air toxics by to
 url = {http://linkinghub.elsevier.com/retrieve/pii/S1352231016309487},
 volume = {150},
 year = {2017}
+}
+@article{Kitchenham2007,
+abstract = {The objective of this report is to propose comprehensive guidelines for systematic literature reviews appropriate for software engineering researchers, including PhD students. A systematic literature review is a means of evaluating and interpreting all available research relevant to a particular research question, topic area, or phenomenon of interest. Systematic reviews aim to present a fair evaluation of a research topic by using a trustworthy, rigorous, and auditable methodology. The guidelines presented in this report were derived from three existing guidelines used by medical researchers, two books produced by researchers with social science backgrounds and discussions with researchers from other disciplines who are involved in evidence-based practice. The guidelines have been adapted to reflect the specific problems of software engineering research. The guidelines cover three phases of a systematic literature review: planning the review, conducting the review and reporting the review. They provide a relatively high level description. They do not consider the impact of the research questions on the review procedures, nor do they specify in detail the mechanisms needed to perform meta-analysis.},
+archivePrefix = {arXiv},
+arxivId = {1304.1186},
+author = {Kitchenham, Barbara and Charters, Stuart},
+doi = {10.1145/1134285.1134500},
+eprint = {1304.1186},
+file = {::},
+isbn = {1595933751},
+issn = {00010782},
+journal = {Engineering},
+number = {4ve},
+pages = {1051},
+pmid = {10853839},
+title = {{Guidelines for performing Systematic Literature reviews in Software Engineering Version 2.3}},
+url = {http://scholar.google.com/scholar?hl=en\&btnG=Search\&q=intitle:Guidelines+for+performing+Systematic+Literature+Reviews+in+Software+Engineering#0\%5Cnhttp://www.dur.ac.uk/ebse/resources/Systematic-reviews-5-8.pdf},
+volume = {45},
+year = {2007}
 }
 @book{Benarie1979,
 author = {Benarie, Michel},
@@ -2747,8 +2927,20 @@ urldate = {2020-04-17}
 @article{P2014,
 author = {P, Eaton and M, Radojevic},
 file = {::},
-title = {{Airborne multi-axis DOAS measurements of tropospheric SO2 plumes in the Po-valley , Italy To cite this version : HAL Id : hal-00301159 Airborne multi-axis DOAS measurements of tropospheric SO 2 plumes in the}},
-year = {2017}
+journal = {Forest fires and regional haze in Southeast Asia},
+pages = {1--7},
+title = {{Forest Fire Detection and Monitoring}},
+year = {2014}
+}
+@book{Clark1997,
+abstract = {Developed from a short course taught at Leeds University, this book covers methods of monitoring emissions of air pollutants from stationary sources. It surveys the techniques and points out their advantages and disadvantages.},
+author = {Clark, Andrew G.},
+booktitle = {Industrial Air Pollution Monitoring},
+doi = {10.1007/978-94-009-1435-3},
+file = {:Users/ruivalmeida/Downloads/Andrew G. Clarke (auth.), Dr Andrew G. Clarke (eds.) - Industrial Air Pollution Monitoring-Springer Netherlands (1997).pdf:pdf},
+isbn = {9789401071437},
+title = {{Industrial Air Pollution Monitoring}},
+year = {1997}
 }
 @article{Mettendorf2005,
 abstract = {In this study we validate the two-dimensional long path DOAS tomography measurement technique by means of an indoor experiment with well-known concentration distributions. The experiment was conducted over an area of 10 m {\^{A}} 15 m using one and two cylindrical polycarbonate containers of diameter 2 m, respectively, filled with NO 2 . The setup was realized with three of the multibeam instruments recently developed by Pundt and Mettendorf (Appl. Opt., 2005, in press), 1 which allow the simultaneous measurement along at least four light paths each. The configuration consisted of twelve simultaneous light beams, 39 horizontal light paths in total, and 18 different cylinder positions inside the field. It was found that for the discretization and inversion technique shown here reconstructions of the concentration distributions from experimental data agree well with simulated reconstructions. In order to draw conclusions for atmospheric applications, numerical studies including instrumental errors were carried out. It was found that with the presented measurement setup it is possible to measure and reconstruct one or two NO 2 plumes of 600 m diameter and average concentrations above 4.2 ppbv each, on a scale of 13.5 km 2 . Theoretical investigations show that it should be possible to localize and quantify 600 m diameter plumes of SO 2 4 1.5 ppbv, H 2 CO 4 6.3 ppbv, HONO 4 3.2 ppbv, and ozone 4 46.2 ppbv. Larger plumes can be measured with higher precision.},
@@ -2805,6 +2997,22 @@ url = {http://dx.doi.org/10.1016/j.nima.2015.05.018},
 volume = {794},
 year = {2015}
 }
+@article{Byer1979,
+abstract = {We propose to apply computerized tomography to measure a two-dimensional pollutant-concentration map over an area that may contain several potential sources of pollution. A tunable-laser source at the center of the area generates secondary or virtual light sources around the perimeter of the area that play the role of x rays in conventional computerized tomography of the human body.},
+annote = {NULL},
+author = {Byer, R L and Shepp, L A},
+doi = {10.1364/OL.4.000075},
+file = {::},
+issn = {0146-9592},
+journal = {Optics Letters},
+number = {3},
+pages = {75--77},
+pmid = {19687805},
+title = {{Two-dimensional remote air-pollution monitoring via tomography.}},
+url = {http://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed\&id=19687805\&retmode=ref\&cmd=prlinks},
+volume = {4},
+year = {1979}
+}
 @article{Fernandez-Berni2012,
 author = {Fernandez-Berni, Jorge and Carmona-Galn, Ricardo and Martnez-Carmona, Juan F. and Rodrguez-Vzquez, {\'{A}}ngel},
 doi = {10.1071/WF11168},
@@ -2817,6 +3025,19 @@ pages = {938--949},
 title = {{Early forest fire detection by vision-enabled wireless sensor networks}},
 volume = {21},
 year = {2012}
+}
+@article{Ward1991,
+abstract = {Biomass burning is a major source of emissions to the atmosphere. Some of these emissions may change global climate. This paper uses combustion efficiency as an independent variable for predicting emission factors for, among others, carbon monoxide, carbon dioxide, methane, and particulate matter. Other gases are correlated with the release of carbon monoxide. The release of nitrogen and sulfur-based compounds occurs in relation to their content in the biomass. The Sundance Fire is used to model the emissions from major fires that have occurred in the United States. Approximately 1 Tg of biomass was consumed by this fire, which released 0.019, 0.151, 1.545, and 0.007 Tg of particulate matter, carbon monoxide, carbon dioxide, and oxides of nitrogen, respectively. Other fires have released over 50 times this amount. Global emissions of various products of combustion are dependent on the combustion efficiency of the fires. ?? 1991.},
+author = {Ward, Darold E. and Hardy, Colin C.},
+doi = {10.1016/0160-4120(91)90095-8},
+file = {::},
+issn = {01604120},
+journal = {Environment International},
+number = {2-3},
+pages = {117--134},
+title = {{Smoke emissions from wildland fires}},
+volume = {17},
+year = {1991}
 }
 @article{Souza2019,
 author = {Souza, Eric and Moreira, Ana and Goul{\~{a}}o, Miguel},
@@ -2973,14 +3194,11 @@ title = {{Perspectives of 2D and 3D mapping of atmospheric pollutants over urban
 volume = {49},
 year = {2006}
 }
-@inproceedings{Hough2007,
-abstract = {Geo-referenced imaging systems, (which alert the operator to smoke by day, and fire glow by night) are able to perform at higher sensitivity and over longer distances, by using 3 -D information w hich provides the distance between the camera and every ima ge pixel's line-ofsight projection to the object on the ground. A smoke event at any one of these geo -referenced locations is therefore determined when the system is installed – before the fire is detected. Unlike CCTV based surveillance, every pixel is projected to a ground position at a kno wn distance from the camera, ensuring that smoke signatures a few km from the camera are treated very differently from the equivalent smoke signature at 10 tim es the distance. Usually settings that detect far -field smoke signatures are prone to false alarms in the near -field, and settings which work well for detecting near -field smoke are not reliable when detecting smoke in the far -field. Geo-referenced imagi ng systems achieve a measure of range invariance that compensates for distance effects.},
-archivePrefix = {arXiv},
-arxivId = {arXiv:1011.1669v3},
-author = {Hough, Gavin},
-booktitle = {TASSIE FIRE Conference Proceedings},
-doi = {10.1017/CBO9781107415324.004},
-eprint = {arXiv:1011.1669v3},
+@inproceedings{Yu2005,
+abstract = {In this paper, we propose a wireless sensor network paradigm for real-time forest fire detection. The wireless sensor network can detect and forecast forest fire more promptly than the traditional satellite-based detection approach. This paper mainly describes the data collecting and processing in wireless sensor networks for real-time forest fire detection. A neural network method is applied to in-network data processing. We evaluate the performance of our approach by simulations.},
+author = {{Liyang Yu} and {Neng Wang} and {Xiaoqiao Meng}},
+booktitle = {Proceedings. 2005 International Conference on Wireless Communications, Networking and Mobile Computing, 2005.},
+doi = {10.1109/WCNM.2005.1544272},
 file = {::},
 isbn = {0-7803-9335-X},
 keywords = {-wireless sensor networks,neural network},
@@ -3055,6 +3273,19 @@ url = {http://linkinghub.elsevier.com/retrieve/pii/S135223101200180X},
 volume = {54},
 year = {2012}
 }
+@article{Wu2013,
+author = {Wu, F. C. and Xie, P. H. and Li, A. and Chan, K. L. and Hartl, A. and Wang, Y. and Si, F. Q. and Zeng, Y. and Qin, M. and Xu, J. and Liu, J. G. and Liu, W. Q. and Wenig, M.},
+doi = {10.5194/amt-6-2277-2013},
+file = {::},
+issn = {1867-8548},
+journal = {Atmospheric Measurement Techniques},
+number = {9},
+pages = {2277--2292},
+title = {{Observations of SO<sub>2</sub and NO<sub>2</sub> by mobile DOAS in the Guangzhou eastern area during the Asian Games 2010}},
+url = {http://www.atmos-meas-tech.net/6/2277/2013/},
+volume = {6},
+year = {2013}
+}
 @article{Pundt2005a,
 author = {Pundt, Irene and Mettendorf, Kai Uwe},
 doi = {10.1364/AO.44.004985},
@@ -3067,6 +3298,12 @@ title = {{Multibeam long-path differential optical absorption spectroscopy instr
 url = {https://www.osapublishing.org/abstract.cfm?URI=ao-44-23-4985},
 volume = {44},
 year = {2005}
+}
+@book{Kim,
+author = {Kim, Young J and Platt, Ulrich},
+file = {:Users/ruivalmeida/Downloads/Young J. Kim, Ulrich Platt - Advanced Environmental Monitoring-Springer (2007).pdf:pdf},
+isbn = {9781402063633},
+title = {{Advanced Environmental Monitoring}}
 }
 @misc{Board2020,
 author = {Board, Central Pollution Control},
@@ -3124,6 +3361,14 @@ url = {https://en.wikiversity.org/wiki/WikiJournal_of_Medicine/Medical_gallery_o
 volume = {1},
 year = {2014}
 }
+@phdthesis{Beekman2010,
+abstract = {In this research, it is hypothesized that recently developed theoretical considerations of atmospheric radiative transfer in horizontally in-homogeneous atmospheres can be applied to the remote measurement of anthropogenic plumes. To this end, a MAX-DOAS spectrometer, designed around a B\&W-TEK BTU142 spectrometer was constructed and characterized. It was found that the MAX-DOAS spectrometer has a measured resolution of 0.282 nm, and a noise level of 178 counts at 75\% pixel saturation, sufficient to resolve accurately the absorptions of important atmospheric species, including SO2, NO2, HCHO, and O4. The theory of MAX-DOAS spectral analysis was examined in detail, in particular the processing of reference absorption cross-section spectra for use in regression analyses of scattered solar radiation. For the purposes of inversion, optimal estimation software was designed and investigated for suitability in retrieving vertical profiles of atmospheric species. This software is shown to perform well under conditions of both typical and non-typical noise levels using synthetic spectral data and known profiles of three atmospheric species. Furthermore, an extensive examination of the residuals of DOAS spectral analysis was performed, to validate the assumption of normally distributed errors in the inversion process. Investigated methodologies were applied to spectral data collected over nine days in 2008 in the Upper Ohio River Valley. Aerosol extinction coefficient profiles were successfully retrieved, with an average peak value of 0.549 km-1. For the same measurement period, in-plume measurements of SO2 and NO2 concentration from a coal-fired power plant were conducted using recently developed methodologies to account for in-plume solar radiative transfer effects.},
+author = {Beekman, Christopher},
+file = {:Users/ruivalmeida/Downloads/diss_ChrisBeekman-3_2010Final.pdf:pdf},
+school = {Ohio State University},
+title = {{Differential Optical Absorption Spectroscopy of Trace Gas Species and Aerosols in the Upper Ohio River Valley}},
+year = {2010}
+}
 @article{Chance2010,
 abstract = {We have developed an improved solar reference spectrum for use in the analysis of atmospheric spectra from vacuum wavelengths of 200.07 through 1000.99. nm. The spectrum is developed by combining high spectral resolution ground-based and balloon-based solar measurements with lower spectral resolution but higher accuracy irradiance information. The new reference spectrum replaces our previous reference spectrum, and its derivatives, for use in a number of physical applications for analysis of atmospheric spectra, including: wavelength calibration; determination of instrument transfer (slit) functions; Ring effect (Raman scattering) correction; and correction for spectral undersampling of atmospheric spectra, particularly those that are dilute in absorbers. The applicability includes measurements from the GOME, SCIAMACHY, OMI, and OMPS satellite instruments as well as aircraft-, balloon-, and ground-based measurements. {\textcopyright} 2010.},
 author = {Chance, K. and Kurucz, R. L.},
@@ -3140,264 +3385,10 @@ url = {http://dx.doi.org/10.1016/j.jqsrt.2010.01.036},
 volume = {111},
 year = {2010}
 }
-@misc{Danckaert2015,
-author = {Danckaert, Thomas and Fayt, Caroline and {Van Roozendael}, M. and de Smedt, Isabelle and Letocart, Vincent and Merlaud, Alexis and Pinardi, Gaia},
-file = {:Users/ruivalmeida/Library/Application Support/Mendeley Desktop/Downloaded/Danckaert et al. - 2015 - QDOAS.pdf:pdf},
-title = {{QDOAS}},
-url = {http://uv-vis.aeronomie.be/software/QDOAS/},
-year = {2015}
-}
-@phdthesis{Merlaud2013,
-address = {Louvain},
-author = {Merlaud, Alexis},
-file = {:Users/ruivalmeida/Library/Application Support/Mendeley Desktop/Downloaded/Merlaud - 2013 - Development and use of compact instruments for tropospheric investigations based on optical spectroscopy from mobile pl.pdf:pdf},
-isbn = {978-2-87558-128-0},
-publisher = {Presses Universitaires de Louvain},
-school = {Facult{\'{e}} des Sciences - Universit{\'{e}} Catholique de Louvain},
-title = {{Development and use of compact instruments for tropospheric investigations based on optical spectroscopy from mobile platforms}},
-type = {PhD Thesis},
-url = {http://books.google.com/books?hl=en\&lr=\&id=inXVSyR82zwC\&oi=fnd\&pg=PR3\&dq=Development+and+use+of+compact+instruments+for+tropospheric+investigations+based+on+optical+spectroscopy+from+mobile+platforms+sciences\&ots=VdebeDBQMc\&sig=4G0eVEvthJXuqd8WI3IWjjVXuXc},
-year = {2013}
-}
-@phdthesis{Beekman2010,
-abstract = {In this research, it is hypothesized that recently developed theoretical considerations of atmospheric radiative transfer in horizontally in-homogeneous atmospheres can be applied to the remote measurement of anthropogenic plumes. To this end, a MAX-DOAS spectrometer, designed around a B\&W-TEK BTU142 spectrometer was constructed and characterized. It was found that the MAX-DOAS spectrometer has a measured resolution of 0.282 nm, and a noise level of 178 counts at 75\% pixel saturation, sufficient to resolve accurately the absorptions of important atmospheric species, including SO2, NO2, HCHO, and O4. The theory of MAX-DOAS spectral analysis was examined in detail, in particular the processing of reference absorption cross-section spectra for use in regression analyses of scattered solar radiation. For the purposes of inversion, optimal estimation software was designed and investigated for suitability in retrieving vertical profiles of atmospheric species. This software is shown to perform well under conditions of both typical and non-typical noise levels using synthetic spectral data and known profiles of three atmospheric species. Furthermore, an extensive examination of the residuals of DOAS spectral analysis was performed, to validate the assumption of normally distributed errors in the inversion process. Investigated methodologies were applied to spectral data collected over nine days in 2008 in the Upper Ohio River Valley. Aerosol extinction coefficient profiles were successfully retrieved, with an average peak value of 0.549 km-1. For the same measurement period, in-plume measurements of SO2 and NO2 concentration from a coal-fired power plant were conducted using recently developed methodologies to account for in-plume solar radiative transfer effects.},
-author = {Beekman, Christopher},
-file = {:Users/ruivalmeida/Downloads/diss_ChrisBeekman-3_2010Final.pdf:pdf},
-school = {Ohio State University},
-title = {{Differential Optical Absorption Spectroscopy of Trace Gas Species and Aerosols in the Upper Ohio River Valley}},
-year = {2010}
-}
-@book{Vallero2014,
-address = {Oxford, UK},
-author = {Vallero, Daniel},
-edition = {5},
-file = {:Users/ruivalmeida/Downloads/Daniel A Vallero - Fundamentals of air pollution-Academic Press, , Elsevier Inc (2014)-2.pdf:pdf},
-isbn = {9780124017337},
-publisher = {Academic Press - Elsevier},
-title = {{Fundamentals of air pollution}},
-year = {2014}
-}
-@book{Kim,
-author = {Kim, Young J and Platt, Ulrich},
-file = {:Users/ruivalmeida/Downloads/Young J. Kim, Ulrich Platt - Advanced Environmental Monitoring-Springer (2007).pdf:pdf},
-isbn = {9781402063633},
-title = {{Advanced Environmental Monitoring}}
-}
-@book{Clark1997,
-abstract = {Developed from a short course taught at Leeds University, this book covers methods of monitoring emissions of air pollutants from stationary sources. It surveys the techniques and points out their advantages and disadvantages.},
-author = {Clark, Andrew G.},
-booktitle = {Industrial Air Pollution Monitoring},
-doi = {10.1007/978-94-009-1435-3},
-file = {:Users/ruivalmeida/Downloads/Andrew G. Clarke (auth.), Dr Andrew G. Clarke (eds.) - Industrial Air Pollution Monitoring-Springer Netherlands (1997).pdf:pdf},
-isbn = {9789401071437},
-title = {{Industrial Air Pollution Monitoring}},
-year = {1997}
-}
-@book{Platt2007,
-address = {Heidelberg, Germany},
-author = {Platt, U and Stutz, J},
-editor = {Guzzi, Rodolfo and Lanzerotti, Louis J. and Imboden, Dieter and Platt, Ulrich},
-file = {:Users/ruivalmeida/Library/Application Support/Mendeley Desktop/Downloaded/Platt, Stutz - 2008 - Differential Optical Absorption Spectroscopy - Principles and Applications.pdf:pdf},
-isbn = {9783540211938},
-publisher = {Springer-Verlag Heidelberg Berlin},
-title = {{Differential Optical Absorption Spectroscopy - Principles and Applications}},
-year = {2008}
-}
-@article{Galle2010,
-abstract = {This paper presents the global project Network for Observation of Volcanic and Atmospheric Change ({NOVAC)}, the aim of which is automatic gas emission monitoring at active volcanoes worldwide. Data from the network will be used primarily for volcanic risk assessment but also for geophysical research, studies of atmospheric change, and ground validation of satellite instruments. A novel type of instrument, the scanning miniaturized differential optical absorption spectroscopy (Mini-{DOAS)} instrument, is applied in the network to measure volcanic gas emissions by {UV} absorption spectroscopy. The instrument is set up 5–10 km downwind of the volcano under study, and typically two to four instruments are deployed at each volcano in order to cover different wind directions and to facilitate measurements of plume height and plume direction. Two different versions of the instrument have been developed. Version I was designed to be a robust and simple instrument for measurement of volcanic {SO2} emissions at high time resolution with minimal power consumption. Version {II} was designed to allow the best possible spectroscopy and enhanced flexibility in regard to measurement geometry at the cost of larger complexity, power consumption, and price. In this paper the project is described, as well as the developed software, the hardware of the two instrument versions, measurement strategies, data communication, and archiving routines. As of April 2009 a total of 46 instruments have been installed at 18 volcanoes worldwide. As a typical example, the installation at Tungurahua volcano in Ecuador is described, together with some results from the first 21 months of operation at this volcano.},
-author = {Galle, Bo and Johansson, Mattias and Rivera, Claudia and Zhang, Yan and Kihlman, Manne and Kern, Christoph and Lehmann, Thomas and Platt, Ulrich and Arellano, Santiago and Hidalgo, Silvana},
-doi = {10.1029/2009JD011823},
-file = {:Users/ruivalmeida/Library/Application Support/Mendeley Desktop/Downloaded/Galle et al. - 2010 - Network for Observation of Volcanic and Atmospheric Change (NOVAC) - A global network for volcanic gas monitoring.pdf:pdf},
-isbn = {0148-0227},
-issn = {21698996},
-journal = {Journal of Geophysical Research Atmospheres},
-keywords = {DOAS,SO<subscr>2</subscr>,doi:10.1029/2009JD011823,http://dx.doi.org/10.1029/2009JD011823,volcanic gas},
-number = {D5},
-pages = {1--19},
-title = {{Network for Observation of Volcanic and Atmospheric Change (NOVAC) - A global network for volcanic gas monitoring: Network layout and instrument description}},
-volume = {115},
-year = {2010}
-}
-@article{Wu2013,
-author = {Wu, F. C. and Xie, P. H. and Li, A. and Chan, K. L. and Hartl, A. and Wang, Y. and Si, F. Q. and Zeng, Y. and Qin, M. and Xu, J. and Liu, J. G. and Liu, W. Q. and Wenig, M.},
-doi = {10.5194/amt-6-2277-2013},
-file = {::},
-issn = {1867-8548},
-journal = {Atmospheric Measurement Techniques},
-number = {9},
-pages = {2277--2292},
-title = {{Observations of SO<sub>2</sub and NO<sub>2</sub> by mobile DOAS in the Guangzhou eastern area during the Asian Games 2010}},
-url = {http://www.atmos-meas-tech.net/6/2277/2013/},
-volume = {6},
-year = {2013}
-}
-@article{Hendrick2014,
-author = {Hendrick, F. and M{\"{u}}ller, J.-F. and Cl{\'{e}}mer, K. and Wang, P. and {De Mazi{\`{e}}re}, M. and Fayt, C. and Gielen, C. and Hermans, C. and Ma, J. Z. and Pinardi, G. and Stavrakou, T. and Vlemmix, T. and {Van Roozendael}, M.},
-doi = {10.5194/acp-14-765-2014},
-file = {::},
-issn = {1680-7324},
-journal = {Atmospheric Chemistry and Physics},
-number = {2},
-pages = {765--781},
-title = {{Four years of ground-based MAX-DOAS observations of HONO and NO<sub>2</sub> in the Beijing area}},
-url = {http://www.atmos-chem-phys.net/14/765/2014/},
-volume = {14},
-year = {2014}
-}
-@article{Frins2008,
-abstract = {Topographic Target Light scattering – Differen-tial Optical Absorption Spectroscopy (ToTaL-DOAS), also called Target-DOAS, is a novel experimental procedure to re-trieve trace gas concentrations present in the low atmosphere. Scattered sunlight (diffuse or specular) reflected from natural or artificial targets located at different distances are analyzed to retrieve the spatial distribution of the concentration of dif-ferent trace gases like NO 2 , SO 2 and others. We report high spatial resolution measurements of NO 2 mixing ratios in the city of Montevideo (Uruguay) observing three buildings as targets with a Mini-DOAS instrument. Our instrument was 146 m, 196 m, and 280 m apart from three different build-ings located along a main Avenue. We obtain temporal vari-ation of NO 2 mixing ratios between 30 ppb and 65 ppb from measurements of November 2007 and mixing ratios up to 50 ppb from measurements of August and September 2008. Our measurements demonstrate that ToTaL-DOAS observa-tions can be made over relative short distances. In polluted air masses, the retrieved absorption signal was found to be sufficiently strong to allow measurements over distances in the range of several tens of meters.},
-author = {Frins, E and Platt, U and Wagner, T},
-file = {::},
-journal = {Atmos. Chem. Phys. Atmospheric Chemistry and Physics},
-pages = {7595--7601},
-title = {{High spatial resolution measurements of NO 2 applying Topographic Target Light scattering-Differential Optical Absorption Spectroscopy (ToTaL-DOAS)}},
-url = {www.atmos-chem-phys.net/8/7595/2008/},
-volume = {8},
-year = {2008}
-}
-@article{Mettendorf2005b,
-abstract = {In this study we validate the two-dimensional long path DOAS tomography measurement technique by means of an indoor experiment with well-known concentration distributions. The experiment was conducted over an area of 10 m × 15 m using one and two cylindrical polycarbonate containers of diameter 2 m, respectively, filled with NO2. The setup was realized with three of the multibeam instruments recently developed by Pundt and Mettendorf (Appl. Opt., 2005, in press),1 which allow the simultaneous measurement along at least four light paths each. The configuration consisted of twelve simultaneous light beams, 39 horizontal light paths in total, and 18 different cylinder positions inside the field. It was found that for the discretization and inversion technique shown here reconstructions of the concentration distributions from experimental data agree well with simulated reconstructions. In order to draw conclusions for atmospheric applications, numerical studies including instrumental errors were carried out. It was found that with the presented measurement setup it is possible to measure and reconstruct one or two NO 2 plumes of 600 m diameter and average concentrations above 4.2 ppbv each, on a scale of 13.5 km2. Theoretical investigations show that it should be possible to localize and quantify 600 m diameter plumes of SO 2 > 1.5 ppbv, H2CO > 6.3 ppbv, HONO > 3.2 ppbv, and ozone > 46.2 ppbv. Larger plumes can be measured with higher precision. {\textcopyright} The Royal Society of Chemistry 2006.},
-author = {Mettendorf, K U and Hartl, A and Pundt, I},
-doi = {10.1039/b511337g},
-file = {::},
-issn = {14640325},
-journal = {Journal of Environmental Monitoring},
-number = {2},
-pages = {279--287},
-title = {{An indoor test campaign of the tomography long path differential optical absorption spectroscopy technique}},
-volume = {8},
-year = {2006}
-}
-@article{Byer1979,
-abstract = {We propose to apply computerized tomography to measure a two-dimensional pollutant-concentration map over an area that may contain several potential sources of pollution. A tunable-laser source at the center of the area generates secondary or virtual light sources around the perimeter of the area that play the role of x rays in conventional computerized tomography of the human body.},
-annote = {NULL},
-author = {Byer, R L and Shepp, L A},
-doi = {10.1364/OL.4.000075},
-file = {::},
-issn = {0146-9592},
-journal = {Optics Letters},
-number = {3},
-pages = {75--77},
-pmid = {19687805},
-title = {{Two-dimensional remote air-pollution monitoring via tomography.}},
-url = {http://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed\&id=19687805\&retmode=ref\&cmd=prlinks},
-volume = {4},
-year = {1979}
-}
-@book{Kak2001a,
-abstract = {3 Algorithms for Reconstruction with Nondiffracting Sources 3.1 Line Integrals and Projections 49 3.2 The Fourier Slice Theorem 56 3.3 Reconstruction Algorithms for Parallel Projections 60 The Idea l Theory l Computer Implementation of the Algorithm 3.4 Reconstruction from Fan Projections 75 Equiangular Rays l Equally Spaced Collinear Detectors l A Re-sorting Algorithm 3.5 Fan Beam Reconstruction from a Limited Number of Views 93 3.6 Three-Dimensional Reconstructions 99 Three-Dimensional Projections l Three-Dimensional Filtered Backprojection 5 49},
-author = {Kak, Avinash C. and Slaney, Malcolm},
-booktitle = {Principles of Computerized Tomographic Imaging},
-doi = {10.1137/1.9780898719277},
-file = {::},
-isbn = {978-0-89871-494-4},
-issn = {00766879},
-month = {jan},
-number = {1},
-pages = {49--112},
-pmid = {12073313},
-publisher = {Society for Industrial and Applied Mathematics},
-title = {{Principles of Computerized Tomographic Imaging}},
-url = {http://epubs.siam.org/doi/book/10.1137/1.9780898719277},
-year = {2001}
-}
-@article{Kitchenham2007,
-abstract = {The objective of this report is to propose comprehensive guidelines for systematic literature reviews appropriate for software engineering researchers, including PhD students. A systematic literature review is a means of evaluating and interpreting all available research relevant to a particular research question, topic area, or phenomenon of interest. Systematic reviews aim to present a fair evaluation of a research topic by using a trustworthy, rigorous, and auditable methodology. The guidelines presented in this report were derived from three existing guidelines used by medical researchers, two books produced by researchers with social science backgrounds and discussions with researchers from other disciplines who are involved in evidence-based practice. The guidelines have been adapted to reflect the specific problems of software engineering research. The guidelines cover three phases of a systematic literature review: planning the review, conducting the review and reporting the review. They provide a relatively high level description. They do not consider the impact of the research questions on the review procedures, nor do they specify in detail the mechanisms needed to perform meta-analysis.},
-archivePrefix = {arXiv},
-arxivId = {1304.1186},
-author = {Kitchenham, Barbara and Charters, Stuart},
-doi = {10.1145/1134285.1134500},
-eprint = {1304.1186},
-file = {::},
-isbn = {1595933751},
-issn = {00010782},
-journal = {Engineering},
-number = {4ve},
-pages = {1051},
-pmid = {10853839},
-title = {{Guidelines for performing Systematic Literature reviews in Software Engineering Version 2.3}},
-url = {http://scholar.google.com/scholar?hl=en\&btnG=Search\&q=intitle:Guidelines+for+performing+Systematic+Literature+Reviews+in+Software+Engineering#0\%5Cnhttp://www.dur.ac.uk/ebse/resources/Systematic-reviews-5-8.pdf},
-volume = {45},
-year = {2007}
-}
-@book{Platt2007,
-address = {Heidelberg, Germany},
-author = {Platt, U and Stutz, J},
-editor = {Guzzi, Rodolfo and Lanzerotti, Louis J. and Imboden, Dieter and Platt, Ulrich},
-file = {:Users/ruivalmeida/Library/Application Support/Mendeley Desktop/Downloaded/Platt, Stutz - 2008 - Differential Optical Absorption Spectroscopy - Principles and Applications.pdf:pdf},
-isbn = {9783540211938},
-publisher = {Springer-Verlag Heidelberg Berlin},
-title = {{Differential Optical Absorption Spectroscopy - Principles and Applications}},
-year = {2008}
-}
-@article{Olsson2013,
-abstract = {Objectives: Our aim was to study the possible associations between exposure to elevated levels of air pollution, ozone (O3) and vehicle exhaust (NOx), during early gestation, and adverse pregnancy outcomes such as pre-eclampsia, preterm birth and small for gestational age. Design: Prospective register-based cohort study. Setting: The Swedish Medical Birth Register includes data on all deliveries during 1998 to 2006 in Greater Stockholm, Sweden. The national Patient Register and the Prescribed Drug Register were used to collect information on maternal asthma. Participants: All singleton pregnancies, conceived at the earliest in August 1997 and at the latest in February 2006, were included, n=120 755. Outcome measures: We studied preterm birth, small for gestational age and pre-eclampsia. Results: 4.4\% of pregnancies resulted in a preterm birth. The prevalence of pre-eclampsia was 2.7\%. We observed an association between first trimester O3 and preterm birth (OR 1.04, 95\% CI 1.01 to 1.08) as well as an association with pre-eclampsia (OR 1.04, 95\% CI 1.01 to 1.08), per 10 $\mu$g/m3 increase in O3. We observed no association between first trimester NOx and adverse pregnancy outcomes. No associations were observed between any of the air pollutants and small for gestational age. Conclusions: Increased levels of O3 during the first trimester increased the risk of pre-eclampsia and preterm birth. Air pollutants did not exhibit any effects on fetal growth restriction. We estimated 1 in every 20 cases of pre-eclampsia to be associated with O3 exposure.},
-author = {Olsson, David and Mogren, Ingrid and Forsberg, Bertil},
-doi = {10.1136/bmjopen-2012-001955},
-isbn = {2012001955},
-issn = {20446055},
-journal = {BMJ Open},
-number = {2},
-pages = {1--8},
-title = {{Air pollution exposure in early pregnancy and adverse pregnancy outcomes: A register-based cohort study}},
-volume = {3},
-year = {2013}
-}
-@book{IPCC2012,
-abstract = {IPCC Special Report on Managing the Risks of Extreme Events and Disasters to Advance Climate Change Adaptation},
-author = {IPCC},
-booktitle = {Ipcc},
-doi = {10.1596/978-0-8213-8845-7},
-file = {::},
-isbn = {9781107607804},
-issn = {16604601},
-keywords = {HG,climate change,disasters,extreme events},
-pages = {594},
-pmid = {25522050},
-title = {{Managing the risks of extreme events and disasters to advance climate change adaptation}},
-url = {https://www.ipcc.ch/pdf/special-reports/srex/SREX_Full_Report.pdf\%5Cnpapers2://publication/uuid/41AD43FB-2529-4ACD-AD33-4C2D0AB4A0F3\%5Cnhttp://ipcc-wg2.gov/SREX/},
-year = {2012}
-}
-@article{Spichtinger2004,
-abstract = {Forest fire emissions have a strong impact on the concentrations of trace gases and aerosols in the atmosphere. In order to quantify the influence of boreal forest fire emissions on the atmospheric composition, the fire seasons of 1997 and 1998 are compared in this paper. Fire activity in 1998 was very strong, especially over Canada and Eastern Siberia, whereas it was much weaker in 1997. According to burned area estimates the burning in 1998 was more than six times as intense as in 1997. Based on hot spot locations derived from ATSR ( Along Track Scanning Radiometer) data and official burned area data, fire emissions were estimated and their transport was simulated with a Lagrangian tracer transport model. Siberian and Canadian forest fire tracers were distinguished to investigate the transport of both separately. The fire emissions were transported even over intercontinental distances. Due to the El Nino induced meteorological situation, transport from Siberia to Canada was enhanced in 1998. Siberian fire emissions were transported towards Canada and contributed concentrations more than twice as high as those due to Canada's own CO emissions by fires. In 1998 both tracers arrive at higher latitudes over Europe, which is due to a higher North Atlantic Oscillation (NAO) index in 1998. The simulated emission plumes are compared to CMDL ( Climate Monitoring and Diagnostics Laboratory) CO(2) and CO data, Total Ozone Mapping Spectrometer ( TOMS) aerosol index ( AI) data and Global Ozone Monitoring Experiment (GOME) tropospheric NO(2) and HCHO columns. All the data show clearly enhanced signals during the burning season of 1998 compared to 1997. The results of the model simulation are in good agreement with ground-based as well as satellite-based measurements.},
-author = {Spichtinger, N and Damoah, R and Eckhardt, S and Forster, C and James, P and Beirle, S and Marbach, T and Wagner, T and Novelli, P C and Stohl, a},
-doi = {10.5194/acp-4-1857-2004},
-file = {::},
-isbn = {1680-7316},
-issn = {1680-7324},
-journal = {Atmospheric Chemistry and Physics},
-keywords = {biomass burning smoke,carbon-monoxide,co,emissions,northern latitudes,region,satellite-observations,siberia,united-states,upper troposphere},
-pages = {1857--1868},
-title = {{Boreal forest fires in 1997 and 1998: a seasonal comparison using transport model simulations and measurement data}},
-volume = {4},
-year = {2004}
-}
-@book{Feeman2010,
-address = {New York, NY},
-author = {Feeman, Timothy G.},
-doi = {10.1007/978-0-387-92712-1},
-file = {::},
-isbn = {978-0-387-92711-4},
-publisher = {Springer New York},
-series = {Springer Undergraduate Texts in Mathematics and Technology},
-title = {{The Mathematics of Medical Imaging}},
-url = {http://link.springer.com/10.1007/978-0-387-92712-1},
-year = {2010}
-}
-@article{EuropeanComission2012,
-author = {{European Comission}},
-file = {::},
-title = {{Catalogue of EU funded projects in Environmental research}},
-volume = {0},
-year = {2012}
-}
-@article{Leigh2006,
-author = {Leigh, R J and Corlett, Gary K. and Frie{\ss}, U. and Monks, P S},
-doi = {https://doi.org/10.1364/AO.45.007504},
-journal = {Applied optics},
-number = {28},
-pages = {7504--7518},
-title = {{Concurrent multiaxis differential optical absorption spectroscopy system for the measurement of tropospheric nitrogen dioxide}},
-volume = {45},
-year = {2006}
+@misc{Ambiente2019,
+author = {do Ambiente, Ag{\^{e}}ncia Portuguesa},
+title = {{QualAR}},
+url = {https://qualar.apambiente.pt/},
+urldate = {20/09/2021},
+year = {2019}
 }
