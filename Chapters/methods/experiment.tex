@@ -283,63 +283,63 @@ simultaneously, with the light turned off to allow removal of solar
 contribution.} (likely due to some operation error); on the other hand,
 we have too few data points to make any claim of validation or
 refutation of the principle we were to measure. It was thus clear that
-another run was necessary to get the necessary results.
+another run was necessary to get satisfactory results.
 
-Although it was not possible to produce convincing results from these
-data, they were of good individual quality and allowed some preliminary
-analysis to be run. Using the first measurement as the reference
-spectrum, it was possible to calculate optical densities for each one of
-the measurement moments, as well as \gls{no2} concentration. The
-graphical appearance of the optical density signal for each measurement
-is presented in Figure~\ref{fig:active_optical_densities} and
-Figure~\ref{fig:passive_optical_densities}, while the concentration
-chart for the various moments comprises
-Figure~\ref{fig:calculated_concentration}.
+Although the collected data did not allow to make any claims whatsoever,
+they were of good individual quality and allowed for a partial analysis
+to be run, namely the passive \gls{DOAS} side. Using the first
+measurement as the reference spectrum, it was possible to calculate the
+\gls{no2} concentration. The fits that generated these concentration
+values are presented in Figure~\ref{fig:exp1_fit_west} and
+Figure~\ref{fig:exp1_fit_east}, respectively, for the West and East
+assemblies. The molecular density values for \gls{no2} are presented in
+Figure~\ref{fig:exp1_no2_density}. The \gls{DOAS} parameters for this
+run of the experiment are presented in
+Table~\ref{tab:doas_parameters_exp1}
+
+\begin{sidewaysfigure}[htpb]
+    \centering
+    \includegraphics[width = .82\textheight]{img/eps/fit_passive_westbank_exp1.eps}
+    \caption{Passive \gls{DOAS} fits for the first run of the
+    experiment, collected at the West Bank assembly.}
+    \label{fig:exp1_fit_west}
+% \end{sidewaysfigure}
+
+% \begin{sidewaysfigure}
+    \includegraphics[width=.82\textheight]{img/eps/fit_passive_eastbank_exp1.eps}
+    \caption{Passive \gls{DOAS} fits for the first run of the
+    experiment, collected at the East Bank assembly.}
+    \label{fig:exp1_fit_east}
+\end{sidewaysfigure}
 
 \begin{figure}[htpb]
     \centering
-    \includegraphics[width=0.8\linewidth]{img/png/tau_activeDOAS.png}
-    \caption{Optical densities calculated with reference to measurement
-    \#1 for the other measurement moments in the active DOAS mode.} 
-    \label{fig:active_optical_densities}
+    \includegraphics[width=0.8\linewidth]{img/eps/no2_passive_density_exp1.eps}
+    \caption{\gls{no2} density values, in number of molecules, for the
+    first run of the experiment. Note that the calculated value is the
+    subtraction between the density found for the East Bank and the density
+    found at the West Bank.}
+    \label{fig:exp1_no2_density}
 \end{figure}
 
-\begin{figure}[htpb]
+
+\begin{table}[htpb]
     \centering
-    \includegraphics[width=0.8\linewidth]{img/png/tau_passiveDOAS.png}
-    \caption{Optical densities calculated with reference to measurement
-    \#1 for the other measurement moments in the passive DOAS mode.} 
-    \label{fig:passive_optical_densities}
-\end{figure}
-
-\begin{figure}[htpb]
-    \centering
-    \includegraphics[width=0.8\linewidth]{img/png/calculatedConcentrations.png}
-    \caption{Calculated \gls{no2} concentrations for the various
-    measurement moments. Each integer in the horizontal axis corresponds
-    to a moment, organized chronologically.}
-    \label{fig:calculated_concentration}
-\end{figure}
-
-Although admittedly incomplete, these data allows some preliminary
-remarks. The first and most important one is that the highest
-concentration detected appears in the first measurement point for both
-active and passive modes. The passive mode measurement could be
-discarded because this measurement was taken during sunrise and the
-relevant spectra could be considered too noisy. However, its active
-counterpart produces the exact same result, as the chart in
-Figure~\ref{fig:calculated_concentration} shows. The second data point
-had the lowest detected concentration, and from that point forward, the
-concentration evolves as expected (rising). One other remark that could
-be addressed towards this first stage analysis is that there seems to be
-a good agreement between active and passive measurements. This remark
-might be considered invalid, as there is no data for the active
-baseline. However, since this analysis was focused on \gls{no2}
-concentration, and the relevant spectral window for this trace gas is
-usually between 400nm and 500nm, this is not the case. In effect, the
-scattered-sunlight-originated photon counts in this interval will be
-always much smaller than the artificial ones, thus having an
-equivalently smaller influence in the final results. 
+    \caption{Parameters for the DOAS measurements relative to the first
+    run of the experiment.}
+    \label{tab:doas_parameters_exp1}
+    \begin{tabular}{@{}ll@{}}
+        \toprule
+        \textbf{Parameter}                   & \textbf{Value}    \\
+        \midrule
+        Analysis Window                      & {[}430, 455{]} nm \\
+        \midrule
+        Order of Filtering Polynomial        & 2                 \\
+        \midrule
+        Spectral Resolution                  & 2.4 nm           \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 \subsection{Second run}%
 \label{sub:second_run}
@@ -380,10 +380,21 @@ for each of the performed spectral collections.
     \centering
     \caption{Second run: time of measurements table.}
     \label{tab:second_run_measurements}
-    \missingfigure{This is actually a table.}
-    % \begin{tabular}{c}
-    
-    % \end{tabular}
+    \begin{tabularx}{\textwidth}{@{}lXXXXl@{}}
+        \toprule
+        \textbf{\#} & \textbf{Active DOAS} & \textbf{Active DOAS Reference} & \textbf{West Bank Passive DOAS} & \textbf{East Bank Passive DOAS} & \textbf{Comments} \\ \midrule
+        1           & 06:07                & 05:57                          & 06:14                           & 06:12                           & BAD               \\
+        2           & 06:35                & \multirow{2}{*}{06:30}         & 06:40                           & 06:40                           & BAD               \\
+        3           & 06:50                &                                & 06:50                           & 07:00                           & BAD               \\
+        4           & 07:10                & 07:15                          & 07:00                           & 07:27                           &                   \\
+        5           & 07:50                & 07:40                          & 07:10                           & \multirow{3}{*}{07:52}          &                   \\
+        6           & 08:08                & 08:03                          & 07:25                           &                                 &                   \\
+        7           & 08:18                & 08:21                          & 07:53                           &                                 &                   \\
+        8           & 08:35                & 08:30                          & 08:35                           & 08:36                           &                   \\
+        9           & 09:00                & 08:53                          & 09:02                           & 09:00                           &                   \\
+        10          & 09:45                & 09:50                          & 09:24                           & 09:20                           &                   \\
+        11          & 10:00                & 10:05                          & 09:53                           & 09:48                           &                   \\ \bottomrule
+    \end{tabularx}
 \end{table}
 
 Spectroscopically, the collected data were of good quality.
@@ -398,7 +409,71 @@ was interested in, in more than one occasion, this alignment was
 (probably by the wind) destroyed. Since the light was so small in
 comparison with the field of vision, the final resulting spectrum is one
 of the background instead of the torch. In the end, only 8 measurements
-were viable. 
+were viable. Analytical parameters are found in
+Table~\ref{tab:doas_parameters}. Figure~\ref{fig:active_densities} and
+Figures~\ref{fig:passive_densities} are plots of the measured
+concentration of \gls{no2}. Figures~\ref{fig:fit_active},
+Figure~\ref{fig:fit_passive_back} and Figure~\ref{fig:fit_passive_front}
+are the plots showing the actual \gls{DOAS} fits.
+
+\begin{table}[htpb]
+    \centering
+    \caption{Parameters for the DOAS measurements relative to the second
+    run of the experiment.}
+    \label{tab:doas_parameters}
+    \begin{tabular}{@{}ll@{}}
+        \toprule
+        \textbf{Parameter}                   & \textbf{Value}    \\
+        \midrule
+        Analysis Window - Active Experiment  & {[}400, 450{]} nm \\
+        \midrule
+        Analysis Window - Passive Experiment & {[}430, 455{]} nm \\
+        \midrule
+        Order of Filtering Polynomial        & 2                 \\
+        \midrule
+        Spectral Resolution                  & 2.4 nm           \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{figure}[htpb]
+    \begin{minipage}[t]{.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{img/eps/no2_active_density.eps}
+        \caption{Active \gls{DOAS} molecular density for \gls{no2}, varying
+        with the measurement number.}
+        \label{fig:active_densities}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{img/eps/no2_passive_density.eps}
+        \caption{Passive \gls{DOAS} molecular density for \gls{no2}, varying
+        with the measurement number. Note that this is the difference
+        between the density obtained at the two experiment assemblies, as per
+        hypothesis 2 (see~\ref{sec:second_hypothesis}).}
+        \label{fig:passive_densities}
+    \end{minipage}
+\end{figure}
+
+\begin{sidewaysfigure}[htpb]
+    \centering
+    \includegraphics[width=\textheight]{img/eps/fit_active.eps}
+    \caption{Active \gls{DOAS} fit results. Each plot corresponds to one
+    measurement moment.}
+    \label{fig:fit_active}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[htpb]
+    \includegraphics[width=.82\textheight]{img/eps/fit_passive_back.eps}
+    \caption{Passive \gls{DOAS} fit results, from the system on the East
+    Bank. Each plot corresponds to one measurement moment.}
+    \label{fig:fit_passive_back}
+    \includegraphics[width=.82\textheight]{img/eps/fit_passive_front.eps}
+    \caption{Passive \gls{DOAS} fit results, from the system on the West
+    Bank. Each plot corresponds to one measurement moment.}
+    \label{fig:fit_passive_front}
+\end{sidewaysfigure}
 
 \subsection{Data Processing}%
 \label{sub:data_processing}

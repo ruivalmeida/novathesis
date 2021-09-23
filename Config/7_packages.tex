@@ -29,6 +29,7 @@
 \usepackage{multirow}
 \usepackage{epigraph}
 \usepackage{lipsum}
+\usepackage{rotating}
 
 \usepackage[textsize=footnotesize]{todonotes}  % To register TODO notes in the text
 \setlength{\marginparwidth}{3.25cm}
@@ -46,3 +47,11 @@
 \captionsetup{compatibility=false}
 \usepackage{tikz}
 \usetikzlibrary{calc, intersections}
+
+\definecolor{green_letters}{rgb}{54, 126, 51}
+\definecolor{green_bg}{rgb}{198, 239, 205}
+\definecolor{yellow_letters}{rgb}{170, 106, 23}
+\definecolor{yellow_bg}{rgb}{255, 235, 156}
+
+
+\renewcommand\tabularxcolumn[1]{m{#1}}% for vertical centering text in X column

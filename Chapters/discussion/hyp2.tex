@@ -1,8 +1,7 @@
 %!TEX root=../../template.tex
 \section{Second Hypothesis}%
 \label{sec:second_hypothesis}
-\todo[inline]{Read the first leg of the expeiment again; add some
-official data; check to see if it plays out ok.}
+
 The proposed hypothesis was, as explained in
 Section~\ref{sec:intro_hypothesis}, that one could obtain a trace gas'
 column density between two points by determining this value on both said
@@ -27,40 +26,72 @@ The experiment was conducted in two "runs". The first run took place on
 first measurement was taken at 06:20, some minutes after sunrise.
 Although meteorological conditions were optimal and there were no
 hassles, work was interrupted at around 08:20, when the battery of one
-of the laptops that were being used ran out. The collected data on this
-first run were not as perfect as they seemed to be. An undetected
-operational error (with probable protocol breach) caused some of the
-data to be missing, and some of the collected spectra were
-"contaminated" - meaning measurement interruptions were not correctly
-registered. This alone dictated the need to have another go at the
-experiment. Even with the missing data, I ran the processing routines on
-the data that existed. Part of the results were as expected, another
-part puzzling. The puzzling part was that the highest registered column
-density happened on the second measurement, before 07:00. After that,
-the number of detected molecules evolves as one would expect: rising
-with traffic intensity. The expected (and positive) part was that
-density evolution was the same for both the passive and the active
-\gls{DOAS} systems.
+of the laptops that were being used ran out. Although not enough to make
+claims, it was possible to produce some results from these data, namely
+concerning passive \gls{DOAS}. These were presented in
+Figure~\ref{fig:exp1_no2_density} and their fits in
+Figure~\ref{fig:exp1_fit_east} and Figure~\ref{fig:exp1_fit_west}.
+
+The fits themselves show a lot of signal being measured, although
+\gls{no2} has less expression than \gls{o4} in most of the
+measurements. For the reader's reference, a cross section of \gls{no2}
+and \gls{o4} is included in Figure~\ref{fig:no2_cross_section} and
+Figure~\ref{fig:o4_cross_section}, already cut to the analysis
+wavelength window. This weak fit expression coincides with the trends
+displayed on the \gls{no2} density plot. 
+
+QualAR, a Portuguese public initiative to monitor the territory's air
+quality, makes its data public and available for consultation at the
+initiative's website~\cite{Ambiente2019}. The QualAR chart for the
+concentration of \gls{no2} in the closest monitoring station to the
+experiment's site is presented in Figure~\ref{fig:qualar_0706}. By
+comparing the chart's data and the experiment's data, one can see that
+they seem to approximately agree.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/pdf/no2_07jun_apa_chart.pdf}
+    \caption{QualAR chart for the \gls{no2} concentration at
+    the closest monitoring station from the experiment
+    site~\cite{Ambiente2019}. 07 June 2021.}
+    \label{fig:qualar_0706}
+\end{figure}
+
+\begin{figure}[htpb]
+    \begin{minipage}{.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/eps/no2_cross_section.eps}
+        \caption{Cross section for \gls{no2}, cut to the analysis window
+        described in Table~\ref{tab:doas_parameters_exp1}.}
+        \label{fig:no2_cross_section}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/eps/o4_cross_section.eps}
+        \caption{Cross section for \gls{o4}, cut to the analysis window
+        described in Table~\ref{tab:doas_parameters_exp1}.}
+        \label{fig:o4_cross_section}
+    \end{minipage}
+\end{figure}
 
 The second run of the experiment happened later in the same month, on
-the 23\textsuperscript{rd}. A new challenge came from the fact that the
-experiment's site was re-located to a better place (in terms of
-measuring capabilities),  the alignment became more difficult, and
-revealed itself to be of paramount importance, rendering several
-measurements useless. Also, in this second day of experiments, there was
-a lot more wind than in the first day, which also played an important
-part in this alignment problem. With the 8 viable measurements that were
-left, I calculated molecular densities for \gls{no2} and gls{o3}, which
-are displayed in Figure~\ref{fig:no2_o3_densities}. The \gls{DOAS} fits
-that led to these concentration values are also displayed, in
-Figure~\ref{fig:doas_fits}. Official numbers for \gls{no2}
-concentrations are provided by QualAR, a Portuguese public initiative
-that measures air quality throughout the country~\cite{agencia2019}. The
-QualAR chart for the relevant day is presented in
-Figure~\ref{fig:qualar_june_23}. 
+the 23\textsuperscript{rd}. The assembly on the East Bank was relocated
+around 100m, in an attempt to improve the spectral measurements.
+However, this introduced a new challenge. Since the assembly was
+positioned farther from the West Bank than in the previous run, the
+light source occupied a smaller fraction of the telescope's field of
+view. Moreover, in this day we had worse conditions than in the first
+day, with wind making the alignment of the two telescopes even more
+difficult. In the end, three out of the eleven possible measurements
+were discarded due to alignment issues. Coincidentally, the first three.
+A relocation schematic is included in
+Figure~\ref{fig:changing_position}. There were no logistical problems
+this time, and the use of external UPS ensured the laptops would have
+sufficient battery to run this experiment until 10:00, half an hour
+before the opening of the sanctuary for visitors. 
 
-There are two important levels of analysis for the density plots
-presented in Figure~\ref{fig:no2_o3_densities}:
+Again we can analyse the data from two angles:
 \begin{description}
     \item[Internal analysis:] did the experiment confirm or deny the
         hypothesis it was meant to test (see
@@ -69,44 +100,50 @@ presented in Figure~\ref{fig:no2_o3_densities}:
         way with the official data coming from QualAR?
 \end{description}
 
-With regards to the first angle of analysis, a first glance comparison
-of active and passive-related measurement charts might indicate that the
-hypothesis was firmly denied. However, one should look at the charts
-with some care. Both types of chart are always in the same scale,
-meaning that whatever is being measured, it appears to have
-approximately the same effect on both measurements. Moreover, if it is
-true that they exhibit different behaviours, it is also true that with
-respect to a trend, they seem to agree. The analysed data are too
-different in order to issue a confirmation of the proposed hypothesis,
-but they are also too close to conclude the opposite. Once misalignment
-issues are factored in, this becomes ever more evident. The hypothesis
-remains plausible, even if not confirmed. 
+With regards to the first level of analysis, one might initially be
+tempted to consider the hypothesis validated if looking only at the
+shape of the two plots, Figure~\ref{fig:active_densities} and
+Figure~\ref{fig:passive_densities}. They are in fact quite similar in
+terms of trend, and they share the same order of magnitude in the scale,
+but the values displayed from one to another are quite different. Not so
+different as to making the hypothesis implausible, but unfortunately,
+not close enough to confirm it directly. As to the fit plots,
+Figure~\ref{fig:fit_active}, Figure~\ref{fig:fit_passive_back} and
+Figure~\ref{fig:fit_passive_front}, the fit line is much closer to the
+signal being fitted (differential optical density) in the passive
+experiment than in the active experiment. However, the values of the fit
+are one order of magnitude higher in the latter. In every fit, the line
+is clearly above noise level, which was one of the most important
+concerns in the beginning. 
 
-The second lens through which one must look at the charts is the
-external analysis. This must also be done with some care. The first
-important thing to consider is that absolute quantities are of no
-importance here. The data collected through this experiment was not
-processed with the goal of providing a vertical column density that
-could be compared to the official numbers. Besides this, although the
-air quality station that provided the QualAR data is not far from the
-place in which I ran the experiment, it is still sufficiently far that
-the absolute values should not be the same.
+Regarding the second level of analysis, the official QualAR data are
+presented in the chart of Figure~\ref{fig:qualar_2306}. Although this
+chart has a low resolution, it is safe to say that the peak value for
+\gls{no2} concentration was measured between 07:00 and 08:00. This
+contradicts the data collected in the second run of the experiment,
+which detected a growing trend for \gls{no2} at least until 10:00. These
+differences might be explained with some local effects due to the
+proximity of the highway (QualAR's measuring station is near, but in a
+completely different surrounding, in the middle of a primary school) or
+from some alignment-related instability. 
 
-The QualAR chart tells us that, from 0700 onwards, \gls{no2}
-concentration only goes down. This is in direct agreement with the
-\gls{no2} cycle described in Section~\ref{sub:criteria_pollutants}.
-Although not being as monotonic as the official data, our density charts
-(see Figure~\ref{fig:no2_o3_densities}) confirm this. Two factors can be
-used to explain the behaviour difference that can be seen between our
-charts and QualAR's:
-\begin{itemize}
-    \item misalignment issues may have introduced this discrepancy as an
-        error;
-    \item measurements may have been too close to the noise level, and
-        therefore some instability is expected.
-\end{itemize}
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{img/pdf/no2_23jun_apa_chart.pdf}
+    \caption{QualAR chart for the \gls{no2} concentration at
+    the closest monitoring station from the experiment
+    site~\cite{Ambiente2019}. 23 June 2021.}
+    \label{fig:qualar_2306}
+\end{figure}
 
-The second hypothesis is clearly the more worrisome, as it threatens the
-validity of the whole experiment. However, the fit charts in
-Figure~\ref{fig:doas_fits} make this unlikely, since one can clearly see
-the signal above the noise.
+Alignment issues are in fact the single most important threat for the
+validity of this experiment. As detailed in
+Section~\ref{sec:the_experiment}, the experiment was mainly a manual
+process, that relied in the sensibility of the two necessarily human
+operators to produce the most correct data possible. Given the small
+size of the artificial light in the field of view of the telescope, and
+the presence of moderately strong winds, this experiment may have been
+too tall an order. It is impossible to reach a definite conclusion
+without the development of some kind of automatic alignment and
+measurement process, that mimics what would be performed by the
+autonomous \gls{UAV}.
