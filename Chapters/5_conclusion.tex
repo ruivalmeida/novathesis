@@ -5,8 +5,83 @@
 %%
 %% This chapter contains the conclusion presentation.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Conclusions}
+\chapter{Concluding Remarks and Further Developments}
 \label{cha:conclusions}
+
+This dissertation proposes and describes a new atmospheric monitoring
+system, based on the use of an autonomous drone, \gls{DOAS} for trace
+gas concentration retrieval and tomographic processing for the rendering
+of a two dimensional map of the trace gases in a specific geographic
+region.
+
+In its beginning,  the project (or rather, its development) was
+presented in a Portugal2020 funding round, having been granted the funds
+that would allow the actual construction of the system. In the end this
+would be the case due to some bureaucratic issues rising from the need
+to change the project's promoting company.
+
+With the system's physical construction out of the way, the work evolved
+into one of gathering sufficient evidence for a simulation-based proof
+of concept. Replying to the Research Questions of
+Section~\ref{sec:research_questions} became a matter of testing the two
+hypothesis described in the introductory text of
+Chapter~\ref{cha:methods}. It was thus that I divided this concluding
+chapter, with Section~\ref{sec:tomosim_conclusions} addressing the data
+assembly and treatment as a tomographic problem (which has since been
+published, see Appendix~\ref{ap:tomosim_paper}) and
+Section~\ref{sec:lambertian_absorption_experiment} addressing the second
+hypothesis, described in Section~\ref{sec:second_hypothesis}. 
+
+A very short summary table aiming to provide a brief reply to the
+aforementioned research questions is provided in
+Table~\ref{tab:rq_summary}.
+
+\begin{table}[htb]
+    \centering
+    \caption{Summary table: this table aims to provide a brief and
+    concise reply to the research questions identified in
+    Section~\ref{sec:research_questions}.}
+    \label{tab:rq_summary}
+    \begin{tabularx}{\textwidth}{l l X}
+        \toprule
+        Research Question & Status  & Description\\
+        \midrule
+
+        RQ 1.1 & \cellcolor[HTML]{FFEB9C}\color[HTML]{AA6A17}Partially
+        Verified& \cellcolor[HTML]{FFEB9C}\color[HTML]{AA6A17}The
+        Lambertian hypothesis of Section~\ref{sec:second_hypothesis}
+        would allow for the coverage of the target geographical area
+        with an autonomous \gls{UAV}.  This hypothesis was only
+        partially verified and needs further studies with more
+        sophisticated equipment. \\
+
+        \midrule
+
+        RQ 1.2 & \cellcolor[HTML]{C6EFCD}\color[HTML]{367E33}Verified /
+        Published &\cellcolor[HTML]{C6EFCD}\color[HTML]{367E33}Described in
+        Appendix~\ref{ap:tomosim_paper}. \\
+
+        \midrule
+
+        RQ 1.3 & \cellcolor[HTML]{C6EFCD}\color[HTML]{367E33}Verified /
+        Published &\cellcolor[HTML]{C6EFCD}\color[HTML]{367E33}By performing a
+        series of spectroscopic measurements with a particularly defined
+        trajectory, it will be possible to gather fanbeam projection
+        data for the target geographical region. \\
+
+        \midrule
+
+        RQ 1.4 & \cellcolor[HTML]{C6EFCD}\color[HTML]{367E33}Verified /
+        Published &\cellcolor[HTML]{C6EFCD}\color[HTML]{367E33}Described in
+        Section~\ref{sec:tomosim}\\
+
+        \bottomrule
+        
+    \end{tabularx}
+\end{table}
+
+
+
 
 \section{TomoSim}%
 \label{sec:tomosim_conclusions}
@@ -103,48 +178,3 @@ With regards to future developments for this side of the project, I
 think it is imperative to develop the necessary adaptations for this
 system to operate autonomously, so that we can solve the question of
 alignment once and for all.
-\newpage
-\section{Research Questions Summary}%
-\label{sec:research_questions_summary}
-
-\begin{table}[htb]
-    \centering
-    \caption{Summary table for the research questions presented in
-    Section~\ref{sec:research_questions}.}
-    \begin{tabularx}{\textwidth}{l l X}
-        \toprule
-        Research Question & Status  & Description\\
-        \midrule
-
-        RQ 1.1 & \cellcolor[HTML]{FFEB9C}\color[HTML]{AA6A17}Partially
-        Verified& \cellcolor[HTML]{FFEB9C}\color[HTML]{AA6A17}The
-        Lambertian hypothesis of Section~\ref{sec:second_hypothesis}
-        would allow for the coverage of the target geographical area
-        with an autonomous \gls{UAV}.  This hypothesis was only
-        partially verified and needs further studies with more
-        sophisticated equipment. \\
-
-        \midrule
-
-        RQ 1.2 & \cellcolor[HTML]{C6EFCD}\color[HTML]{367E33}Verified /
-        Published &\cellcolor[HTML]{C6EFCD}\color[HTML]{367E33}Described in
-        Appendix~\ref{ap:tomosim_paper}. \\
-
-        \midrule
-
-        RQ 1.3 & \cellcolor[HTML]{C6EFCD}\color[HTML]{367E33}Verified /
-        Published &\cellcolor[HTML]{C6EFCD}\color[HTML]{367E33}By performing a
-        series of spectroscopic measurements with a particularly defined
-        trajectory, it will be possible to gather fanbeam projection
-        data for the target geographical region. \\
-
-        \midrule
-
-        RQ 1.4 & \cellcolor[HTML]{C6EFCD}\color[HTML]{367E33}Verified /
-        Published &\cellcolor[HTML]{C6EFCD}\color[HTML]{367E33}Described in
-        Section~\ref{sec:tomosim}\\
-
-        \bottomrule
-        
-    \end{tabularx}
-\end{table}
