@@ -8,36 +8,45 @@
 
 \typeout{NT FILE abstrac-pt.tex}
 
-Independentemente da língua em que a dissertação esteja redigida, é necessário um resumo na mesma língua do texto principal e outro resumo noutra língua. Pressupõe-se que as duas línguas em questão sejam o português e o inglês.
+Era o objectivo deste trabalho descrever o processo de desenho e
+implementação de uma prova de conceito para um sistema de avaliação
+atmosférica comercialmente viável, para uso no mapeamento das
+concentrações de compostos traço na atmosfera.
 
-Os resumos devem aparecer primeiro na língua do texto principal e depois na outra língua. Por exemplo, se a dissertação for redigida em português, o resumo em português aparecerá primeiro, seguido do resumo em inglês (\emph{abstract}), seguido do texto principal em português. Se a dissertação for redigida em inglês, o resumo em inglês (\emph{abstract} aparecerá primeiro, seguido do resumo em português, seguido do texto principal em inglês.
+A avaliação atmosférica é um campo muito estudado, estando no presente
+momento disponíveis para instalação diversos sistemas e subsistemas com
+estas capacidades. No entanto, é marcante o compromisso que se verifica
+entre a resolução espacial e a complexidade operacional destes
+equipamentos. Nesta tese, desafio este problema e levanto a questão
+sobre como se poderia desenvolver um sistema com os mesmos fins, mas sem
+este premente compromisso. 
 
-Na versão \LaTeX\, o template NOVAthesis irá ordenar automaticamente os dois resumos tendo em consideração a língua do texto principal. É possível alterar este comportamento adicionando
-\begin{verbatim}
-    \abstractorder(<MAIN_LANG>):={<LANG_1>,...,<LANG_N>}
-\end{verbatim}
-\noindent à zona de customização no preâmbulo do documento, e.g.,
-\begin{verbatim}
-    \abstractorder(de):={de,en,it}
-\end{verbatim}
+Usando uma metodologia a duas partes, proponho duas hipóteses  para
+comprovar a exequibilidade deste sistema. A primeira diz respeito à
+formação da matriz tomográfica e à resolução das equações que dela
+derivam e que formam a imagem que se pretende. Confirmei esta hipótese
+teoricamente através do desenvolvimento de uma plataforma de simulação
+para a reconstrução tomográfica de um campo de concentrações fantoma.
 
-Os resumos não devem ultrapassar uma página e, de forma genérica, devem responder às seguintes questões (é essencial adaptá-los às práticas habituais da sua área científica):
+A segunda é dirigida a aquisição de dados espectroscópicos. Proponho que
+com o material presentemente disponível comercialmente, deverá ser
+possível aproveitar uma consequência da lei de Beer-Lambert para retirar
+os valores de concentração molecular de gases traço na atmosfera. Foi
+apenas possível validar esta hipótese parcialmente, sendo que resultados
+mais conclusivos necessitariam de equipamentos automatizados dos quais
+não foi possível dispôr.
 
-\begin{enumerate}
-  \item Qual é o problema?
-  \item Porque é que é um problema interessante/desafiante?
-  \item Qual é a proposta de abordagem/solução?
-  \item Quais são as consequências/resultados da solução proposta?
-\end{enumerate}
-
-% E agora vamos fazer um teste com uma quebra de linha no hífen a ver se a \LaTeX\ duplica o hífen na linha seguinte se usarmos \verb+"-+… em vez de \verb+-+.
-%
-% zzzz zzz zzzz zzz zzzz zzz zzzz zzz zzzz zzz zzzz zzz zzzz zzz zzzz zzz zzzz comentar"-lhe zzz zzzz zzz zzzz
-%
-% Sim!  Funciona! :)
+No final, este trabalho constitui um importante primeiro passo no
+estabelecimento da técnica de \gls{DOAS} tomográfico como uma
+alternativa comercialmente viável para a análise atmosférica. Ademais, o
+desenvolvimento desta tese levou à escrita de uma biblioteca em Python
+para análise de dados \gls{DOAS} actualmente usada em ambiente de
+produção. Por fim, importa realçar que dos trabalhos realizados no
+decorrer da tese foram publicados dois artigos em revistas científicas
+com \emph{Impact Factor} acima de 3.
 
 % Palavras-chave do resumo em Português
 \begin{keywords}
-Palavra-chave 1, Palavra-chave 2, Palavra-chave 3,  \ldots
+    \gls{DOAS}, tomografia, drones
 \end{keywords}
 % to add an extra black line
