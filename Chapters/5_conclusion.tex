@@ -89,24 +89,13 @@ Table~\ref{tab:rq_summary}.
 The initial goal of the TomoSim software project was to develop a
 simulation platform with which to recreate the tomographic
 reconstruction of the column density distribution for a number of target
-atmoshperic trace gases.
-
-The software program was written using the Python language and some
-numeric calculation libraries, such as NumPy and SciPy. Using these two
-libraries had two main effects: on the one hand, it enabled the
-programmers to easily create and manipulate matrices and vectors
-(images, for instance), and on the other, they greatly improved the
-running speed of the code, since their core is written in lower level
-languages (namely C).
-
-The simulations that the software performs prove that, if the final
-device is programmed to comply to trajectory and acquisition
-requirements, reconstruction is perfectly achievable, even with
-relatively low projection numbers (comparing with medical imaging
-procedures). This brings another significant conclusion which is that
-the devised acquisition definitions, which produce a set of fan beam
-arrays, provide sufficient projection information to run the
-reconstruction and achieve plausible results.
+atmoshperic trace gases. The software program was written using the
+Python language and some numeric calculation libraries, such as NumPy
+and SciPy. Using these two libraries had two main effects: on the one
+hand, it enabled the programmers to easily create and manipulate
+matrices and vectors (images, for instance), and on the other, they
+greatly improved the running speed of the code, since their core is
+written in lower level languages (namely C).
 
 TomoSim runs three algorithms on the projection data in order to produce
 the spectral mapping of the target pollutants: FBP (analytical), SART and
@@ -117,6 +106,16 @@ The MLEM algorithm cannot be directly compared to the SART algorithm,
 due to differences in the optimisation levels of both routines, but had
 nonetheless a reasonable time performance altogether, although producing
 the poorest reconstruction results.
+
+The simulations that the software performs prove that, if the final
+device is programmed to comply to trajectory and acquisition
+requirements, reconstruction is perfectly achievable, even with
+relatively low projection numbers (comparing with medical imaging
+procedures). This brings another significant conclusion which is that
+the devised acquisition definitions, which produce a set of fan beam
+arrays, provide sufficient projection information to run the
+reconstruction and achieve plausible results.
+
 
 Regarding future developments, there are three main avenues that should
 be explored: 

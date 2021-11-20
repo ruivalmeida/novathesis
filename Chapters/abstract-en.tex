@@ -8,29 +8,45 @@
 
 \typeout{NT FILE abstrac-en.tex}
 
-Regardless of the language in which the dissertation is written, a summary is required in the same language as the main text and another summary in another language. It is assumed that the two languages in question are Portuguese and English.
+The aim of this thesis is to describe the design and development of a
+proof of concept for a commercially viable large are atmospheric
+analysis tool, for use in trace gas concentration mapping and
+quantification. 
 
-The abstracts should appear first in the language of the main text and then in the other language. For example, if the dissertation is written in Portuguese the abstract in Portuguese will appear first, then the abstract in English, followed by the main text in Portuguese. If the dissertation is written in English, the abstract in English will appear first, then the abstract in Portuguese, followed by the main text in English. 
+Atmospheric monitoring is a very well researched field, with dozens of
+available analytical systems and subsystems. However, current systems
+require a very important compromise between spatial and operational
+complexity. We address this issue asking how we could integrate the
+\gls{DOAS} atmospheric analysis technique in a \gls{UAV} with
+tomographic capabilities.
 
-In the \LaTeX\ version, the NOVAthesis template will automatically order the two abstracts taking into account the language of the main text. You may change this behaviour by adding
-\begin{verbatim}
-    \abstractorder(<MAIN_LANG>):={<LANG_1>,...,<LANG_N>}
-\end{verbatim}
-\noindent to the customization area in the document preamble, e.g.,
-\begin{verbatim}
-    \abstractorder(de):={de,en,it}
-\end{verbatim}
+Using a two-part methodology, I proposed two hypothesis for proving the
+possibility of a miniaturised tomographic system, both related to how
+the spectroscopic data is acquired. The first hypothesis addresses the
+projection forming aspect of the acquisition, its matrix assembly and
+the resolution of the consequent equations. This hypothesis was
+confirmed theoretically by the development of a simulation platform for
+the reconstruction of a trace gas concentration mapping.
 
-The abstracts should not exceed one page and, in a generic way, should answer the following questions (it is essential to adapt to the usual practices of your scientific area):
+The second hypothesis deals with the way in which data is collected in
+spectroscopic terms. I proposed that with currently available equipment,
+it should be possible to leverage a consequence of the Beer-Lambert law
+to produce molecular density fields for trace gases using passive
+\gls{DOAS}. This hypothesis was partially confirmed, with definite
+conclusions being possible only through the use of complex autonomous
+systems for improved accuracy.
 
-\begin{enumerate}
-  \item What is the problem?
-  \item Why is this problem interesting/challenging?
-  \item What is the proposed approach/solution?
-  \item What results (implications/consequences) from the solution?
-\end{enumerate}
+This work has been a very important first step in the establishment of
+\gls{DOAS} tomography as a commercially viable solution for atmospheric
+monitoring, although further studies are required for definite results.
+Moreover, this thesis has conducted to the development of a \gls{DOAS}
+software library for Python that is currently being used in a production
+environment. Finally, it is important to mention that two journal
+articles were published from pursuing this work, both in important
+journals with Impact Factors over 3.0.
+
 
 % Palavras-chave do resumo em Inglês
 \begin{keywords}
-Keyword 1, Keyword 2, Keyword 3, Keyword 4, Keyword 5, Keyword 6, Keyword 7, Keyword 8, Keyword 9, …
+    \gls{DOAS}, tomography, \gls{UAV}, drones
 \end{keywords} 
