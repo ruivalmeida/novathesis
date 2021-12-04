@@ -1,0 +1,57 @@
+%!TEX root=../../../template.tex
+\subsection{Collection System}%
+\label{sub:methods_collection}
+
+The flight controller unit is in permanent communication with the
+collection system, through the spectrometer controlling computer. This
+is an \gls{rpi}-based single board device. This equipment controls the
+spectral acquisition process, which is conducted by an Avantes Mini
+spectrometer with 2048 channels and a \gls{usb} 3.0 connection. The
+Avantes spectrometer can be interfaced with both Unix-based and
+Microsoft Windows operating systems through a set of software libraries
+that are available for download at this manufacturer's website. There
+are several physical interfaces for available for both types of
+operating system. Nowadays, the most common and expedient way to run
+this connection is through the \gls{usb} port. This is also the
+connection that allows a higher data throughput (allowing smaller
+integration times to be used). In the end, the proposed system will only
+run in Unix-based computers, but the Windows version was very important
+for initial experiments, which at the time were programmed in C\# (code
+included in Appendix~\ref{ap:c_sharp_spectrometer}). The spectrometer
+control flow is very different in the two approaches. The Unix version
+works by continuously polling the spectrometer for the spectral data,
+which is the somewhat obvious strategy. The Windows version uses a
+sophisticated by seldom used technique: Windows messages. This is a set
+of fixed-value event flags that are fired at the Operating System level
+and can be intercepted by running programs. Among other things, these
+events allow, for instance, the detection of a new \gls{usb} connection.
+Both workflows are depicted in
+Figure~\ref{fig:unix_spectrometer_workflow} and
+Figure~\ref{fig:windows_spectrometer_workflow}. 
+
+\begin{figure}[htpb]
+    \centering
+    \missingfigure{}
+    \caption{Unix type Operating System workflow for interfacing with an
+    Avantes spectrometer.}%
+    \label{fig:unix_spectrometer_workflow}
+\end{figure}
+
+\begin{figure}[htpb]
+    \centering
+    \missingfigure{}
+    \caption{Windows Operating System workflow for interfacing with an
+    Avantes spectrometer.}%
+    \label{fig:windows_spectrometer_workflow}
+\end{figure}
+
+This type of spectrometer is usually shipped with an \gls{SMA}
+connector, for direct connection of a fibre optics cable. While this is
+ideal as a bench-top solution and when size and weight restrictions are
+looser, we found it not to be the best fit for our particular case. We
+tend to think of fibre optics as an almost lossless medium for data
+transmission. This is, of course, true, but it does not hold for 
+
+
+
+
