@@ -50,7 +50,61 @@ connector, for direct connection of a fibre optics cable. While this is
 ideal as a bench-top solution and when size and weight restrictions are
 looser, we found it not to be the best fit for our particular case. We
 tend to think of fibre optics as an almost lossless medium for data
-transmission. This is, of course, true, but it does not hold for 
+transmission. This is, of course, true, but it does not hold for its
+connectors. They represent one of the most significant sources for
+signal loss in an optics fibre line. Avantes does not mention any value
+for \gls{SMA} connector losses, but the traditional figure that appears
+in most manufacturer's catalogues is around 1dB~\todo{check some
+citations for this. Senko white paper is one.}. My own measurements,
+conducted in an improvised workbench set-up, have found differences of
+around xx\%\todo{check this value} between the fibre optics cable and a
+direct measurement in which the light goes directly from the telescope
+into the spectrometer's connector.
+Figure~\ref{fig:direct_vs_optical_assmbly} is a schematic representation
+of the experiment, whose results are plotted in
+Figure~\ref{fig:direct_vs_optical_plot}.
+
+\begin{figure}[htpb]
+    \centering
+    \missingfigure{}
+    \caption{Schematic representation of the experiment set-up used to
+    observe the differences between direct light and fibre optics light
+    conduction}%
+    \label{fig:direct_vs_optical_assmbly}
+\end{figure}
+
+\begin{figure}[htpb]
+    \centering
+    \missingfigure{}
+    \caption{Plots obtained through the collection of light managed by
+    the assemblies depicted in
+    Figure~\ref{fig:direct_vs_optical_assmbly}}.%
+    \label{fig:direct_vs_optical_plot}
+\end{figure}
+
+Circumventing the optical loss of signal is normally feasible just by
+selecting a more powerful light source. In our case, this would equate
+to the selection of a larger telescope, which would go against our size
+and weight constraints. Therefore, we had to solve the problem through a
+direct light connector that coupled the telescope to the spectrometer's
+entrance. This design was made with Autodesk's Inventor CAD software
+suite~\footnote{Thanks to a very generous protocol between Autodesk and
+many universities around the world that makes this software free for all
+FCT NOVA's students.} and some renderings of the designs can be seen in
+Figure~\ref{fig:spectrometer_telescope_coupling_3d}. Technical drawings
+are also available in
+Appendix~\ref{ap:technical_drawing_telescope_spectrometer_coupling}.
+
+\begin{figure}[htpb]
+    \centering
+    \missingfigure{}
+    \caption{Telescope - Spectrometer coupling. 3D design rendered
+    through Autodesk Inventor.}%
+    \label{fig:spectrometer_telescope_coupling_3d}
+\end{figure}
+
+The centrepiece of this collection system is of course the telescope.
+This 
 
 
 
