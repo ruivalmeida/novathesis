@@ -4,7 +4,7 @@
 
 Although it was not possible to assemble the final physical system onto
 an actual drone, I have managed to specify it completely in a custom
-design for which Figure~\ref{fig:custom_drone} is a basic
+design for which Figure~\ref{fig:img/pdf/drone_schematic} is a basic
 schematic~\footnote{To the reader: although this is still a fairly
 advanced design, recent advances in drone technology might render it
 a bit obsolete in some aspects. Please bear in mind that this design
@@ -12,8 +12,7 @@ was finished in March 2019}.
 
 \begin{figure}[htpb]
     \centering
-    \missingfigure{}
-    % \includegraphics[width=0.8\linewidth]{img/pdf/drone_schematic.pdf}
+    \includegraphics[width=0.8\linewidth]{img/pdf/drone.pdf}
     \caption{A schematic for the custom-designed drone system on which
     the pollution monitoring system would be mounted.}%
     \label{fig:img/pdf/drone_schematic}
@@ -57,7 +56,7 @@ both flight time and carrying capacity. According to the manufacturer,
 this configuration is able to handle a maximum weight per rotor of
 3900g, or almost 24 kg in total. Assuming our drone to weight 6 kg, this
 gives us a very comfortable weight margin for our payload, which in any
-case should be slightly below 2 kg~\todo{cite dji}.
+case should be slightly below 2 kg~\cite{DJI2015}.
 
 A Pixhawk flight controller takes care of the aerial dynamics, movement
 and positioning. This flight controller comes with all the needed
@@ -65,5 +64,5 @@ sensors (gyroscopes, barometers, magnetometers, accelerometers, etc.),
 requiring only an external navigation unit. The unit natively supports
 \gls{RTK-GPS}, a combination of inertial sensors and traditional
 satellite navigation data that achieves positioning precisions of a few
-tens of centimetres~\todo{citation - rtkgps from tomosim article}.
+tens of centimetres~\cite{Zimmermann2017, Triantafyllou2011}.
 
