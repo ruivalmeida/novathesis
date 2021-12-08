@@ -12,7 +12,7 @@ Figure~\ref{fig:tomosim_reconstruction}.
 
 \begin{figure}[htpb]
     \centering
-    \missingfigure{}
+    \includegraphics[width=.1\textwidth]{img/pdf/tomosimStartFlowchart.pdf}
     \caption{A flowchart describing the beginning stages of the Tomosim
     simulation.}%
     \label{fig:tomosim_start}
@@ -20,7 +20,7 @@ Figure~\ref{fig:tomosim_reconstruction}.
 
 \begin{figure}[htpb]
     \centering
-    \missingfigure{}
+    \includegraphics[width=.4\textwidth]{img/pdf/tomosimReconstructionFlowchart.pdf}
     \caption{Flowchart representing the Tomosim operation during the
     reconstruction phase.}%
     \label{fig:tomosim_reconstruction}
@@ -223,24 +223,102 @@ in Table~\ref{tab:new_phantom}.
 \end{table}
 
 %% RECONSTRUCTION ALGORITHMS AND DISCRETISATION
-Moving forward, the phantom is then discretised, using Siddon's
-algorithm~\todo{link to theory} before being reconstructed using one of
-the algorithms described in
-Section~\ref{sec:theoretical_background}~\todo{Link to theory}:
-\gls{FBP}, \gls{MLEM} or \gls{SART}. Both \gls{FBP} and \gls{SART} were
-taken from external Python libraries and are extremely well optimised.
-They also both require resorting the projection data into parallel
-geometries. Resorting is an operation in which we interpolate a parallel
-geometry from another kind of assembly, as described in
-Section~\ref{sec:theoretical_background}. As to \gls{MLEM}, the
-algorithm was implemented directly in Python using the popular array
-library called Numpy~\cite{Oliphant2007}, making heavy use of the
-observation that this reconstruction technique is in fact a series of
-matrix multiplications, as noted in
-Section~\ref{sec:theoretical_background}~\todo{link to theory}. 
+The phantom is then discretised, using Siddon's algorithm~\todo{link to
+theory} before being reconstructed using one of the algorithms described
+in Section~\ref{sec:theoretical_background}~\todo{Link to theory}:
+\gls{FBP}, \gls{MLEM} or \gls{SART}. Here, there is an additional step
+if opting for \gls{FBP} or \gls{SART}. Both algorithms come directly
+from a dedicated tomography library and expect to receive parallel
+projection data as their input. Tomosim resorts the collected fanbeam
+projections onto a virtual parallel geometry~\todo{link to theory} by
+using the procedure described in
+Section~\ref{sec:theoretical_background}. I could not find any library
+that already applied this resorting algorithm, so I wrote my own,
+inspired by Matlab's fan2para routine. 
+
+In contrast, the \gls{MLEM} algorithm was hand coded especially for
+Tomosim, and relies heavily on the fact that (as described in
+Section~\ref{sec:theoretical_background} ), this algorithm is a series
+of algebraic operations between matrices~\todo{link to theory}.
 
 %% ERROR ESTIMATION 
+Error estimation is an important part of every tomography method and
+especially in simulations, as it allows one to approach the results with
+much more confidence of their similarity to the real world. Error
+sources for the Tomosim simulator come in four different natures: time
+errors, geometric errors, spectroscopic errors and reconstruction
+errors.
 
+Time errors come from the fact that there are two moments of
+measurement. In a dynamic system, the time that passes between the two
+is enough for concentrations to change significantly. Tomosim does not
+address these errors, because they can be eliminated by the introduction
+of a second drone carrying the same type of equipment, which would
+eliminate said time difference.
+
+Geometric errors exist due to the drone not being able to situate itself
+perfectly. There is always a positioning error, no matter how
+sophisticated the onboard equipment is. This type of error is addressed
+in the simulation through a Monte Carlo like approach. Positioning and
+pointing errors are assumed to have normal distributions. Each time a
+point is calculated by the drone, it generates a normally distributed
+random number, with a mean if 0 and a standard deviation equal to the
+nominal error of the positioning system. This number is then added to
+the theoretical point.  Figure~\ref{fig:geometric_error_calculation} is
+a graphical representation of the reasoning behind the calculation of
+the geometric error. The image deals with two types of error. One comes
+from the \gls{rtk} positioning system (the positioning error,
+$\epsilon_p$); and the other that comes from the gimbal (the pointing
+error, $\epsilon_\gamma$). The two $\epsilon$ values are the nominal
+error for the positioning and the pointing devices. The error is
+introduced in the simulation through the values of $\beta$ and $D$ (see
+Figure~\ref{fig:p2_calculation}) while calculating $P_2$. Given the very
+low nominal error for the gimbal, the small angle approximation is valid
+($\sin \theta = \theta$). This is used to determine the theoretical
+value of $P_2$, located on the device's circular trajectory. Finally,
+the software adds the positioning error, using the same process as in
+$P_1$'s case. The error depiction in
+Figure~\ref{fig:geometric_error_calculation} is extremely exaggerated
+for visibility.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/pdf/error_estimation_2.pdf}
+    \caption{Error estimation graphical representation. Note errors are
+    extremely exaggerated for visualisation purposes.}
+    \label{fig:geometric_error_calculation}
+\end{figure}
+
+The third type of error are the spectroscopic errors. These come from
+the spectroscopic equipment that is used to gather projections. To take
+this noise into account, the simulator adds a Gaussian noise spectrum to
+each measurement, which is configurable through its standard deviation,
+as was previously done in~\cite{Stutz1996}. This is a valid approach,
+insofar as the captured spectra are perfectly calibrated regarding
+spectral shift and squeeze. Since this is a simulation software, this is
+an acceptable assumption.
+
+The final type of error that the system needs to contend with is the
+reconstruction error. In tomographic inversion problems, it is common to
+use techniques such as the \gls{mse} as a metric for an algorithm's
+performance. Tomosim was also evaluated in this light and in two
+separate ways. The first was to calculate the \gls{mse} for each pixel of the
+whole image. This information can still be viewed as an image (it is a
+two-dimensional grid of values) and paints an immediate picture of the
+general behaviour of the reconstruction algorithm. Moreover, it can tell
+the viewer if there are any types of shapes or areas in which the
+algorithm has more difficulties. The second way of using \gls{mse} to
+evaluate the reconstruction is to calculate a score through
+Equation~\ref{eq:mse_score}. In this equation, and with respect to this
+simulator, $f$ is the original image and $g$ the one reconstructed from
+projections.
+
+\begin{equation}
+    \centering
+    \label{eq:mse_score}
+    E = \sqrt{\frac{\sum\lvert g(x,y) - f(x,y)
+    \lvert^{^{2}}}{\sum\lvert f(x,y) \lvert ^{^{2}}}}
+\end{equation}
 
 %% SOFTWARE DEVELOPMENT
 
@@ -250,17 +328,49 @@ programmed using the \gls{oop} paradigm. And also like the \gls{DOAS}
 library, the SOLID principles of \gls{oop} were generally observed. The
 global flowcharts of the software's operation can be viewed in
 Figure~\ref{fig:tomosim_start} and
-Figure~\ref{fig:tomosim_reconstruction}. 
-
-As the application grew and I continued to work on it, it became quite
-clear that the original architecture was compromising the tool's
-performance and the code would need to be heavily overhauled. Although
-the time-frame of this work did not allow this, I was able to devise a
-basic new architecture for this software. 
+Figure~\ref{fig:tomosim_reconstruction}. As the application grew and I
+continued to work on it, it became quite clear that the original
+architecture was compromising the tool's performance and the code would
+need to be heavily overhauled. Although the time-frame of this work did
+not allow this, I was able to devise a basic new architecture for this
+software. 
 
 Ideally, Tomosim would be an extension of the more generic \gls{DOAS}
 library. The only reason why it is not is purely historical: Tomosim's
-development was started before the other library's. The \gls{uml}
-diagram of the new architecture is displayed in
-Figure~\ref{fig:new_tomosim_uml}. The \gls{DOAS} library would 
+development was started before the former library library. Therefore,
+the first part of any refactoring exercise should be to mend this error.
+The new architecture, represented in Figure~\ref{fig:new_tomosim_uml},
+is characterised by an increase in modularity. This is achieved through
+the introduction of the new classes "Reconstructor" and "RecEvaluator",
+which are composed into an also new class called "Experiment". The
+introduction of the two first classes greatly increases Tomosim's
+flexibility, as one would now be allowed to introduce any new
+reconstruction technique or evaluation method, without ever having to
+touch code already in place. To ensure this functionality, it is highly
+advisable that these two classes are built using the Template Design
+Pattern, with structural enforcing in the for of key abstract methods.
+This new design also favours the implementation of a mix between the
+factory design pattern and the strategy design pattern. This would
+result in factory methods being used to create Experiment objects based
+on some input parameters that would (for instance) determine the types
+of reconstruction and / or evaluation performed by said
+object~\todo{link to theory}.
 
+Improving the system's architecture is  a necessary and very important
+development, but the refactoring effort must also comprehend the
+performance side of the application. Currently, Tomosim's spends most of
+its running time discretising the \gls{ROI}. This is expected. However,
+since Siddon's algorithm is not implemented using arrays, but instead
+makes heavy use of Python lists and for-loop-based iterations, it is
+absolutely imperative that this component is optimised
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/pdf/newTomosimUML.pdf}
+    \caption{First draft of the \gls{uml} diagram for the new
+        architectural model of the Tomosim library. Note the usage of
+        several classes from the \gls{DOAS}library described in
+        Section~\ref{sub:methods_ground_station}.
+    }%
+    \label{fig:new_tomosim_uml}
+\end{figure}
