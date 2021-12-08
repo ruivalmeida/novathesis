@@ -28,8 +28,10 @@
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{epigraph}
-\usepackage{lipsum}
 \usepackage{rotating}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{verbatim}
 
 \usepackage[textsize=footnotesize]{todonotes}  % To register TODO notes in the text
 \setlength{\marginparwidth}{3.25cm}
@@ -37,8 +39,6 @@
 %% For automatic adding month and year
 \usepackage[calc]{datetime2}
 
-%% FOR DEMO PURPOSES ONLY --- TO BE REMOVED by final users
-\usepackage{lipsum}
 \usepackage{pdfpages}
 \usepackage[ruled,vlined]{algorithm2e}
 \SetKw{KwBy}{by}
@@ -54,4 +54,21 @@
 \definecolor{yellow_bg}{rgb}{255, 235, 156}
 
 
+
 \renewcommand\tabularxcolumn[1]{m{#1}}% for vertical centering text in X column
+
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{
+     fontsize=\footnotesize,
+     %
+     frame=lines,  % top and bottom rule only
+     framesep=2em, % separation between frame and text
+     rulecolor=\color{Blue},
+     %
+     label=\fbox{\color{Blue}objective\_prescription.txt},
+     labelposition=topline,
+     %
+     commandchars=\|\(\), % escape character and argument delimiters for
+                          % commands within the verbatim
+     commentchar=*        % comment character
+}
