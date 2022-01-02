@@ -40,8 +40,7 @@ categorisation of monitoring techniques with regard to the proximity
 with which they are designed to interact with the target pollutant.
 As with the case of fire detecting systems, reported
 in~\cite{ValentedeAlmeida2017}, atmospheric pollution monitoring systems
-can be divided into three broad categories, which are further divided as
-in~\ref{fig:pollution_monitoring_tree}:
+can be divided into three broad categories.
 
 \begin{description}
     \item[In-situ systems] localised sensors that are influenced by
@@ -54,13 +53,13 @@ in~\ref{fig:pollution_monitoring_tree}:
         larger-scale trends;
 \end{description}
 
-\begin{figure}[htpb]
-    \centering
-    \includegraphics[width=.8\textwidth]{img/pdf/air_pollution_monitoring_tree.pdf}
-    \caption{A tree diagram providing a general overview of the various
-    types of atmospheric pollution monitoring systems. }%
-    \label{fig:pollution_monitoring_tree}
-\end{figure}
+% \begin{figure}[htpb]
+%     \centering
+%     \includegraphics[width=.8\textwidth]{img/pdf/air_pollution_monitoring_tree.pdf}
+%     \caption{A tree diagram providing a general overview of the various
+%     types of atmospheric pollution monitoring systems. }%
+%     \label{fig:pollution_monitoring_tree}
+% \end{figure}
 
 Sampling studies are still regarded as the gold standard for atmospheric
 pollution monitoring. They are fundamentally different from the other
@@ -86,83 +85,123 @@ concentration and an appropriate electrolyte is used (for instance,
 KOH), an electronic charged develops through the oxidation of the anode
 into a hydroxide. If a load is presented to the system, the current
 flowing through it is proportional to the partial pressure of oxygen in
-the mixture~\cite{Dhall2021, Clark1997}~\todo{citation image - citicel}.
+the mixture~\cite{Dhall2021, Clark1997}.
 
 \begin{figure}[htpb]
     \centering
     \includegraphics[trim=6cm 6.2cm 4cm 16cm, clip]{img/pdf/clark_193.pdf}
-    \caption{An oxygen electrochemical sensor developed by Citi}%
+    \caption{General schematic for an electrochemical sensor cell by
+    City Technology~\cite{Clark1997}.}%
     \label{fig:electrochemical_wet_cell}
 \end{figure}
 
 A similarly applicable technology is the use of semiconductor sensors.
-These usually operate by the detection 
+These usually operate by the detection of a change in an electrical
+characteristic of the sensor's material. These sensors usually display
+sub-ppm detection limits, are easy to manufacture and to install and
+have simple high-level operating principles (although some of them are
+based on unknown phenomena~\cite{Dhall2021}). They are
+also extremely cheap due to their needing minute quantities of sensing
+materials. The most common approach to the semiconductor sensors is the
+chemoresistive sensor. This sensor's resistance changes with the
+presence of the target gas. They are based in the work of Brattain and
+Bardeen~\cite{Dhall2021, Brattain1952}, in 1953. In spite of their many
+advantages, semiconductor sensors also have their limitations. For
+instance they are not as stable as most other measurement techniques.
+They are also quite limited in terms of their selectivity, and therefore
+should not be used in environments in which accuracy is a requirement.
+Besides, they suffer from the fact that they are only meant to detect
+what is directly in their vicinity, which means that they are easily
+influenced by local sources (think of a car's exhaust near to the
+sensor) which can mislead operators with regard to the atmosphere's
+composition.
 
+Open path atmospheric monitoring techniques are completely different.
+Instead of relying in networks of small, local sensors, open-path
+measurement methods apply optical principles to assess the atmosphere's
+composition in a large area (up to a radius of a few km). \gls{tdl} is
+one of such techniques, and one of the most popular. The measurement is
+focused on a single line of the absorption spectrum of a particular
+chemical species, to which \emph{the} laser is tuned. \gls{tdl} can be
+used to retrieve data from several gaseous pollutants at the same time.
+It is very user friendly, does not require any type of complex
+maintenance and it is reasonably easy to implement. However, since the
+laser is tuned to a particular wavelength, it has the important drawback
+of needing one laser per target component. Moreover, only a relatively
+limited set of components can be detected through this method, and
+\gls{PM} and airborne objects are known to interfere with measurements
+from this technique~\cite{Vallero2014, Kim2007}.
 
+\gls{dial} is another important open-path technique. It uses \gls{lidar}
+in two different wavelengths and measures the difference in absorption
+between the two echos to determine the target gas concentration. By
+measuring response times, \gls{dial} is also able to determine the
+spatial distribution of the gas that is being measured. With regards to
+drawbacks, there is a frequent problem with spectral artifacts that can
+introduce some bias towards high densities (real concentrations are
+smaller than they appear). Moreover, \gls{dial} depends on the lasers
+that are used, so it can have a limited range of detected
+components~\cite{Vallero2014}.
 
-%\glsxtrlong{AP} monitoring techniques and devices are too many to address
-%them all in this document. Besides, the physical principles involved are
-%completely different from one to another, making it very difficult to
-%make a broad generalization, other than the fact that they can be
-%divided into local and remote sensing devices. The gold standard for air
-%quality measurements remains those techniques in which a sample is
-%collected in the field and then taken to the laboratory to be analyzed
-%by very powerful analytical methods such as chromatography or mass
-%spectroscopy. While undoubtedly providing the most accurate
-%representation of the air composition at the time and place the sample
-%was collected, it is also true that this method's results are too slow
-%to use regularly in the field~\cite{Vallero2014, Clark1997, Bishop1996}.
+Infrared radiation can also be used to measure atmospheric gas
+densities. The \gls{ftir} method (general schematic presented in
+Figure~\ref{fig:ap_monitoring_ftir}) uses an interferometric measurement
+of infrared light to determine how much of a particular gas was in the
+analysed column. This is a very accurate method of obtaining average
+concentrations along a path. However, it can be quite expensive and is
+certainly the most complicated method described here. Moreover, strong
+infrared absorption by water in the atmosphere can lead to it not being
+useful in high-humidity environments. Raman spectroscopy can be used in
+these situations, but this method has a much lower resolution, due to
+the much lower intensity of the relevant signal~\cite{Vallero2014}.
 
-%Another very important air quality monitoring method is the use of
-%electrochemical sensors. The first variants (wet cells) of this kind of
-%sensor became very popular in the field of industrial hygiene, where
-%they were applied in many portable flue gas analyzers. They were very
-%attractive to companies worldwide given their potential for very low
-%costs in comparison to optical or other more complex techniques. Apart
-%from the oxygen wet cell sensor, that has a slightly different
-%configuration, these electrochemical devices are comprised of three
-%electrodes - a sensing electrode, a counter electrode and a reference
-%electrode - separated by a thin layer of electrolyte. The gas that is
-%diffused to the surface of the electrode is either oxidized or reduced,
-%thus changing the systems electrical properties, in a way that is then
-%captured by an amplification circuit~\cite{Clark1997}.
+\begin{figure}[htpb]
+    \centering
+    %{<left> <lower> <right> <upper>}
+    \includegraphics[trim=10.5cm 5.5cm 2cm 18cm,%...
+        clip, frame, width=.8\textwidth]{img/pdf/vallero_ftir_588.pdf}
+    \caption{General schematic of a \gls{ftir} instrument for
+    atmospheric monitoring. Image adapted from~\cite{Vallero2014}.}%
+    \label{fig:ap_monitoring_ftir}
+\end{figure}
 
-%Wet cell electrochemical sensors were the precursors of the now more
-%common solid state sensors. These sensors are the ones that we see in
-%every subterranean parking lot, measuring several traffic related gases
-%such as \gls{co}, \gls{co2} or \gls{no2}. In general semiconductor gas
-%detectors are comprised of two modules: a receptor and a transducer (see
-%Figure~\ref{fig:semiconductor_sensor}). The receptor has in its
-%composition a material (or set of materials) that, in contact with the
-%target gas, induces a change in the systems inherent properties (work
-%function, dielectric constant, resistance, etc.) or emits heat or light.
-%The transducer is a device or circuit that converts the receptor's
-%changes into an electrical signal~\cite{Clark1997, Bishop1996,
-%Vallero2014}.
+One of the most important atmospheric monitoring techniques available is
+\gls{DOAS}. As \gls{ftir} and \gls{tdl}, \gls{DOAS} is based on
+Lambert-Beer's law, so it determines the quantity of a given gas in the
+atmosphere by how much light is absorbed on a certain light path and a
+certain wavelength (which with \gls{DOAS}, can be a wavelength
+interval). The method, which is explained in more detail in
+Section~\ref{sec:doas} is able to simultaneously detect multiple trace
+gases with ppm level accuracy (depending on the assembly). A \gls{DOAS}
+system is a very easy to operate system, since once it is assembled it
+requires no complicated maintenance.
 
-%\begin{figure}[htpb]
-%    \centering
-%    %\includegraphics[trim=left bottom right top, clip]{file}
-%    \includegraphics[trim=6cm 6.2cm 4cm 16cm, clip]{img/pdf/clark_193.pdf}
-%    \caption{Semiconductor electrochemical sensor basic structure. There
-%    are many examples of this type of sensors, but in general they
-%    follow this architecture~\cite{Clark1997}.}
-%    \label{fig:semiconductor_sensor}
-%\end{figure}
+The last atmospheric monitoring solution that I wish to delve on are
+satellite-based techniques. In the last decade, we have seen a global
+effort on behalf of governments (and transational entities) to invest in
+tools that can accurately monitor how atmospheric composition varies and
+evolves through time. The EU developed the Copernicus network, with
+several instruments already in orbit and Copernicus 5 scheduled for
+launch in 2023; South Korea has deployed its Geostationary Environment
+Monitoring Spectrometer in 2020, covering most of South-East Asia; and
+the USA are preparing to launch their Tropospheric Emissions: Monitoring
+of Pollution device in 2022. Together, this constellation of satellites
+will provide hourly data from the most important pollution sources in
+the world (example \gls{no2} map displayed in
+Figure~\ref{fig:ap_monitoring_copernicus}). The amount and quality of
+data that will come from these initiatives is something unheard of until
+now, and has the potential to revolutionise how humans look at
+tropospheric emissions. However, these applications lack spatial and
+temporal resolution, as it is common for space-based terrestrial
+monitoring instruments. Moreover, in spite of its total availability
+(you can consult data on the internet), raw satellite data can be hard
+to interpret and most of the times requires special knowledge and tools.
 
-%Optical (spectroscopic) systems are fundamentally different from the
-%other techniques that have already been presented. They can be used to
-%perform remote sensing measurements (as far as being used for
-%measurements aboard satellites). In the last few decades, these
-%techniques have gained a lot of ground in atmospheric research, due to
-%their high sensitivity and specificity and the universality of their
-%applicability. Spectroscopic methods are based on Lambert-Beer's law
-%(see Section~\ref{sec:doas} for a more thorough explanation), and make
-%use of the fact that the way in which gases interact with light is well
-%known and follows an exponential expression. There are many
-%spectroscopic techniques for measuring \gls{AP}. One of the most
-%important atmospheric analysis methods, and especially in what concerns
-%this document, is \gls{DOAS}. While it is based on the same mathematical
-%formulation as the other spectroscopic methods, it is also based on
-%other factors, which shall be discussed in Section~\ref{sec:doas}.
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/pdf/ENSEMBLE_no2_2022010200_SFC_000.pdf}
+    \caption{Satellite \gls{no2} measurements over Europe. Figure taken
+    from Copernicus's website~\cite{copernicusweb2021}.}%
+    \label{fig:ap_monitoring_copernicus}
+\end{figure}
 
