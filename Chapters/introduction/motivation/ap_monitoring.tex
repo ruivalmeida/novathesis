@@ -178,7 +178,7 @@ requires no complicated maintenance.
 
 The last atmospheric monitoring solution that I wish to delve on are
 satellite-based techniques. In the last decade, we have seen a global
-effort on behalf of governments (and transational entities) to invest in
+effort on behalf of governments (and transnational entities) to invest in
 tools that can accurately monitor how atmospheric composition varies and
 evolves through time. The EU developed the Copernicus network, with
 several instruments already in orbit and Copernicus 5 scheduled for
@@ -199,9 +199,50 @@ to interpret and most of the times requires special knowledge and tools.
 
 \begin{figure}[htpb]
     \centering
-    \includegraphics[width=.8\textwidth]{img/pdf/ENSEMBLE_no2_2022010200_SFC_000.pdf}
+    \includegraphics[width=.8\textwidth]{img/pdf/ENSEMBLE_no2_2021120500_SFC_000.pdf}
     \caption{Satellite \gls{no2} measurements over Europe. Figure taken
     from Copernicus's website~\cite{copernicusweb2021}.}%
     \label{fig:ap_monitoring_copernicus}
 \end{figure}
+
+Summarising, we have already several ways of monitoring, quantifying and
+studying pollution. It is clear that one of the ways in which this field
+of study will progress is through technology, namely through the
+development of new intelligent instruments that \emph{fill the blanks}
+that are currently left by what we can use today~\cite{EEA2019,
+Kim2007}. At this point I would point out to the reader the summary
+table that is presented in Table~\ref{tab:ap_monitoring_summary_table}.
+The amount of green in it should be an inspiring sight. Most methods are
+generally very useful. However, \gls{DOAS} has a single red cell,
+corresponding to spatial resolution. While this is a limitation of the
+\emph{vanilla} \gls{DOAS} method, it does not hold for some of this
+technique's more recent ramifications. In fact, \gls{DOAS} tomography
+can very well solve this problem. This was the rationale behind the path
+that was chosen in this thesis' work, and the motto for the rest of this
+document.
+
+\begin{table}[htb]
+\centering
+\caption{Summary table for \gls{AP} monitoring methods. Highlighted are
+perceived strengths and weaknesses: \textcolor{red}{red} for bad,
+\textcolor{green}{green} for good. In this table, electrochemical
+sensors are abbreviated to EC and semiconductor sensors to SC.}
+\label{tab:ap_monitoring_summary_table}
+\small
+\begin{tabularx}{\textwidth}{XXXXcXXX}
+    \toprule
+\textbf{Method}          & \textbf{Acc.}
+                         & \textbf{Temp. Res.}
+                         & \textbf{Spt. Res.}
+                         & \textbf{Robustness}                                & \textbf{Ease of Use}                                  & \textbf{Cost over time}                               \\ \midrule
+\textbf{Sampling}        & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High}   & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} Low}  & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High} & \cellcolor[HTML]{FFEB9C}{\color[HTML]{AA6A17} Medium} & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} Low}    & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} Low}    \\
+\textbf{EC} & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} Low}    & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High} & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High} & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} Low}    & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High}   & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} High}   \\
+\textbf{SC}  & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} Low}    & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High} & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High} & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} Low}    & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High}   & \cellcolor[HTML]{FFEB9C}{\color[HTML]{AA6A17} Medium} \\
+\textbf{\gls{tdl}}       & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High}   & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High} & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} Low}  & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High}   & \cellcolor[HTML]{FFEB9C}{\color[HTML]{AA6A17} Medium} & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} Low}    \\
+\textbf{\gls{dial}}      & \cellcolor[HTML]{FFEB9C}{\color[HTML]{AA6A17} Medium} & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High} & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} Low}  & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High}   & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} Low}    & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} Low}    \\
+\textbf{\gls{ftir}}      & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High}   & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High} & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} Low}  & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High}   & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} Low}    & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} High}   \\
+\textbf{\gls{DOAS}}      & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High}   & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High} & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} Low}  & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High}   & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High}   & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} Low}    \\
+\textbf{Satellite}       & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High}   & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} Low}  & \cellcolor[HTML]{FFC7CE}{\color[HTML]{9C006E} Low}  & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} High}   & \cellcolor[HTML]{FFEB9C}{\color[HTML]{AA6A17} Medium} & \cellcolor[HTML]{C6EFCD}{\color[HTML]{367E33} Low}    \\ \bottomrule
+\end{tabularx}
+\end{table}
 
