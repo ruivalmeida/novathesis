@@ -1,0 +1,78 @@
+%!TEX root=../../template.tex
+\section{First Hypothesis}%
+\label{sec:first_hypothesis}
+
+Results presented in Section~\ref{sec:tomosim}  raise a series of
+pertinent observations that should be addressed in discussion. The first
+remark goes to the fact that the number of projections used seemed
+adequate to perform the tomographic reconstruction in adequate fashion,
+although there are tomographic applications with many more projections
+(orders of magnitude more projections).  This was not an unexpected
+result, as there are already several examples of studies in which a
+considerably lower number of projections was used, still producing
+satisfactory results~\cite{Pundt2005}.  Moreover, and since the
+simulation software automatically includes errors in the calculations,
+this number also proves that geometric error plays a very limited role
+in changing the result of the reconstruction due to the difference in
+size between the drone's trajectory and the geometric error, this was
+also a predicted result.
+
+Even with the relatively low number of projections produced by the
+drone's trajectory and measurement strategy, all reconstruction
+algorithms were able to produce a reconstructed image that resembled the
+phantom that generated it. $\Delta$, the angular interval between
+projections, revealed itself to be crucial. This was expected as the
+number of captured projections is obtained by dividing 360 by $\Delta$.
+This is, also as expected, confirmed by the upward trend of the error
+when increasing the value of the angular projection interval, as can be
+seen numerically in Table~\ref{tab:rec_errors} and qualitatively in
+Figure~\ref{fig:rec_comparison}. With respect to the algorithms used,
+the custom-made MLEM routine produces clearly outlier results, which are
+not on par with the other two reconstruction methods used. This is plain
+to see both in Figure~\ref{fig:rec_results} and in
+Table~\ref{tab:rec_errors}, in which this algorithm's NRMSE is almost
+four times the second best result (FBP) for the smallest projection
+interval. This difference could to some extent be expected. SART and FBP
+algorithms were implemented using some of the most relevant and
+consistently used Python libraries (SciPy, for
+instance~\cite{Virtanen2020}). Given the amount of attention these
+libraries get from the scientific programming community, levels of
+optimisation are extremely high. Although it is nowhere near the other
+two approaches, the MLEM routine is still useful, as it is the only
+truly geometry-independent algorithm in this study (SART is also
+geometry independent, but this particular implementation expects a
+parallel projection sinogram as input).
+
+As stated in Section~\ref{sub:error_estimation}, three different kinds
+of error influence the reconstruction results: geometric, spectroscopic
+and reconstruction errors. The first kind of error is directly included
+in projection calculations, through the application of a Monte
+Carlo-like method to the geometry described in the same section. The
+second kind of uncertainty comes from the spectrum acquisition process
+itself, which is not perfect.  If one considers there are no systematic
+errors present in the results, which is an acceptable premise in a
+simulation, then these errors can be simulated by the inclusion of
+Gaussian noise in the spectral measurements. This approach is based on
+the one used in~\cite{Stutz1996}, in which a Gaussian noise spectrum is
+added to the spectrum of interest in order to simulate how the error
+behaves with a degraded signal. Finally, reconstruction errors come from
+the finite precision of the calculations that render the images. These
+errors were presented in Subsection~\ref{sub:reconstruction_results}.
+
+The three methods were also evaluated as to how they perform
+computationally, by measuring the time it took to produce the images in
+Figure~\ref{fig:rec_results} using a Paperspace P4000 cloud computing
+instance. In this regard, the fastest method was FBP, which took around
+3 seconds to reconstruct. The second was MLEM, with around 50 seconds
+for 1000 iterations, and finally came SART, with 1 minute and 50 seconds
+for 1 iteration. One relevant observation comes from the fact that MLEM
+was significantly faster than SART, even taking into account the
+difference in optimisation, which was not an expected result and may
+indicate some reconstruction enhancing technique on SART's side, as the
+literature seems to indicate that this technique is faster than
+MLEM~\cite{Defrise2003}.
+
+All things considered, the FBP algorithm produces a very good
+reconstruction, equivalent to SART's, while being more than 10 times
+faster, indicating that for this kind of application and with this kind
+of projection information, it is the best reconstruction algorithm.
