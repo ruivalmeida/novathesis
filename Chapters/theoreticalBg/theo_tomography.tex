@@ -265,7 +265,7 @@ In Equation~\ref{eq:theta_and_t}, $D$ is the distance between the source
 $S$ and the origin $O$; $\gamma$ is the angle of a ray within a fan and
 $\beta$ is the angle that the source $S$ makes with a reference axis.
 Through these relationships one can \emph{translate} the parallel
-projection's FBP algorithm to the fan-beam case, which involves several
+projection's \gls{FBP} algorithm to the fan-beam case, which involves several
 complex geometric transformations, although the overall rationale is
 exactly the same.
 
@@ -315,3 +315,26 @@ projection. Although being much simpler than directly applying the
 limitation, which is the non-uniformity of the generated parallel
 projections. This can usually be corrected through
 interpolation~\cite{Kak2001a}. 
+
+\subsection{Iterative Tomographic Reconstruction Methods}%
+\label{sub:theobg_tomography_iterativemethods}
+
+Iterative reconstruction algorithms are based on simpler premises than
+\gls{FBP}, but they do require a more computational approach. One can
+start by thinking that a certain tomographic problem is modelled by its
+sinogram, which is the set of all projections that were gathered by the
+sensors. The sinogram is a matrix whose columns represent the sensor
+that gathered the information and whose lines represent the projection
+number. The resulting image can also be thought of as a matrix. Each
+value of this matrix corresponds to a pixel intensity, which gives it
+its intensity and/or colour. The third matrix is the system matrix. This
+matrix stores the length of each ray in each projection contained in one
+of the image's pixels. These lengths are obtained through a process
+called discretisation. One famous method for this purpose if described
+in Section~\ref{ssub:theobg_tomography_iterativemethods_siddon}.
+Iterative methods attempt to solve the relationship between these three
+matrices, which is presented in Equation~\ref{eq:iterative_relation}. In
+it~\todo{continue from tomosim}
+
+
+
