@@ -293,9 +293,9 @@ re-sort any fan-beam projection into parallel beam geometry.
     R_{\beta}(\gamma) = P_{\beta + \gamma}(D \cdot \sin \gamma)
 \end{equation}
 
-Let's call the angular interval between fan-beam projections can be
-written $\delta\beta$, and the angular interval of rays within each fan
-is written $\delta\gamma$. In the case that they are the same
+The angular interval between fan-beam projections can be written
+$\delta\beta$, and the angular interval of rays within each fan is
+written $\delta\gamma$. In the case that they are the same
 ($\beta=\gamma=\alpha$), then it it is the case that they can both be
 replaced by multiples of that interval in
 Equation~\ref{eq:parallel_vs_fanbeam}, which becomes
@@ -319,6 +319,10 @@ interpolation~\cite{Kak2001a}.
 \subsection{Iterative Tomographic Reconstruction Methods}%
 \label{sub:theobg_tomography_iterativemethods}
 
+This subsection borrows heavily from an article I published in 2021, in
+which I described the tomographic part of this
+thesis~\cite{ValentedeAlmeida2020}.  
+
 Iterative reconstruction algorithms are based on simpler premises than
 \gls{FBP}, but they do require a more computational approach. One can
 start by thinking that a certain tomographic problem is modelled by its
@@ -332,9 +336,88 @@ matrix stores the length of each ray in each projection contained in one
 of the image's pixels. These lengths are obtained through a process
 called discretisation. One famous method for this purpose if described
 in Section~\ref{ssub:theobg_tomography_iterativemethods_siddon}.
+
 Iterative methods attempt to solve the relationship between these three
-matrices, which is presented in Equation~\ref{eq:iterative_relation}. In
-it~\todo{continue from tomosim}
+matrices, which is presented in Equation~\ref{eq:iterative_general}. In
+it, $\mathbf{g}\in\mathbb{R}^{m, 1}$ is the column vector sinogram,
+$\mathbf{a} \in \mathbb{R}^{m,n}$ is the system matrix and $\mathbf{f}
+\in \mathbb{R}^{n, 1}$ is the column vector image. $m$ is the number of
+measurements (projections times detectors) and $n$ is the number of
+pixels in the image. As their designation implies, iterative algorithms
+produce an estimation for $\mathbf{f}$ which is updated in the direction
+of error minimisation in every iteration~\cite{Kak2001, Bruyant2002}.
+
+\begin{equation}
+    \centering
+    \mathbf{g} = \mathbf{a} \cdot \mathbf{f}
+    \label{eq:iterative_general}
+\end{equation}
+
+The popularity of algebraic reconstruction methods has not remained
+constant throughout the years. For a long time, they have been
+considered too computationaly intensive to use in a clinical setting
+(paradoxically, Hounsfield's machine used this kind of algorithm). This
+was in direct opposition to the fact that researchers know that these
+methods are better able to model reconstruction since Shepp and Vardi
+published the maximum likelihood tracer estimation in 1982. Nowadays,
+and since the mid nineties, these algorithms are the first choice
+whenever the reconstruction dataset is not too large to process using
+the available computational capabilities~\cite{Defrise2003}.
+
+The general goal of iterative reconstruction algorithms is to solve
+Equation~\ref{eq:iterative_general}~\cite{Bruyant2002a}. In principle,
+any method that solves it can be used for image reconstruction in
+tomography. In reality, however, only a few are currently in use by the
+community. Of these, TomoSim uses two of the most prominent:
+Simultaneous algebraic Reconstruction Technique (SART) and Maximum
+Likelihood Expectation Maximisation (MLEM). 
+
+SART was presented in 1984 by Andersen and Kak~\cite{Andersen1984a} and
+the global idea is that the estimated image is corrected for all
+projections at the same time (in opposition to the original algebraic
+Reconstruction Technique, in which corrections were applied for each
+single projection). Iterations in SART change the estimated image
+according to Equation~\ref{eq:sart}, iterating on $k$.
+
+\begin{equation}
+    \centering
+    \mathbf{g}_{i}^{(k+1)} = \mathbf{g}_{i}^{(k)} + \frac{\sum_j \left[
+            \mathbf{a}_{ij} \cdot \frac{p_{j} - \mathbf{a}_{j}^{T} \cdot
+    \mathbf{g}^{(k)}}{\sum_{i=1}^{n}\mathbf{a}_{ij}}\right]}{\sum_j
+    \mathbf{a}_{ij}}
+    \label{eq:sart}
+\end{equation}
+
+MLEM algorithms were first published in the medical imaging community in
+1982, by Shepp and Vardi~\cite{Shepp1982}. With this algorithm, image
+corrections are ruled by Equation~\ref{eq:mlem}, which also iterates
+over $k$.
+
+\begin{equation}
+    \centering
+    \mathbf{f}_{j}^{k + 1} =
+    \frac{\mathbf{f}_{j}^{k}}{\sum_{i=1}^{n}\mathbf{a}_{ij}}
+    \sum_{i=1}^{n}\frac{\mathbf{g}_i}{\sum_{j'=1}^{m}\mathbf{a}_{ij'}\mathbf{f}_{j'}^{k}}
+    \label{eq:mlem}
+\end{equation}
+
+This equation is very easy to implement computationally, if one observes
+that the sums of the second multiplication term expand neatly onto
+matrix products. In the end, this equation is the equivalent of writing
+Equation~\ref{eq:mlem_simplified}, as explained in~\cite{Bruyant2002a},
+in which IMG$^{(k)}$ is the estimated image in the k$^{\text{th}}$
+iteration, NBP is the Normalised Backprojection operation, RSNG the real
+sinogram (as in coming from the detector hardware) and SSNG the
+simulated sinogram, calculated through the previous iteration.
+
+\begin{equation}
+    \centering
+    \begin{split}
+        \text{IMG}^{(k+1)} = \text{IMG}^{(k)}&
+        \times\text{NBP} \left(\frac{\text{RSNG}}{\text{SSNG}^{(k)}}\right)
+    \end{split}
+    \label{eq:mlem_simplified}
+\end{equation}
 
 
 
