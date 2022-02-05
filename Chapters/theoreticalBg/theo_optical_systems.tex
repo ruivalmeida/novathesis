@@ -13,8 +13,7 @@ following chapters.
 
 \begin{figure}[htpb]
     \centering
-    \missingfigure{}
-    % \includegraphics[width=0.8\linewidth]{name.ext}
+    \includegraphics[width=.8\textwidth]{img/pdf/opticalSystemBasic.drawio.pdf}
     \caption{General schematic for an optical system, as relevant to the
     work of this thesis. Its function is to gather environment light and
     format it as data.}%
@@ -25,19 +24,19 @@ following chapters.
 \label{sub:theobg_opticalsystems_telescopes}
 
 The most basic form of telescope comes from the juxtaposition of two
-lenses~\tdcitation{Hecht}, as depicted in
+lenses~\cite{Hecht2016}, as depicted in
 Figure~\ref{fig:basic_telescope}. The focal point of the objective is
 coincident with the focal point of the eyepiece. Notice, also from the
 figure, that the rays reaching in the eye are parallel, so the observer
-can use the telescope with a relaxed eye~\tdcitation{Hecht}.
+can use the telescope with a relaxed eye~\cite{Hecht2016}.
 
 \begin{figure}[htpb]
     \centering
-    \missingfigure{}
     % \includegraphics[width=0.8\linewidth]{name.ext}
+    \includegraphics[width=0.8\linewidth]{img/png/telescope.png}
     \caption{The most basic form of telescope. The second lens
     (eyepiece) magnifies the image produced by the first lens (the
-    objective)}%
+    objective)~\cite{Hecht2016}}%
     \label{fig:basic_telescope}
 \end{figure}
 
@@ -65,8 +64,8 @@ entering the tube. Of at least the same importance, the focal length's
 dependence of the length of the tube dissipates, since the light path
 between the objective and the observer's eye depends now on the mirror
 configuration inside the telescope. For all these advantages, there are
-nowadays no great telescopes of refracting geometry~\tdcitation{Warren
-Smith}.
+nowadays no great telescopes of refracting geometry~\cite{Smith2000,
+Hecht2016}.
 
 \begin{figure}
       \begin{subfigure}[b]{.45\linewidth}
@@ -100,7 +99,7 @@ a UV-Vis Czerny-Turner spectrometer. A schematic representation of this
 type of spectrometer is presented in
 Figure~\ref{fig:czernyturner}~\tdcitation{the image with angle notes},
 and a more realistic representation is displayed in
-Figure~\ref{fig:avantes_3d}~\tdcitation{Avantes technical note}. As can
+Figure~\ref{fig:avantes_3d}~\cite{Avantes2022}. As can
 be seen in both schematics, light enters the assembly through the slit
 and is collimated on a spherical mirror, which reflects it towards an
 oriented diffraction grating. The resulting diffracted light is then
@@ -129,6 +128,24 @@ experiment or application. Here are the most important of them.
         conditions that allow for lower integration times.
 \end{description}
 
+\begin{figure}
+      \begin{subfigure}[b]{.45\linewidth}
+        \centering
+        \missingfigure{}
+        % \includegraphics[width=.8\textwidth]{img/png/Open-Bench-V2.png}
+        \caption{}\label{fig:czernyturner}
+      \end{subfigure}%
+      \hfill
+      \begin{subfigure}[b]{.45\linewidth}
+        \centering
+        \includegraphics[width=.8\textwidth]{img/png/Open-Bench-V2.png}
+        \caption{The optical bench of an Avantes
+        spectrometer~\cite{Avantes2022}.}\label{fig:avantes_3d}
+      \end{subfigure}
+      \caption{Basic schematics for the two types of telescopes
+      presented.}\label{fig:telescope_types_schematics}
+\end{figure}
+
 Finally, the choice of spectrometer should also include into
 consideration some less desirable, but inescapable,  features of these
 devices. The most important of these is the thermal stability.
@@ -138,4 +155,4 @@ the detector is exposed to a slightly different section of the spectrum,
 which naturally leads to different signal results. Commercial
 spectrometer manufacturers normally provide quality control measurements
 for the device's thermal stability
-values~\cite{Merlaud2013}~\tdcitation{Avantes notes}.
+values~\cite{Merlaud2013, Avantes2022}.
