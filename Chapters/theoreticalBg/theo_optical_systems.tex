@@ -50,7 +50,7 @@ application the designer had in mind. Astronomical telescopes produce
 inverted images. This would be highly confusing for terrestrial
 observations (therefore, terrestrial telescopes have an erector lens).
 There are two main types of telescope, refractors (see
-Figure~\ref{fig:refractor_telescopes}) and reflectors (see
+Figure~\ref{fig:basic_telescope}) and reflectors (see
 Figure~\ref{fig:reflector_telescopes}). While conceptually much simpler,
 refraction based telescopes do have several drawbacks. They are
 exclusively dependent on lenses, which are difficult to manufacture.
@@ -67,23 +67,16 @@ configuration inside the telescope. For all these advantages, there are
 nowadays no great telescopes of refracting geometry~\cite{Smith2000,
 Hecht2016}.
 
-\begin{figure}
-      \begin{subfigure}[b]{.45\linewidth}
-        \centering
-        \missingfigure{}
-        \caption{Basic schematic for a refractor
-        telescope.}\label{fig:refractor_telescopes}
-      \end{subfigure}%
-      \hfill
-      \begin{subfigure}[b]{.45\linewidth}
-        \centering
-        \missingfigure{}
-        \caption{Basic schematic for a reflector
-        telescope.}\label{fig:reflector_telescopes}
-      \end{subfigure}
-      \caption{Basic schematics for the two types of telescopes
-      presented.}\label{fig:telescope_types_schematics}
+\begin{figure}[htpb]
+    \centering
+    % left bottom right top
+    \includegraphics[clip,%
+    trim=1cm 11.5cm 11cm 13.5cm,%
+    width=.8\textwidth]{img/pdf/optics_reflector_telescopes_235.pdf}
+    \caption{A refractor telescope of the Cassegrain
+    variant~\cite{Hecht2016}.}\label{fig:reflector_telescopes}
 \end{figure}
+
 
 \subsection{Spectrometers}%
 \label{sub:theobg_opticalsystems_spectrometers}
@@ -97,17 +90,17 @@ based on, on their applications and on the geometry of their internal
 components. In this thesis, the only type of spectrometer that was used
 a UV-Vis Czerny-Turner spectrometer. A schematic representation of this
 type of spectrometer is presented in
-Figure~\ref{fig:czernyturner}~\tdcitation{the image with angle notes},
-and a more realistic representation is displayed in
-Figure~\ref{fig:avantes_3d}~\cite{Avantes2022}. As can
-be seen in both schematics, light enters the assembly through the slit
-and is collimated on a spherical mirror, which reflects it towards an
-oriented diffraction grating. The resulting diffracted light is then
-focused on a second spherical mirror onto a 1D linear detector array.
-This particularly optical assembly is highly customisable. One can
-choose between a variety of sensors, diffraction gratings and entrance
-slits, according to the spectral parameters required for one's
-experiment or application. Here are the most important of them.
+Figure~\ref{fig:czernyturner}~\cite{Neumann2014}, and a more realistic
+representation is displayed in
+Figure~\ref{fig:avantes_3d}~\cite{Avantes2022}. As can be seen in both
+schematics, light enters the assembly through the slit and is collimated
+on a spherical mirror, which reflects it towards an oriented diffraction
+grating. The resulting diffracted light is then focused on a second
+spherical mirror onto a 1D linear detector array.  This particularly
+optical assembly is highly customisable. One can choose between a
+variety of sensors, diffraction gratings and entrance slits, according
+to the spectral parameters required for one's experiment or application.
+Here are the most important of them.
 
 \begin{description}
     \item[Optical Resolution] The optimal resolution comes from a
@@ -129,14 +122,19 @@ experiment or application. Here are the most important of them.
 \end{description}
 
 \begin{figure}
-      \begin{subfigure}[b]{.45\linewidth}
+    \centering
+      \begin{subfigure}[a]{.8\linewidth}
         \centering
-        \missingfigure{}
-        % \includegraphics[width=.8\textwidth]{img/png/Open-Bench-V2.png}
-        \caption{}\label{fig:czernyturner}
+        % left bottom right top
+        \includegraphics[clip,%
+        trim=3.7cm 17.5cm 3.7cm 3.7cm,%
+        width=.8\textwidth]{img/pdf/neumannCzernyTurner.pdf}
+        \caption{The definition schematic for the Czerny-Turner
+        spectrometer, including all the relevant
+        angles~\cite{Neumann2014}}\label{fig:czernyturner}
       \end{subfigure}%
-      \hfill
-      \begin{subfigure}[b]{.45\linewidth}
+      \\
+      \begin{subfigure}[b]{.6\linewidth}
         \centering
         \includegraphics[width=.8\textwidth]{img/png/Open-Bench-V2.png}
         \caption{The optical bench of an Avantes
