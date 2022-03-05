@@ -3,6 +3,14 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=latex,windows,linux,macos
 
 ### LaTeX ###
+#
+#Don't look at image folder
+!img/
+
+# Strange lock files that are ruining the repo
+aux/.~lock.edc-co2-2008.xls#
+aux/.~lock.energySources.ods#
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
