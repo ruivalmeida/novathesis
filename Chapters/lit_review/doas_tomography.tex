@@ -1,61 +1,192 @@
 %!TEX root = ../../template.tex
 \section{DOAS Tomography}%
-\label{sec:doas_tomography}
+\label{sec:litrev_doas_tomography}
 
-In previous sections (Section~\ref{sec:doas}) we have established that
-\gls{DOAS} is a widespread spectroscopic technique with particular usage
-in the atmospheric research community. This technique uses either
-artificial or natural light to retrieve slant column densities, the
-number of molecules that interact with the said light in a given optical
-path. These values are described by Equation~\ref{eq:slantColumn}, and
-are indeed line integrals.
+The main goal of the \gls{sms} that I am going to address was to
+determine a good starting point for the system that I was aiming at. How
+is the current literary panorama for DOAS tomography? What is the
+novelty level of a drone-based spectroscopic system using tomographic
+trajectories? Answering these questions was extremely important for the
+(at the time) future of this project. They were also the basis for the
+definition of the article's research question: \textbf{What is the
+current status of DOAS tomography technology?}
 
-Also in a previous but different section
-(Section~\ref{sec:tomographic_algorithms_and_reconstruction_techniques}),
-we have seen that with enough of these integrals (which we can call
-projections), we can gather enough information to depict the interior
-structure of an object that we make traverse with radiation of some
-kind, as long as it is measurable and its behaviour is well known.
+Such a broad research question would be impossible to answer from direct
+literary research, so I partitioned my approach in three narrower parts.
+What does the typical hardware used for DOAS tomography look like? What
+kind of software are researchers using for this effect? What are the
+most common algorithms in use by the community? These questions are
+summarised in Table~\ref{tab:lit_rev_RQ1}.
 
-Joining the two notions, we can get to the idea that it would be
-possible to use \gls{DOAS} in a tomographic manner, so long as we use
-sufficient light collection points. This has been proposed by Byer and
-Shepp~\cite{Byer1979} in 1979. At the time the authors did not mention
-specifically the \gls{DOAS} technique, but the assembly they propose is
-essentially equivalent to one that would use this method. \gls{DOAS}
-tomography was also mentioned in one of the main pieces of literature in
-the field,~\cite{Platt2007}, as one of the most promising avenues
-available for \gls{DOAS} progress in the future.
+\begin{table}[htb]
+\centering
+\small
+\caption{Research question slicing}
+\label{tab:lit_rev_RQ1}
+    \begin{tabularx}{\textwidth}{lX}
+        \toprule
+        \textbf{Original} & What is the current status of the technology used in
+        tomographic DOAS? \\
+        \textbf{RQ1} & Is there a typical hardware setup used in tomographic
+        DOAS studies? \\
+        \textbf{RQ2} & Is there a standard software used to perform these
+        analysis? \\
+        \textbf{RQ3} & What are the algorithms more commonly used?\\\bottomrule
+    \end{tabularx}
+\end{table}
 
-As a requirement for one of the courses that I chose to pursue during
-the curricular part of my doctorate, I had to complete an assignment
-that consisted in writing a \acrlong{sms} on the subject of \gls{DOAS}
-tomography. The study is included in full in Appendix~\ref{ap:tomDoas}.
-It aims at characterising the literary panorama regarding the subject
-and tries to arrive at a standard application with respect to software,
-algorithms and instrumentation.
+Preliminary searches revealed that it would be difficult finding many
+sources on tomographic \gls{DOAS}. This was a defining moment on the
+article's development, since it meant that both the search terms and the
+used libraries would have to be broad, putting more pressure on the
+filtering operation.
 
-This type of study has a particular methodology focused on
-repeatability. Its complete explanation is out of scope of this section
-and even this document, but a simplified schematic is included in
-Figure~\ref{fig:sms_schematic}. A more detailed and extensive
-description of this method can be found in several works available in
-the literature, namely~\cite{Kitchenham2007, Kitchenham2009, Souza2019}.
+Preliminary searches, ran as tests for this study, indicated that there
+were a very low number of studies in \gls{DOAS} tomography, in
+comparison to other subjects to which this methodology is commonly
+applied. As consequence, the search terms were purposefully chosen as to
+maintain a broad scope and retrieve the largest possible amount of
+articles. The selected terms were: \textbf{DOAS atmospher*
+tomography}\footnote{The asterisk acts as a wildcard.}. The same
+strategy was applied to the selection of electronic libraries, as these
+preliminary searches revealed that there was a poor availability of
+relevant information in the most commonly used libraries. This in itself
+motivated a two stage approach to the search effort, in which we use
+several libraries to complement an initial \gls{gs} search. Libraries
+used are summarised in Table~\ref{tab:lit_rev_libraries}. Determining
+how a paper was to be used in my paper was a matter of applying the
+inclusion and exclusion filters presented in
+Table~\ref{tab:lit_rev_filters}, according to a particular algorithm
+that is presented in its flowchart form in
+Figure~\ref{fig:lit_rev_search_flowchart}. 
+
+Inclusion is a binary function. Either a paper is included or it is not.
+How then, should a paper be ranked once it is included? This is tackled
+by defining an objective metric with which to measure the paper's
+influence in the field. There are many ways to do this, but I have
+chosen to apply the formula in
+Equation~\ref{eq:lit_rev_paper_quality_metric}. This formula uses the
+paper's journal ranking, the number of citations it has garnered and its
+age to determine how much it is relevant to the investigation I was
+conducting.
+
+\begin{table}[htb]
+\centering
+\caption{Electronic libraries used in the \gls{sms} study.}
+\label{tab:lit_rev_libraries}
+\begin{tabularx}{\textwidth}{ll}
+\toprule
+\textbf{Library}          & \textbf{URL}\\
+\midrule
+\gls{gs}   & https://scholar.google.com/\\
+\gls{wok}& https://webofknowledge.com\\
+\gls{sd}   & https://www.sciencedirect.com\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[htb]
+\centering
+\caption{Selection filters in use for this study's search.}
+\label{tab:lit_rev_filters}
+\begin{tabularx}{\textwidth}{lXl}%{@{}cll@{}}
+\toprule
+\multicolumn{1}{l}{} & \textbf{Criterium} & \textbf{Definition} \\ \midrule
+\multirow{1}{*}{\textbf{Exc. Criteria}} & EC1 & Satellite data papers
+are not accepted \\
+\midrule
+\multicolumn{1}{l}{\multirow{3}{*}{\textbf{Inc. Criteria}}} & IC1 &
+Results must be journal papers \\
+\multicolumn{1}{l}{} & IC2 & Results must be about Tomographic DOAS \\ 
+\multicolumn{1}{l}{} & IC3 & Results must be written in English \\ 
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{equation}
+    \centering
+    \label{eq:lit_rev_paper_quality_metric}
+    S = Q_{i} \cdot \frac{C_{i}}{Age_{i}}
+\end{equation}
 
 \begin{figure}[htpb]
     \centering
-    \includegraphics[width=.6\textwidth]{img/pdf/sms_planning.pdf}
-    \caption{Simplified diagram of the \gls{sms} method. This type of
-    study is focused on registering every step of the search and the
-    reading  of the retrieved material, in an effort to make the process
-    completely repeatable. Adapted from~\cite{Kitchenham2007}.}
-    \label{fig:sms_schematic}
+    \includegraphics[width=\linewidth]{img/pdf/asd_flowchart.pdf}
+    \caption{Conduction stage flowchart. Libraries are searched
+    independently through \emph{Publish or Perish}~\cite{Harzing}, but
+    results must be checked to ensure they are not counted twice, due to the
+    imbalance of power between \gls{gs}'s search engine and the others.}
+    \label{fig:lit_rev_search_flowchart}
 \end{figure}
 
-After defining search terms and conducting the actual search, we arrived
-at a total of 9 relevant papers. These were analysed under the light of
-the study's main goal, which was to identify a standard \gls{DOAS}
-tomography device and application.
+The application of the aforementioned methods has rendered what is
+summarised in two tables. Table~\ref{tab:lit_rev_high_level_results}
+presents a high-level representation of the search results.
+Table~\ref{tab:lit_rev_selected_articles} presents all selected papers,
+as well as their score according to the formula of
+Equation~\ref{eq:lit_rev_paper_quality_metric}. The following subsection
+includes my observations on the hypothesis explored through the selected
+papers and how I can use this in my research.
+
+\begin{table}[htb]
+\centering
+\caption{Search results summary.}
+\label{tab:lit_rev_high_level_results}
+\begin{tabular}{@{}lccccr@{}}
+\toprule
+\textbf{Library} & \textbf{Results} & \textbf{Excluded} & \textbf{In \gls{gs}} & \textbf{Final} & \textbf{Weight in study} \\ \midrule
+\textbf{\gls{gs}} & 37 & 25 & 0 & 12 & 92,31\% \\
+\textbf{Scopus} & 15 & 3 & 12 & 0 & 0\% \\
+\textbf{WoS} & 9 & 1 & 7 & 1 & 7,69\% \\
+\midrule
+\textbf{Total}& \textbf{61} & \textbf{29} & \textbf{19} &\textbf{13} & \textbf{100,00\%} \\ \bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[htb]
+    \centering
+    \small
+    \caption{References and relevant data for the selected papers,
+        including their score, which was calculated according to
+        Equation~\ref{eq:lit_rev_paper_quality_metric}.}
+    \label{tab:lit_rev_selected_articles}
+    \begin{tabular}{@{}llllll@{}}
+    \toprule
+    \textbf{Number} & \textbf{Reference} & \textbf{Quartile} &
+    \textbf{Citations} & \textbf{Year} & \textbf{Score} \\ \midrule
+    \textbf{1} & \cite{Hartl2006} & 1 & 35 & 2006 & 2,69 \\
+    \midrule
+    \textbf{2} & \cite{Hartl2005} & 1 & 2 & 2005 & 0,14 \\
+    \midrule
+    \textbf{3} & \cite{Laepple2004} & 1 & 30 & 2004 & 2,00 \\
+    \midrule
+    \textbf{4} & \cite{Pundt2005} & 2 & 1 & 2005 & 0,05 \\
+    \midrule
+    \textbf{5} & \cite{Murphy2003} & 3 & 6 & 2003 & 0,19 \\
+    \midrule
+    \textbf{6} & \cite{Frins2006} & 1 & 8 & 2006 & 0,62 \\
+    \midrule
+    \textbf{7} & \cite{Johansson2009} & 2 & 26 & 2009 & 1,95 \\
+    \midrule
+    \textbf{8} & \cite{ODriscoll2003} & 4 & 0 & 2003 & 0,00 \\
+    \midrule
+    \textbf{9} & \cite{Pundt2006} & 1 & 12 & 2006 & 0,92 \\
+    \midrule
+    \textbf{10} & \cite{Pundt2005b} & 1 & 42 & 2005 & 3,00 \\
+    \midrule
+    \textbf{11} & \cite{ODriscoll2003a} & 4 & 1 & 2003 & 0,02 \\
+    \midrule
+    \textbf{12} & \cite{Mettendorf2006} & 1 & 4 & 2006 & 0,31 \\
+    \midrule
+    \textbf{13} & \cite{Casaballe2017} & 1 & 2 & 2017 & 1,00 \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+\subsection{Paper Analysis - The DOAS Tomography State of the Art}%
+\label{sub:paper_analysis_the_doas_tomography_state_of_the_art}
 
 The first identifiable pattern is the marked prevalence of active
 \gls{DOAS} systems. 11 out of the 13 retrieved papers describe or
@@ -191,3 +322,4 @@ point out that there is no commercially available systems for this kind
 of application, although some of the articles, like the one by Stutz in
 2016~\cite{Stutz2016} detail systems which could easily be adapted to
 that end.
+
